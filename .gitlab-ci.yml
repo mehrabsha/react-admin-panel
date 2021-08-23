@@ -1,0 +1,29 @@
+stages:
+  - deploy
+
+
+
+Deploy_Dev:
+  stage: deploy
+  only:
+    - dev
+  script:
+    #- cp $DEV_ENV .env
+    - docker-compose -f docker-compose-dev.yml build dev-tosanex-admin-front
+    - docker-compose -f docker-compose-dev.yml kill dev-tosanex-admin-front
+    - docker-compose -f docker-compose-dev.yml up -d dev-tosanex-admin-front
+  tags:
+    - dev-front
+
+
+Deploy_Prod:
+  stage: deploy
+  only:
+    - master
+  script:
+    #- cp $PROD_ENV .env
+    - docker-compose -f docker-compose-prod.yml build prod-tosanex-admin-front
+    - docker-compose -f docker-compose-prod.yml kill prod-tosanex-admin-front
+    - docker-compose -f docker-compose-prod.yml up -d prod-tosanex-admin-front
+  tags:
+    - prod-front
