@@ -13,7 +13,22 @@ Deploy_Dev:
     - docker-compose -f docker-compose-dev.yml kill dev-tosanex-admin-front
     - docker-compose -f docker-compose-dev.yml up -d dev-tosanex-admin-front
   tags:
-    - dev-front
+    - dev-front-admin
+
+
+
+Deploy_Stage:
+  stage: deploy
+  only:
+    - dev
+  script:
+    #- cp $DEV_ENV .env
+    - docker-compose -f docker-compose-stage.yml build stage-tosanex-admin-front
+    - docker-compose -f docker-compose-stage.yml kill stage-tosanex-admin-front
+    - docker-compose -f docker-compose-stage.yml up -d stage-tosanex-admin-front
+  tags:
+    - stage-front-admin
+
 
 
 Deploy_Prod:
@@ -26,4 +41,4 @@ Deploy_Prod:
     - docker-compose -f docker-compose-prod.yml kill prod-tosanex-admin-front
     - docker-compose -f docker-compose-prod.yml up -d prod-tosanex-admin-front
   tags:
-    - prod-front
+    - prod-front-admin

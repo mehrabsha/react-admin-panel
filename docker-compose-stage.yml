@@ -1,11 +1,11 @@
-version: "3.1"
+version: '3.1'
 
 services:
-  prod-tosanex-admin-front:
+  stage-tosanex-admin-front:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: "prod-tosanex-admin-front"
+    container_name: "stage-tosanex-admin-front"
     restart: always
     ports:
     - 127.0.0.1:8085:3000
