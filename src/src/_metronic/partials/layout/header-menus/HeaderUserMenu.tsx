@@ -4,7 +4,6 @@ import {shallowEqual, useSelector} from 'react-redux'
 import {Link} from 'react-router-dom'
 import {UserModel} from '../../../../app/modules/auth/models/UserModel'
 import {RootState} from '../../../../setup'
-import {Languages} from './Languages'
 
 const HeaderUserMenu: FC = () => {
   const user: UserModel = useSelector<RootState>(({auth}) => auth.user, shallowEqual) as UserModel
@@ -115,8 +114,6 @@ const HeaderUserMenu: FC = () => {
       </div>
 
       <div className='separator my-2'></div>
-
-      <Languages />
 
       <div className='menu-item px-5 my-1'>
         <Link to='/crafted/account/settings' className='menu-link px-5'>

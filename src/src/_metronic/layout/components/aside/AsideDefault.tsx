@@ -77,13 +77,9 @@ const AsideDefault: FC = () => {
         <a
           target='_blank'
           className='btn btn-custom btn-primary w-100'
-          href={process.env.REACT_APP_PREVIEW_DOCS_URL}
-          data-bs-toggle='tooltip'
-          data-bs-trigger='hover'
-          data-bs-dismiss-='click'
-          title='Check out the complete documentation with over 100 components'
+          href="https://tosanex.com"
         >
-          <span className='btn-label'>Docs & Components</span>
+          <span className='btn-label'>Open website</span>
           <span className='btn-icon svg-icon-2'>
             <KTSVG path='/media/icons/duotune/general/gen005.svg' />
           </span>
