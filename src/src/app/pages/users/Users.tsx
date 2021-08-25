@@ -1,13 +1,13 @@
-import { PageTitle } from "../../../_metronic/layout/core"
-import UsersT from "../../templates/users/UsersT"
+import { PageTitle } from '../../../_metronic/layout/core';
+import UsersT from '../../templates/users/UsersT';
 
 const Users = () => {
-    return (
-       <>
-        <PageTitle breadcrumbs={[]}>Users</PageTitle>
-        <UsersT/>
-       </>
-    )
-}
+  return (
+    <>
+      <PageTitle breadcrumbs={[]}>Users</PageTitle>
+      <UsersT />
+    </>
+  );
+};
 
-export default Users
+export default Users;
