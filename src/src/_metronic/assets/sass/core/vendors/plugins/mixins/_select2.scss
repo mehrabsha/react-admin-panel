@@ -16,14 +16,14 @@
 ) {
   $calculated-input-padding-y: calc(
     (
-        #{$input-padding-y * 2} + #{$input-height-border} - #{2 * $choice-padding-y + 2 *
-          $choice-margin-y}
+        #{$input-padding-y * 2} + #{$input-height-border} - #{2 *
+          $choice-padding-y + 2 * $choice-margin-y}
       ) / 2
   );
   $calculated-selection-margin-y: calc(
     #{$input-padding-y} - (
-        #{$input-padding-y * 2} + #{$input-height-border} - #{2 * $choice-padding-y + 2 *
-          $choice-margin-y}
+        #{$input-padding-y * 2} + #{$input-height-border} - #{2 *
+          $choice-padding-y + 2 * $choice-margin-y}
       ) / 2
   );
 

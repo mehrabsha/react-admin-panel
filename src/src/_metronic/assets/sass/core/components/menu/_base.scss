@@ -167,7 +167,10 @@
                 #{get($menu, dropdown, animation-speed)}
                 ease
                 1,
-              menu-sub-dropdown-animation-move-up #{get($menu, dropdown, animation-speed)} ease 1;
+              menu-sub-dropdown-animation-move-up
+                #{get($menu, dropdown, animation-speed)}
+                ease
+                1;
 
             // Move down
             &[data-popper-placement='top'],
@@ -257,7 +260,10 @@
 }
 
 // Menu indention
-@include menu-link-indention(get($menu, accordion, indention), get($menu, link, self, padding-x));
+@include menu-link-indention(
+  get($menu, accordion, indention),
+  get($menu, link, self, padding-x)
+);
 
 // Menu animations
 @keyframes menu-sub-dropdown-animation-fade-in {

@@ -17,7 +17,7 @@ $content-border-radius: 1.5rem !default;
 $content-spacing: (
   desktop: 30px,
   // Padding for desktop mode
-  tablet-and-mobile: 15px // Padding for tablet and mobile modes,,
+  tablet-and-mobile: 15px // Padding for tablet and mobile modes,,,
 ) !default;
 
 // Header
@@ -27,20 +27,21 @@ $header-config: (
     (
       height: (
         desktop: 65px,
-        tablet-and-mobile: 55px,
+        tablet-and-mobile: 55px
       ),
-      bg-color: if(isDarkMode(), #1e1e2d, $white),
+      bg-color: if(isDarkMode(), #1e1e2d, $white)
     ),
   // Fixed Mode
   fixed:
     (
       height: (
         desktop: 65px,
-        tablet-and-mobile: 55px,
+        tablet-and-mobile: 55px
       ),
       z-index: 100,
       bg-color: if(isDarkMode(), #1e1e2d, $white),
-      box-shadow: if(isDarkMode(), none, 0px 10px 30px 0px rgba(82, 63, 105, 0.05)),
+      box-shadow:
+        if(isDarkMode(), none, 0px 10px 30px 0px rgba(82, 63, 105, 0.05))
     )
 ) !default;
 
@@ -49,12 +50,12 @@ $toolbar-config: (
   z-index: 99,
   height: (
     desktop: 75px,
-    tablet-and-mobile: 60px,
+    tablet-and-mobile: 60px
   ),
   padding: 0.5rem,
   bg-color: if(isDarkMode(), darken(#1e1e2d, 2%), $white),
   box-shadow: if(isDarkMode(), none, 0px 10px 30px 0px rgba(82, 63, 105, 0.05)),
-  border-top: if(isDarkMode(), 0, 1px solid $border-color),
+  border-top: if(isDarkMode(), 0, 1px solid $border-color)
 ) !default;
 
 // Aside
@@ -75,11 +76,12 @@ $aside-config: (
   // Aside minimized width for desktop mode
   box-shadow: if(isDarkMode(), none, 0 0 28px 0 rgba(82, 63, 105, 0.05)),
   // Aside box shadow
-  minimized-hover-box-shadow: if(isDarkMode(), none, 5px 0px 10px rgba(70, 78, 95, 0.075))
-    // Monimized hover box shadow,,
+  minimized-hover-box-shadow:
+    if(isDarkMode(), none, 5px 0px 10px rgba(70, 78, 95, 0.075))
+    // Monimized hover box shadow,,,
 ) !default;
 
 // Aside
 $footer-config: (
-  bg-color: if(isDarkMode(), #1b1b28, $white),
+  bg-color: if(isDarkMode(), #1b1b28, $white)
 ) !default;
