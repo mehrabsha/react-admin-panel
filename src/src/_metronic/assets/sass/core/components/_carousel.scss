@@ -35,7 +35,7 @@
 
         &:after {
           display: inline-block;
-          content: ' ';
+          content: " ";
           @include border-radius(50%);
           transition: all $carousel-custom-indicator-transition-speed ease;
           background-color: $carousel-custom-indicator-default-bg-color;

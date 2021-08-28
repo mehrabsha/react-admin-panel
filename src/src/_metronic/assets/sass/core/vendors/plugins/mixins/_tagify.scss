@@ -15,12 +15,15 @@
   $remove-margin-x
 ) {
   $calculated-input-padding-y: calc(
-    (#{$input-padding-y * 2} + #{$input-height-border} - #{2 * $tag-padding-y + 2 * $tag-margin-y}) /
-      2
+    (
+        #{$input-padding-y * 2} + #{$input-height-border} - #{2 * $tag-padding-y +
+          2 * $tag-margin-y}
+      ) / 2
   );
   $calculated-tag-input-margin-y: calc(
     #{$input-padding-y} - (
-        #{$input-padding-y * 2} + #{$input-height-border} - #{2 * $tag-padding-y + 2 * $tag-margin-y}
+        #{$input-padding-y * 2} + #{$input-height-border} - #{2 * $tag-padding-y +
+          2 * $tag-margin-y}
       ) / 2
   );
 

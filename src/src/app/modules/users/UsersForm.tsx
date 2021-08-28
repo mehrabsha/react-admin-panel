@@ -1,10 +1,5 @@
-
 const UsersForm = () => {
-    return (
-        <div>
-            USERS FORM MODULE
-        </div>
-    )
-}
+  return <div>USERS FORM MODULE</div>;
+};
 
-export default UsersForm
+export default UsersForm;

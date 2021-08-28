@@ -1,6 +1,6 @@
 export interface UserSocialNetworksModel {
-  linkedIn: string
-  facebook: string
-  twitter: string
-  instagram: string
+  linkedIn: string;
+  facebook: string;
+  twitter: string;
+  instagram: string;
 }

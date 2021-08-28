@@ -36,7 +36,7 @@
 
   &:not(.form-switch) {
     .form-check-input {
-      &[type='checkbox'] {
+      &[type="checkbox"] {
         background-size: $form-check-input-bg-size;
       }
     }

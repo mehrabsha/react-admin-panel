@@ -40,11 +40,12 @@
   overflow: hidden;
   z-index: get($drawer, z-index) - 1;
   background-color: get($drawer, overlay-bg-color);
-  animation: animation-drawer-fade-in get($drawer, overlay-animation-speed) ease-in-out 1;
+  animation: animation-drawer-fade-in get($drawer, overlay-animation-speed)
+    ease-in-out 1;
 }
 
 // Initial state
-[data-kt-drawer='true'] {
+[data-kt-drawer="true"] {
   display: none;
 }
 
@@ -60,7 +61,7 @@
 
 // Tablet & Mobile Modes
 @include media-breakpoint-down(lg) {
-  body[data-kt-drawer='on'] {
+  body[data-kt-drawer="on"] {
     overflow: hidden;
   }
 }

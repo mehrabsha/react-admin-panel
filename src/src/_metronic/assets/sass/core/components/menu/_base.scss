@@ -92,7 +92,7 @@
       &:after {
         display: block;
         width: 100%;
-        content: ' ';
+        content: " ";
         @include svg-bg-icon(arrow-start, $text-muted);
         /*rtl:begin:remove*/
         @include svg-bg-icon(arrow-end, $text-muted);
@@ -130,7 +130,7 @@
     $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
 
     @if $infix and $direction == down {
-      $infix: $infix + '-' + $direction;
+      $infix: $infix + "-" + $direction;
     }
 
     @include media-breakpoint-direction($direction, $breakpoint) {
@@ -167,12 +167,15 @@
                 #{get($menu, dropdown, animation-speed)}
                 ease
                 1,
-              menu-sub-dropdown-animation-move-up #{get($menu, dropdown, animation-speed)} ease 1;
+              menu-sub-dropdown-animation-move-up
+                #{get($menu, dropdown, animation-speed)}
+                ease
+                1;
 
             // Move down
-            &[data-popper-placement='top'],
-            &[data-popper-placement='top-start'],
-            &[data-popper-placement='top-end'] {
+            &[data-popper-placement="top"],
+            &[data-popper-placement="top-start"],
+            &[data-popper-placement="top-end"] {
               animation: menu-sub-dropdown-animation-fade-in
                   #{get($menu, dropdown, animation-speed)}
                   ease
@@ -257,7 +260,10 @@
 }
 
 // Menu indention
-@include menu-link-indention(get($menu, accordion, indention), get($menu, link, self, padding-x));
+@include menu-link-indention(
+  get($menu, accordion, indention),
+  get($menu, link, self, padding-x)
+);
 
 // Menu animations
 @keyframes menu-sub-dropdown-animation-fade-in {

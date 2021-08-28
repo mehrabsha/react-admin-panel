@@ -3,33 +3,33 @@
  * Please do not modified unless you know what to do
  */
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const path = require('path')
+const path = require("path");
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const del = require('del')
+const del = require("del");
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const RtlCssPlugin = require('rtlcss-webpack-plugin')
+const RtlCssPlugin = require("rtlcss-webpack-plugin");
 
 // global variables
-const rootPath = path.resolve(__dirname)
-const distPath = rootPath + '/src/_metronic/assets'
+const rootPath = path.resolve(__dirname);
+const distPath = rootPath + "/src/_metronic/assets";
 
 const entries = {
-  'css/style': './src/_metronic/assets/sass/style.scss',
-}
+  "css/style": "./src/_metronic/assets/sass/style.scss",
+};
 
 // remove older folders and files
-;(async () => {
-  await del.sync(distPath + '/css', {force: true})
-})()
+(async () => {
+  await del.sync(distPath + "/css", { force: true });
+})();
 
 function mainConfig() {
   return {
     // enabled/disable optimizations
-    mode: 'development',
+    mode: "development",
     // console logs output, https://webpack.js.org/configuration/stats/
-    stats: 'errors-only',
+    stats: "errors-only",
     performance: {
       // disable warnings hint
       hints: false,
@@ -39,26 +39,26 @@ function mainConfig() {
       // main output path in assets folder
       path: distPath,
       // output path based on the entries' filename
-      filename: '[name].js',
+      filename: "[name].js",
     },
     resolve: {
-      extensions: ['.scss'],
+      extensions: [".scss"],
     },
     plugins: [
       new MiniCssExtractPlugin({
-        filename: '[name].css',
+        filename: "[name].css",
       }),
       new RtlCssPlugin({
-        filename: '[name].rtl.css',
+        filename: "[name].rtl.css",
       }),
       {
         apply: (compiler) => {
           // hook name
-          compiler.hooks.afterEmit.tap('AfterEmitPlugin', () => {
-            ;(async () => {
-              await del.sync(distPath + '/css/*.js', {force: true})
-            })()
-          })
+          compiler.hooks.afterEmit.tap("AfterEmitPlugin", () => {
+            (async () => {
+              await del.sync(distPath + "/css/*.js", { force: true });
+            })();
+          });
         },
       },
     ],
@@ -68,9 +68,9 @@ function mainConfig() {
           test: /\.scss$/,
           use: [
             MiniCssExtractPlugin.loader,
-            'css-loader',
+            "css-loader",
             {
-              loader: 'sass-loader',
+              loader: "sass-loader",
               options: {
                 sourceMap: true,
               },
@@ -79,9 +79,9 @@ function mainConfig() {
         },
       ],
     },
-  }
+  };
 }
 
 module.exports = function () {
-  return [mainConfig()]
-}
+  return [mainConfig()];
+};

@@ -3,7 +3,7 @@
 //
 
 @mixin svg-bg-icon($type, $color, $update: false) {
-  $bg-image: '';
+  $bg-image: "";
 
   // Icon type;
   @if ($type == close) {

@@ -8,7 +8,7 @@
   $label-width: 50px;
 
   &:before {
-    content: '';
+    content: "";
     position: absolute;
     left: $label-width + 1px;
     width: 3px;

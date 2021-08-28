@@ -6,7 +6,7 @@
   position: relative;
   overflow: hidden;
 
-  [data-tns='true'] {
+  [data-tns="true"] {
     display: none;
   }
 
@@ -16,7 +16,7 @@
   }
 
   &.tns-initiazlied {
-    [data-tns='true'] {
+    [data-tns="true"] {
       display: flex;
     }
 
@@ -31,18 +31,18 @@
     position: relative;
 
     // Navs
-    [data-controls='prev'],
-    [data-controls='next'] {
+    [data-controls="prev"],
+    [data-controls="next"] {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
     }
 
-    [data-controls='prev'] {
+    [data-controls="prev"] {
       left: 0;
     }
 
-    [data-controls='next'] {
+    [data-controls="next"] {
       right: 0;
     }
 

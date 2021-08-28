@@ -34,7 +34,7 @@
 
     .tagify__tag__removeBtn {
       border-radius: 0;
-      content: ' ';
+      content: " ";
       @include svg-bg-icon(close, $gray-500);
 
       &:after {

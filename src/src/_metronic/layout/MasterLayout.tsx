@@ -1,11 +1,11 @@
-import React from 'react'
-import {AsideDefault} from './components/aside/AsideDefault'
-import {HeaderWrapper} from './components/header/HeaderWrapper'
-import {Toolbar} from './components/toolbar/Toolbar'
-import {ScrollTop} from './components/ScrollTop'
-import {Content} from './components/Content'
-import {MasterInit} from './MasterInit'
-import {PageDataProvider} from './core'
+import React from "react";
+import { AsideDefault } from "./components/aside/AsideDefault";
+import { HeaderWrapper } from "./components/header/HeaderWrapper";
+import { Toolbar } from "./components/toolbar/Toolbar";
+import { ScrollTop } from "./components/ScrollTop";
+import { Content } from "./components/Content";
+import { MasterInit } from "./MasterInit";
+import { PageDataProvider } from "./core";
 import {
   DrawerMessenger,
   ExploreMain,
@@ -13,19 +13,25 @@ import {
   Main,
   InviteUsers,
   UpgradePlan,
-} from '../partials'
+} from "../partials";
 
-const MasterLayout: React.FC = ({children}) => {
+const MasterLayout: React.FC = ({ children }) => {
   return (
     <PageDataProvider>
-      <div className='page d-flex flex-row flex-column-fluid'>
+      <div className="page d-flex flex-row flex-column-fluid">
         <AsideDefault />
-        <div className='wrapper d-flex flex-column flex-row-fluid' id='kt_wrapper'>
+        <div
+          className="wrapper d-flex flex-column flex-row-fluid"
+          id="kt_wrapper"
+        >
           <HeaderWrapper />
 
-          <div id='kt_content' className='content d-flex flex-column flex-column-fluid'>
+          <div
+            id="kt_content"
+            className="content d-flex flex-column flex-column-fluid"
+          >
             <Toolbar />
-            <div className='post d-flex flex-column-fluid' id='kt_post'>
+            <div className="post d-flex flex-column-fluid" id="kt_post">
               <Content>{children}</Content>
             </div>
           </div>
@@ -47,7 +53,7 @@ const MasterLayout: React.FC = ({children}) => {
       <MasterInit />
       <ScrollTop />
     </PageDataProvider>
-  )
-}
+  );
+};
 
-export {MasterLayout}
+export { MasterLayout };
