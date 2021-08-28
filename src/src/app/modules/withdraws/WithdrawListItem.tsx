@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import { WithdrawModel } from './models/WithdrawModel';
 import clsx from 'clsx';
 import { Link, Route } from 'react-router-dom';
+import { OverlayTrigger, Tooltip } from 'react-bootstrap-v5';
 
 interface WithdrawDataProps {
   items: WithdrawModel[];
@@ -21,46 +22,41 @@ const WithdrawsListItem: FC<WithdrawDataProps> = props => {
             </Link>
           </td>
           <td>
-            <a
-              href="#"
+            <Link
+              to={'withdraws/' + row.id}
               className="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6"
             >
               {row.username}
-            </a>
+            </Link>
             <span className="text-muted fw-bold text-muted d-block fs-7">
               {row.phone}
             </span>
           </td>
           <td>
-            {row.emialConfirm ? (
-              <span className="text-dark fw-bolder d-block mb-1 fs-7">
-                Email:<i className="fas fa-check-square ms-1 text-success"></i>
-              </span>
-            ) : (
-              <span className="text-muted fw-bolder d-block mb-1 fs-7">
-                Email:<i className="fas fa-window-close ms-1 text-danger"></i>
-              </span>
-            )}
-            {row.googleConfirm ? (
-              <span className="text-dark fw-bolder d-block mb-1 fs-7">
-                Google Auth:
+            <span className="text-dark fw-bolder d-block mb-1 fs-7">
+              Email:
+              {row.emialConfirm ? (
                 <i className="fas fa-check-square ms-1 text-success"></i>
-              </span>
-            ) : (
-              <span className="text-muted fw-bolder d-block mb-1 fs-7">
-                Google Auth:
+              ) : (
                 <i className="fas fa-window-close ms-1 text-danger"></i>
-              </span>
-            )}
-            {row.googleConfirm && row.emialConfirm ? (
-              <span className="text-dark fw-bolder d-block mb-1 fs-7">
-                Final:<i className="fas fa-check-square ms-1 text-success"></i>
-              </span>
-            ) : (
-              <span className="text-muted fw-bolder d-block mb-1 fs-7">
-                Final:<i className="fas fa-window-close ms-1 text-danger"></i>
-              </span>
-            )}
+              )}
+            </span>
+            <span className="text-dark fw-bolder d-block mb-1 fs-7">
+              Google Auth:
+              {row.googleConfirm ? (
+                <i className="fas fa-check-square ms-1 text-success"></i>
+              ) : (
+                <i className="fas fa-window-close ms-1 text-danger"></i>
+              )}
+            </span>
+            <span className="text-dark fw-bolder d-block mb-1 fs-7">
+              Final:
+              {row.googleConfirm && row.emialConfirm ? (
+                <i className="fas fa-check-square ms-1 text-success"></i>
+              ) : (
+                <i className="fas fa-window-close ms-1 text-danger"></i>
+              )}
+            </span>
           </td>
           <td>
             <span className="text-dark fw-bolder d-block mb-2 fs-7">
@@ -93,18 +89,33 @@ const WithdrawsListItem: FC<WithdrawDataProps> = props => {
             </span>
           </td>
           <td className="text-end">
-            <a
-              href="#"
-              className="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1"
+            <OverlayTrigger
+              placement="top"
+              overlay={<Tooltip id="delete-tooltip">Delete</Tooltip>}
             >
-              <i className="fas fa-edit"></i>
-            </a>
-            <a
-              href="#"
-              className="btn btn-icon btn-bg-light btn-active-color-primary btn-sm"
+              <div className="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                <i className="fas fa-trash"></i>
+              </div>
+            </OverlayTrigger>
+            <OverlayTrigger
+              placement="top"
+              overlay={<Tooltip id="delete-tooltip">Edit</Tooltip>}
             >
-              <i className="fas fa-trash"></i>
-            </a>
+              <Link
+                to={'withdraws/' + row.id}
+                className="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1"
+              >
+                <i className="fas fa-edit"></i>
+              </Link>
+            </OverlayTrigger>
+            <OverlayTrigger
+              placement="top"
+              overlay={<Tooltip id="delete-tooltip">Compelete</Tooltip>}
+            >
+              <div className="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
+                <i className="fas fa-check-double"></i>
+              </div>
+            </OverlayTrigger>
           </td>
         </tr>
       ))}

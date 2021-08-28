@@ -9,7 +9,7 @@ export const WithdrawData = [
         date: '25/08/2021 - 13:56',
         amount: '113 TRX',
         network: 'TRC20',
-        status: 'Awaiting approval'
+        status: 'Awaiting Approval'
     },
     {
         id: 5631,

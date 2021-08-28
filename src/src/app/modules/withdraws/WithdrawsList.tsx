@@ -1,4 +1,5 @@
 import React from 'react';
+import { Toggle } from '../../../_metronic/partials/layout/explore/Toggle';
 import { WithdrawData } from './models/WithdrawMockData';
 import WithdrawsListItem from './WithdrawListItem';
 
