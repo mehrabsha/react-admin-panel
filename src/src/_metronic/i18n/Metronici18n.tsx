@@ -1,12 +1,12 @@
-import React, { FC, createContext, useContext } from "react";
+import React, { FC, createContext, useContext } from 'react';
 
-const I18N_CONFIG_KEY = process.env.REACT_APP_I18N_CONFIG_KEY || "i18nConfig";
+const I18N_CONFIG_KEY = process.env.REACT_APP_I18N_CONFIG_KEY || 'i18nConfig';
 
 type Props = {
-  selectedLang: "de" | "en" | "es" | "fr" | "ja" | "zh";
+  selectedLang: 'de' | 'en' | 'es' | 'fr' | 'ja' | 'zh';
 };
 const initialState: Props = {
-  selectedLang: "en",
+  selectedLang: 'en'
 };
 
 function getConfig(): Props {

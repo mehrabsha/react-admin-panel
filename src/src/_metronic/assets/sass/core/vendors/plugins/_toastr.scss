@@ -5,7 +5,7 @@
 // Base
 .toast {
   transition: $transition-base;
-  background-position: 1.5rem center #{"/*rtl:calc(100% - 1.5rem) center*/"} !important;
+  background-position: 1.5rem center #{'/*rtl:calc(100% - 1.5rem) center*/'} !important;
   box-shadow: $dropdown-box-shadow !important;
   border-radius: $dropdown-border-radius !important;
   border: 0 !important;

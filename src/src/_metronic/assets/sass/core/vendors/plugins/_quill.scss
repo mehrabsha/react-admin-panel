@@ -112,7 +112,7 @@
     box-shadow: $dropdown-box-shadow;
     @include border-radius($border-radius);
 
-    input[type="text"] {
+    input[type='text'] {
       @include input-reset();
       border: 1px solid $border-color;
       color: $input-plaintext-color;

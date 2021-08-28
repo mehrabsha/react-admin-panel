@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useEffect, useRef } from "react";
-import { Carousel } from "bootstrap";
+import React, { useEffect, useRef } from 'react';
+import { Carousel } from 'bootstrap';
 
 type Props = {
   className: string;
@@ -10,8 +10,8 @@ type Props = {
 
 const StatsWidget9: React.FC<Props> = ({
   className,
-  innerPadding = "",
-  children,
+  innerPadding = '',
+  children
 }) => {
   const carouselRef = useRef<HTMLDivElement | null>(null);
   useEffect(() => {

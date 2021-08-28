@@ -1,5 +1,5 @@
-import React, { FC } from "react";
-import { toAbsoluteUrl } from "../../../helpers";
+import React, { FC } from 'react';
+import { toAbsoluteUrl } from '../../../helpers';
 
 const Demos: FC = () => (
   <div className="mb-0">
@@ -8,7 +8,7 @@ const Demos: FC = () => (
       <div className="overlay overflow-hidden border border-4 border-primary p-2 rounded">
         <div className="overlay-wrapper rounded">
           <img
-            src={toAbsoluteUrl("/media/demos/demo1.png")}
+            src={toAbsoluteUrl('/media/demos/demo1.png')}
             alt="demo"
             className="w-100 rounded"
           />
@@ -28,7 +28,7 @@ const Demos: FC = () => (
       <div className="overlay overflow-hidden border border-4 p-2 rounded">
         <div className="overlay-wrapper">
           <img
-            src={toAbsoluteUrl("/media/demos/demo2.png")}
+            src={toAbsoluteUrl('/media/demos/demo2.png')}
             alt="demo"
             className="w-100 rounded"
           />
@@ -45,7 +45,7 @@ const Demos: FC = () => (
       <div className="overlay overflow-hidden border border-4 p-2 rounded">
         <div className="overlay-wrapper">
           <img
-            src={toAbsoluteUrl("/media/demos/demo3.png")}
+            src={toAbsoluteUrl('/media/demos/demo3.png')}
             alt="demo"
             className="w-100 rounded"
           />
@@ -62,7 +62,7 @@ const Demos: FC = () => (
       <div className="overlay overflow-hidden border border-4 p-2 rounded">
         <div className="overlay-wrapper">
           <img
-            src={toAbsoluteUrl("/media/demos/demo4.png")}
+            src={toAbsoluteUrl('/media/demos/demo4.png')}
             alt="demo"
             className="w-100 rounded"
           />
@@ -79,7 +79,7 @@ const Demos: FC = () => (
       <div className="overlay overflow-hidden border border-4 p-2 rounded">
         <div className="overlay-wrapper">
           <img
-            src={toAbsoluteUrl("/media/demos/demo5.png")}
+            src={toAbsoluteUrl('/media/demos/demo5.png')}
             alt="demo"
             className="w-100 rounded"
           />
@@ -96,7 +96,7 @@ const Demos: FC = () => (
       <div className="overlay overflow-hidden border border-4 p-2 rounded">
         <div className="overlay-wrapper">
           <img
-            src={toAbsoluteUrl("/media/demos/demo6.png")}
+            src={toAbsoluteUrl('/media/demos/demo6.png')}
             alt="demo"
             className="w-100 rounded"
           />
@@ -113,7 +113,7 @@ const Demos: FC = () => (
       <div className="overlay overflow-hidden border border-4 p-2 rounded">
         <div className="overlay-wrapper">
           <img
-            src={toAbsoluteUrl("/media/demos/demo7.png")}
+            src={toAbsoluteUrl('/media/demos/demo7.png')}
             alt="demo"
             className="w-100 rounded"
           />
@@ -130,7 +130,7 @@ const Demos: FC = () => (
       <div className="overlay overflow-hidden border border-4 p-2 rounded">
         <div className="overlay-wrapper">
           <img
-            src={toAbsoluteUrl("/media/demos/demo8.png")}
+            src={toAbsoluteUrl('/media/demos/demo8.png')}
             alt="demo"
             className="w-100 rounded"
           />
@@ -147,7 +147,7 @@ const Demos: FC = () => (
       <div className="overlay overflow-hidden border border-4 p-2 rounded">
         <div className="overlay-wrapper">
           <img
-            src={toAbsoluteUrl("/media/demos/demo9.png")}
+            src={toAbsoluteUrl('/media/demos/demo9.png')}
             alt="demo"
             className="w-100 rounded"
           />
@@ -164,7 +164,7 @@ const Demos: FC = () => (
       <div className="overlay overflow-hidden border border-4 p-2 rounded">
         <div className="overlay-wrapper">
           <img
-            src={toAbsoluteUrl("/media/demos/demo10.png")}
+            src={toAbsoluteUrl('/media/demos/demo10.png')}
             alt="demo"
             className="w-100 rounded"
           />
@@ -181,7 +181,7 @@ const Demos: FC = () => (
       <div className="overlay overflow-hidden border border-4 p-2 rounded">
         <div className="overlay-wrapper">
           <img
-            src={toAbsoluteUrl("/media/demos/demo11.png")}
+            src={toAbsoluteUrl('/media/demos/demo11.png')}
             alt="demo"
             className="w-100 rounded"
           />
@@ -198,7 +198,7 @@ const Demos: FC = () => (
       <div className="overlay overflow-hidden border border-4 p-2 rounded">
         <div className="overlay-wrapper">
           <img
-            src={toAbsoluteUrl("/media/demos/demo12.png")}
+            src={toAbsoluteUrl('/media/demos/demo12.png')}
             alt="demo"
             className="w-100 rounded"
           />
@@ -215,7 +215,7 @@ const Demos: FC = () => (
       <div className="overlay overflow-hidden border border-4 p-2 rounded">
         <div className="overlay-wrapper">
           <img
-            src={toAbsoluteUrl("/media/demos/demo13.png")}
+            src={toAbsoluteUrl('/media/demos/demo13.png')}
             alt="demo"
             className="w-100 rounded"
           />
@@ -232,7 +232,7 @@ const Demos: FC = () => (
       <div className="overlay overflow-hidden border border-4 p-2 rounded">
         <div className="overlay-wrapper">
           <img
-            src={toAbsoluteUrl("/media/demos/demo14.png")}
+            src={toAbsoluteUrl('/media/demos/demo14.png')}
             alt="demo"
             className="w-100 rounded"
           />
@@ -249,7 +249,7 @@ const Demos: FC = () => (
       <div className="overlay overflow-hidden border border-4 p-2 rounded">
         <div className="overlay-wrapper">
           <img
-            src={toAbsoluteUrl("/media/demos/demo15.png")}
+            src={toAbsoluteUrl('/media/demos/demo15.png')}
             alt="demo"
             className="w-100 rounded"
           />

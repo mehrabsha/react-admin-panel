@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import { FC } from "react";
-import { Link } from "react-router-dom";
-import { toAbsoluteUrl } from "../../../helpers";
+import { FC } from 'react';
+import { Link } from 'react-router-dom';
+import { toAbsoluteUrl } from '../../../helpers';
 
 type Props = {
   icon: string;
@@ -24,7 +24,7 @@ const Card2: FC<Props> = ({
   description,
   date,
   budget,
-  progress,
+  progress
 }) => {
   return (
     <Link

@@ -5,8 +5,8 @@ import {
   EventHandlerUtil,
   DataUtil,
   DOMEventHandlerUtil,
-  ElementStyleUtil,
-} from "../_utils/index";
+  ElementStyleUtil
+} from '../_utils/index';
 
 export interface IStepperOptions {
   startIndex: number;
@@ -19,10 +19,9 @@ export interface IStepperOptions {
 const defaultStepperOptions: IStepperOptions = {
   startIndex: 1,
   animation: false,
-  animationSpeed: "0.3s",
-  animationNextClass: "animate__animated animate__slideInRight animate__fast",
-  animationPreviousClass:
-    "animate__animated animate__slideInLeft animate__fast",
+  animationSpeed: '0.3s',
+  animationNextClass: 'animate__animated animate__slideInRight animate__fast',
+  animationPreviousClass: 'animate__animated animate__slideInLeft animate__fast'
 };
 
 class StepperComponent {
@@ -40,7 +39,7 @@ class StepperComponent {
   constructor(_element: HTMLElement, options: IStepperOptions) {
     this.element = _element;
     this.options = Object.assign(defaultStepperOptions, options);
-    this.instanceUid = getUniqueIdWithPrefix("stepper");
+    this.instanceUid = getUniqueIdWithPrefix('stepper');
 
     // Elements
     this.steps = this.element.querySelectorAll(
@@ -70,11 +69,11 @@ class StepperComponent {
     this.initHandlers();
 
     // Bind Instance
-    DataUtil.set(this.element, "stepper", this);
+    DataUtil.set(this.element, 'stepper', this);
   }
 
   private _goTo = (index: number) => {
-    EventHandlerUtil.trigger(this.element, "kt.stepper.change");
+    EventHandlerUtil.trigger(this.element, 'kt.stepper.change');
     // Skip if this step is already shown
     if (
       index === this.currentStepIndex ||
@@ -93,26 +92,26 @@ class StepperComponent {
     // Refresh elements
     this.refreshUI();
 
-    EventHandlerUtil.trigger(this.element, "kt.stepper.changed");
+    EventHandlerUtil.trigger(this.element, 'kt.stepper.changed');
   };
 
   private initHandlers = () => {
-    this.btnNext?.addEventListener("click", (e: Event) => {
+    this.btnNext?.addEventListener('click', (e: Event) => {
       e.preventDefault();
 
-      EventHandlerUtil.trigger(this.element, "kt.stepper.next", e);
+      EventHandlerUtil.trigger(this.element, 'kt.stepper.next', e);
     });
 
-    this.btnPrev?.addEventListener("click", (e: Event) => {
+    this.btnPrev?.addEventListener('click', (e: Event) => {
       e.preventDefault();
 
-      EventHandlerUtil.trigger(this.element, "kt.stepper.previous", e);
+      EventHandlerUtil.trigger(this.element, 'kt.stepper.previous', e);
     });
 
     DOMEventHandlerUtil.on(
       this.element,
       '[data-kt-stepper-action="step"]',
-      "click",
+      'click',
       (e: Event) => {
         e.preventDefault();
 
@@ -136,7 +135,7 @@ class StepperComponent {
   };
 
   private _getStepDirection = (index: number) => {
-    return index > this.currentStepIndex ? "next" : "previous";
+    return index > this.currentStepIndex ? 'next' : 'previous';
   };
 
   private getStepContent = (index: number) => {
@@ -163,20 +162,20 @@ class StepperComponent {
   };
 
   private refreshUI = () => {
-    let state = "";
+    let state = '';
 
     if (this.isLastStep()) {
-      state = "last";
+      state = 'last';
     } else if (this.isFirstStep()) {
-      state = "first";
+      state = 'first';
     } else {
-      state = "between";
+      state = 'between';
     }
 
     // Set state class
-    this.element.classList.remove("last");
-    this.element.classList.remove("first");
-    this.element.classList.remove("between");
+    this.element.classList.remove('last');
+    this.element.classList.remove('first');
+    this.element.classList.remove('between');
 
     this.element.classList.add(state);
 
@@ -193,34 +192,34 @@ class StepperComponent {
       var element = elements[i] as HTMLElement;
       var index = getElementIndex(element) + 1;
 
-      element.classList.remove("current");
-      element.classList.remove("completed");
-      element.classList.remove("pending");
+      element.classList.remove('current');
+      element.classList.remove('completed');
+      element.classList.remove('pending');
 
       if (index === this.currentStepIndex) {
-        element.classList.add("current");
+        element.classList.add('current');
 
         if (
           this.options.animation !== false &&
-          element.getAttribute("data-kt-stepper-element") === "content"
+          element.getAttribute('data-kt-stepper-element') === 'content'
         ) {
           ElementStyleUtil.set(
             element,
-            "animationDuration",
+            'animationDuration',
             this.options.animationSpeed
           );
 
           const animation =
-            this._getStepDirection(this.passedStepIndex) === "previous"
+            this._getStepDirection(this.passedStepIndex) === 'previous'
               ? this.options.animationPreviousClass
               : this.options.animationNextClass;
           ElementAnimateUtil.animateClass(element, animation);
         }
       } else {
         if (index < this.currentStepIndex) {
-          element.classList.add("completed");
+          element.classList.add('completed');
         } else {
-          element.classList.add("pending");
+          element.classList.add('pending');
         }
       }
     }
@@ -305,7 +304,7 @@ class StepperComponent {
   };
 
   public destroy = () => {
-    console.log("destroy stepper");
+    console.log('destroy stepper');
   };
 
   public trigger = (name: string, event: Event) => {
@@ -314,12 +313,12 @@ class StepperComponent {
 
   // Static methods
   public static hasInstace(element: HTMLElement): boolean {
-    return DataUtil.has(element, "stepper");
+    return DataUtil.has(element, 'stepper');
   }
 
   public static getInstance(element: HTMLElement): StepperComponent | null {
     if (element !== null && StepperComponent.hasInstace(element)) {
-      return DataUtil.get(element, "stepper");
+      return DataUtil.get(element, 'stepper');
     }
     return null;
   }
@@ -327,7 +326,7 @@ class StepperComponent {
   // Create Instances
   public static createInstances(selector: string): void {
     const elements = document.body.querySelectorAll(selector);
-    elements.forEach((element) => {
+    elements.forEach(element => {
       const item = element as HTMLElement;
       let stepper = StepperComponent.getInstance(item);
       if (!stepper) {
@@ -350,7 +349,7 @@ class StepperComponent {
     return stepper;
   };
 
-  public static bootstrap(attr: string = "[data-kt-stepper]") {
+  public static bootstrap(attr: string = '[data-kt-stepper]') {
     StepperComponent.createInstances(attr);
   }
 }

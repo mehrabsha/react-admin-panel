@@ -5,8 +5,8 @@ import React, {
   useState,
   useEffect,
   SetStateAction,
-  Dispatch,
-} from "react";
+  Dispatch
+} from 'react';
 
 const MetronicSplashScreenContext = createContext<
   Dispatch<SetStateAction<number>> | undefined
@@ -17,14 +17,14 @@ const MetronicSplashScreenProvider: FC = ({ children }) => {
   let visible = count > 0;
 
   useEffect(() => {
-    const splashScreen = document.getElementById("splash-screen");
+    const splashScreen = document.getElementById('splash-screen');
 
     // Show SplashScreen
     if (splashScreen && visible) {
-      splashScreen.classList.remove("hidden");
+      splashScreen.classList.remove('hidden');
 
       return () => {
-        splashScreen.classList.add("hidden");
+        splashScreen.classList.add('hidden');
       };
     }
 
@@ -32,7 +32,7 @@ const MetronicSplashScreenProvider: FC = ({ children }) => {
     let timeout: number;
     if (splashScreen && !visible) {
       timeout = window.setTimeout(() => {
-        splashScreen.classList.add("hidden");
+        splashScreen.classList.add('hidden');
       }, 3000);
     }
 
@@ -58,14 +58,14 @@ const LayoutSplashScreen: FC<{ visible?: boolean }> = ({ visible = true }) => {
     }
 
     if (setCount) {
-      setCount((prev) => {
+      setCount(prev => {
         return prev + 1;
       });
     }
 
     return () => {
       if (setCount) {
-        setCount((prev) => {
+        setCount(prev => {
           return prev - 1;
         });
       }

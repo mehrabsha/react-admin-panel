@@ -1,14 +1,14 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from "react";
-import { KTSVG } from "../../../helpers";
+import React from 'react';
+import { KTSVG } from '../../../helpers';
 
 type Props = {
   className: string;
   innerPadding?: string;
 };
 
-const StatsWidget4: React.FC<Props> = ({ className, innerPadding = "" }) => {
+const StatsWidget4: React.FC<Props> = ({ className, innerPadding = '' }) => {
   return (
     <div className={`card ${className}`}>
       {/* begin::Body */}
@@ -52,7 +52,7 @@ const StatsWidget4: React.FC<Props> = ({ className, innerPadding = "" }) => {
           <div
             className="progress-bar bg-success"
             role="progressbar"
-            style={{ width: "80%" }}
+            style={{ width: '80%' }}
             aria-valuenow={50}
             aria-valuemin={0}
             aria-valuemax={100}

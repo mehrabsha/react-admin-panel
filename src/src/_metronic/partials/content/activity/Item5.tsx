@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import { FC } from "react";
-import { KTSVG, toAbsoluteUrl } from "../../../helpers";
+import { FC } from 'react';
+import { KTSVG, toAbsoluteUrl } from '../../../helpers';
 
 const Item5: FC = () => {
   return (
@@ -32,7 +32,7 @@ const Item5: FC = () => {
               data-bs-placement="top"
               title="Marcus Dotson"
             >
-              <img src={toAbsoluteUrl("/media/avatars/150-3.jpg")} alt="img" />
+              <img src={toAbsoluteUrl('/media/avatars/150-3.jpg')} alt="img" />
             </div>
           </div>
         </div>
@@ -44,7 +44,7 @@ const Item5: FC = () => {
                 <img
                   alt="img"
                   className="rounded w-200px"
-                  src={toAbsoluteUrl("/media/demos/demo1.png")}
+                  src={toAbsoluteUrl('/media/demos/demo1.png')}
                 />
               </div>
 
@@ -60,7 +60,7 @@ const Item5: FC = () => {
                 <img
                   alt="img"
                   className="rounded w-200px"
-                  src={toAbsoluteUrl("/media/demos/demo2.png")}
+                  src={toAbsoluteUrl('/media/demos/demo2.png')}
                 />
               </div>
 
@@ -76,7 +76,7 @@ const Item5: FC = () => {
                 <img
                   alt="img"
                   className="rounded w-200px"
-                  src={toAbsoluteUrl("/media/demos/demo3.png")}
+                  src={toAbsoluteUrl('/media/demos/demo3.png')}
                 />
               </div>
 

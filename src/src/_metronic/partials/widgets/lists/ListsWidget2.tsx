@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from "react";
-import { KTSVG, toAbsoluteUrl } from "../../../helpers";
-import { Dropdown1 } from "../../content/dropdown/Dropdown1";
+import React from 'react';
+import { KTSVG, toAbsoluteUrl } from '../../../helpers';
+import { Dropdown1 } from '../../content/dropdown/Dropdown1';
 
 type Props = {
   className: string;
@@ -39,7 +39,7 @@ const ListsWidget2: React.FC<Props> = ({ className }) => {
           {/* begin::Avatar */}
           <div className="symbol symbol-50px me-5">
             <img
-              src={toAbsoluteUrl("/media/avatars/150-1.jpg")}
+              src={toAbsoluteUrl('/media/avatars/150-1.jpg')}
               className=""
               alt=""
             />
@@ -60,7 +60,7 @@ const ListsWidget2: React.FC<Props> = ({ className }) => {
           {/* begin::Avatar */}
           <div className="symbol symbol-50px me-5">
             <img
-              src={toAbsoluteUrl("/media/avatars/150-4.jpg")}
+              src={toAbsoluteUrl('/media/avatars/150-4.jpg')}
               className=""
               alt=""
             />
@@ -83,7 +83,7 @@ const ListsWidget2: React.FC<Props> = ({ className }) => {
           {/* begin::Avatar */}
           <div className="symbol symbol-50px me-5">
             <img
-              src={toAbsoluteUrl("/media/avatars/150-12.jpg")}
+              src={toAbsoluteUrl('/media/avatars/150-12.jpg')}
               className=""
               alt=""
             />
@@ -106,7 +106,7 @@ const ListsWidget2: React.FC<Props> = ({ className }) => {
           {/* begin::Avatar */}
           <div className="symbol symbol-50px me-5">
             <img
-              src={toAbsoluteUrl("/media/avatars/150-8.jpg")}
+              src={toAbsoluteUrl('/media/avatars/150-8.jpg')}
               className=""
               alt=""
             />
@@ -129,7 +129,7 @@ const ListsWidget2: React.FC<Props> = ({ className }) => {
           {/* begin::Avatar */}
           <div className="symbol symbol-50px me-5">
             <img
-              src={toAbsoluteUrl("/media/avatars/150-6.jpg")}
+              src={toAbsoluteUrl('/media/avatars/150-6.jpg')}
               className=""
               alt=""
             />

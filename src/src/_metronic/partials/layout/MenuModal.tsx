@@ -1,9 +1,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useEffect, useRef } from "react";
-import { Modal } from "react-bootstrap-v5";
-import { Link, useLocation } from "react-router-dom";
-import { KTSVG, toAbsoluteUrl } from "../../helpers";
+import React, { useEffect, useRef } from 'react';
+import { Modal } from 'react-bootstrap-v5';
+import { Link, useLocation } from 'react-router-dom';
+import { KTSVG, toAbsoluteUrl } from '../../helpers';
 
 type Props = {
   show: boolean;
@@ -39,7 +39,7 @@ const MenuModal: React.FC<Props> = ({ show, handleClose, children }) => {
               <img
                 alt="logo"
                 className="h-30px"
-                src={toAbsoluteUrl("/media/logos/logo-default.svg")}
+                src={toAbsoluteUrl('/media/logos/logo-default.svg')}
               />
             </Link>
             {/* end::Logo */}
@@ -176,8 +176,8 @@ const MenuModal: React.FC<Props> = ({ show, handleClose, children }) => {
                         className="flex-grow-1 bgi-no-repeat bgi-size-contain bgi-position-x-center bgi-position-y-bottom card-rounded-bottom"
                         style={{
                           backgroundImage: `url('${toAbsoluteUrl(
-                            "/media/illustrations/terms-1.png"
-                          )}')`,
+                            '/media/illustrations/terms-1.png'
+                          )}')`
                         }}
                       />
                     </div>

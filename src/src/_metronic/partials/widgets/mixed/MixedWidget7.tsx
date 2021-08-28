@@ -1,9 +1,9 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useEffect, useRef } from "react";
-import ApexCharts, { ApexOptions } from "apexcharts";
-import { KTSVG } from "../../../helpers";
-import { getCSSVariableValue } from "../../../assets/ts/_utils";
-import { Dropdown1 } from "../../content/dropdown/Dropdown1";
+import React, { useEffect, useRef } from 'react';
+import ApexCharts, { ApexOptions } from 'apexcharts';
+import { KTSVG } from '../../../helpers';
+import { getCSSVariableValue } from '../../../assets/ts/_utils';
+import { Dropdown1 } from '../../content/dropdown/Dropdown1';
 
 type Props = {
   className: string;
@@ -14,7 +14,7 @@ type Props = {
 const MixedWidget7: React.FC<Props> = ({
   className,
   chartColor,
-  chartHeight,
+  chartHeight
 }) => {
   const chartRef = useRef<HTMLDivElement | null>(null);
 
@@ -95,50 +95,50 @@ const MixedWidget7: React.FC<Props> = ({
 };
 
 const chartOptions = (chartColor: string, chartHeight: string): ApexOptions => {
-  const baseColor = getCSSVariableValue("--bs-" + chartColor);
-  const lightColor = getCSSVariableValue("--bs-light-" + chartColor);
-  const labelColor = getCSSVariableValue("--bs-gray-700");
+  const baseColor = getCSSVariableValue('--bs-' + chartColor);
+  const lightColor = getCSSVariableValue('--bs-light-' + chartColor);
+  const labelColor = getCSSVariableValue('--bs-gray-700');
 
   return {
     series: [74],
     chart: {
-      fontFamily: "inherit",
+      fontFamily: 'inherit',
       height: chartHeight,
-      type: "radialBar",
+      type: 'radialBar'
     },
     plotOptions: {
       radialBar: {
         hollow: {
           margin: 0,
-          size: "65%",
+          size: '65%'
         },
         dataLabels: {
           name: {
             show: false,
-            fontWeight: "700",
+            fontWeight: '700'
           },
           value: {
             color: labelColor,
-            fontSize: "30px",
-            fontWeight: "700",
+            fontSize: '30px',
+            fontWeight: '700',
             offsetY: 12,
             show: true,
             formatter: function (val) {
-              return val + "%";
-            },
-          },
+              return val + '%';
+            }
+          }
         },
         track: {
           background: lightColor,
-          strokeWidth: "100%",
-        },
-      },
+          strokeWidth: '100%'
+        }
+      }
     },
     colors: [baseColor],
     stroke: {
-      lineCap: "round",
+      lineCap: 'round'
     },
-    labels: ["Progress"],
+    labels: ['Progress']
   };
 };
 

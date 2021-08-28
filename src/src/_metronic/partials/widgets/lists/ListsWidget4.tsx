@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from "react";
-import { KTSVG, toAbsoluteUrl } from "../../../helpers";
-import { Dropdown1 } from "../../content/dropdown/Dropdown1";
+import React from 'react';
+import { KTSVG, toAbsoluteUrl } from '../../../helpers';
+import { Dropdown1 } from '../../content/dropdown/Dropdown1';
 
 type Props = {
   className: string;
@@ -46,7 +46,7 @@ const ListsWidget4: React.FC<Props> = ({ className, items = 6 }) => {
           <div className="symbol symbol-50px me-5">
             <span className="symbol-label">
               <img
-                src={toAbsoluteUrl("/media/svg/brand-logos/plurk.svg")}
+                src={toAbsoluteUrl('/media/svg/brand-logos/plurk.svg')}
                 className="h-50 align-self-center"
                 alt=""
               />
@@ -77,7 +77,7 @@ const ListsWidget4: React.FC<Props> = ({ className, items = 6 }) => {
           <div className="symbol symbol-50px me-5">
             <span className="symbol-label">
               <img
-                src={toAbsoluteUrl("/media/svg/brand-logos/telegram.svg")}
+                src={toAbsoluteUrl('/media/svg/brand-logos/telegram.svg')}
                 className="h-50 align-self-center"
                 alt=""
               />
@@ -108,7 +108,7 @@ const ListsWidget4: React.FC<Props> = ({ className, items = 6 }) => {
           <div className="symbol symbol-50px me-5">
             <span className="symbol-label">
               <img
-                src={toAbsoluteUrl("/media/svg/brand-logos/vimeo.svg")}
+                src={toAbsoluteUrl('/media/svg/brand-logos/vimeo.svg')}
                 className="h-50 align-self-center"
                 alt=""
               />
@@ -139,7 +139,7 @@ const ListsWidget4: React.FC<Props> = ({ className, items = 6 }) => {
           <div className="symbol symbol-50px me-5">
             <span className="symbol-label">
               <img
-                src={toAbsoluteUrl("/media/svg/brand-logos/bebo.svg")}
+                src={toAbsoluteUrl('/media/svg/brand-logos/bebo.svg')}
                 className="h-50 align-self-center"
                 alt=""
               />
@@ -171,7 +171,7 @@ const ListsWidget4: React.FC<Props> = ({ className, items = 6 }) => {
             <div className="symbol symbol-50px me-5">
               <span className="symbol-label">
                 <img
-                  src={toAbsoluteUrl("/media/svg/brand-logos/kickstarter.svg")}
+                  src={toAbsoluteUrl('/media/svg/brand-logos/kickstarter.svg')}
                   className="h-50 align-self-center"
                   alt=""
                 />
@@ -203,7 +203,7 @@ const ListsWidget4: React.FC<Props> = ({ className, items = 6 }) => {
             <div className="symbol symbol-50px me-5">
               <span className="symbol-label">
                 <img
-                  src={toAbsoluteUrl("/media/svg/brand-logos/fox-hub.svg")}
+                  src={toAbsoluteUrl('/media/svg/brand-logos/fox-hub.svg')}
                   className="h-50 align-self-center"
                   alt=""
                 />

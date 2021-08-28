@@ -1,18 +1,18 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useState, useEffect } from "react";
-import ApexCharts, { ApexOptions } from "apexcharts";
-import { KTSVG, toAbsoluteUrl } from "../../../helpers";
-import { Dropdown2 } from "../../content/dropdown/Dropdown2";
-import { getCSSVariableValue } from "../../../assets/ts/_utils";
+import React, { useState, useEffect } from 'react';
+import ApexCharts, { ApexOptions } from 'apexcharts';
+import { KTSVG, toAbsoluteUrl } from '../../../helpers';
+import { Dropdown2 } from '../../content/dropdown/Dropdown2';
+import { getCSSVariableValue } from '../../../assets/ts/_utils';
 
 type Props = {
   className: string;
   innerPadding?: string;
 };
 
-const StatsWidget2: React.FC<Props> = ({ className, innerPadding = "" }) => {
-  const [activeTab, setActiveTab] = useState("#tab1");
+const StatsWidget2: React.FC<Props> = ({ className, innerPadding = '' }) => {
+  const [activeTab, setActiveTab] = useState('#tab1');
   const [activeChart, setActiveChart] = useState<ApexCharts | undefined>();
   useEffect(() => {
     setTab(1);
@@ -36,7 +36,7 @@ const StatsWidget2: React.FC<Props> = ({ className, innerPadding = "" }) => {
       return;
     }
 
-    const height = parseInt(getCss(element, "height"));
+    const height = parseInt(getCss(element, 'height'));
     const chart = new ApexCharts(element, getChartOptions(tabNumber, height));
     chart.render();
     setActiveChart(chart);
@@ -80,20 +80,20 @@ const StatsWidget2: React.FC<Props> = ({ className, innerPadding = "" }) => {
                 <a
                   onClick={() => setTab(1)}
                   className={`nav-link w-225px h-70px ${
-                    activeTab === "#tab1" ? "active btn-active-light" : ""
+                    activeTab === '#tab1' ? 'active btn-active-light' : ''
                   } fw-bolder me-2`}
                   id="tab1"
                 >
                   <div className="nav-icon me-3">
                     <img
                       alt=""
-                      src={toAbsoluteUrl("/media/svg/logo/gray/aven.svg")}
+                      src={toAbsoluteUrl('/media/svg/logo/gray/aven.svg')}
                       className="default"
                     />
 
                     <img
                       alt=""
-                      src={toAbsoluteUrl("/media/svg/logo/colored/aven.svg")}
+                      src={toAbsoluteUrl('/media/svg/logo/colored/aven.svg')}
                       className="active"
                     />
                   </div>
@@ -112,19 +112,19 @@ const StatsWidget2: React.FC<Props> = ({ className, innerPadding = "" }) => {
                 <a
                   id="tab2"
                   className={`nav-link w-225px h-70px ${
-                    activeTab === "#tab2" ? "active btn-active-light" : ""
+                    activeTab === '#tab2' ? 'active btn-active-light' : ''
                   } fw-bolder me-2`}
                   onClick={() => setTab(2)}
                 >
                   <div className="nav-icon me-3">
                     <img
                       alt=""
-                      src={toAbsoluteUrl("/media/svg/logo/gray/tower.svg")}
+                      src={toAbsoluteUrl('/media/svg/logo/gray/tower.svg')}
                       className="default"
                     />
                     <img
                       alt=""
-                      src={toAbsoluteUrl("/media/svg/logo/colored/tower.svg")}
+                      src={toAbsoluteUrl('/media/svg/logo/colored/tower.svg')}
                       className="active"
                     />
                   </div>
@@ -143,20 +143,20 @@ const StatsWidget2: React.FC<Props> = ({ className, innerPadding = "" }) => {
                 <a
                   id="tab3"
                   className={`nav-link w-225px h-70px ${
-                    activeTab === "#tab3" ? "active btn-active-light" : ""
+                    activeTab === '#tab3' ? 'active btn-active-light' : ''
                   } fw-bolder me-2`}
                   onClick={() => setTab(3)}
                 >
                   <div className="nav-icon me-3">
                     <img
                       alt=""
-                      src={toAbsoluteUrl("/media/svg/logo/gray/fox-hub-2.svg")}
+                      src={toAbsoluteUrl('/media/svg/logo/gray/fox-hub-2.svg')}
                       className="default"
                     />
                     <img
                       alt=""
                       src={toAbsoluteUrl(
-                        "/media/svg/logo/colored/fox-hub-2.svg"
+                        '/media/svg/logo/colored/fox-hub-2.svg'
                       )}
                       className="active"
                     />
@@ -176,19 +176,19 @@ const StatsWidget2: React.FC<Props> = ({ className, innerPadding = "" }) => {
                 <a
                   id="tab4"
                   className={`nav-link w-225px h-70px ${
-                    activeTab === "#tab4" ? "active btn-active-light" : ""
+                    activeTab === '#tab4' ? 'active btn-active-light' : ''
                   } fw-bolder me-2`}
                   onClick={() => setTab(4)}
                 >
                   <div className="nav-icon me-3">
                     <img
                       alt=""
-                      src={toAbsoluteUrl("/media/svg/logo/gray/kanba.svg")}
+                      src={toAbsoluteUrl('/media/svg/logo/gray/kanba.svg')}
                       className="default"
                     />
                     <img
                       alt=""
-                      src={toAbsoluteUrl("/media/svg/logo/colored/kanba.svg")}
+                      src={toAbsoluteUrl('/media/svg/logo/colored/kanba.svg')}
                       className="active"
                     />
                   </div>
@@ -213,7 +213,7 @@ const StatsWidget2: React.FC<Props> = ({ className, innerPadding = "" }) => {
             {/* begin::Tab Pane 1 */}
             <div
               className={`tab-pane fade ${
-                activeTab === "#tab1" ? "show active" : ""
+                activeTab === '#tab1' ? 'show active' : ''
               }`}
               id="tab1_content"
             >
@@ -249,7 +249,7 @@ const StatsWidget2: React.FC<Props> = ({ className, innerPadding = "" }) => {
               {/* end::Content  */}
 
               {/* begin::Chart */}
-              <div id="tab1_chart" style={{ height: "250px" }} />
+              <div id="tab1_chart" style={{ height: '250px' }} />
               {/* end::Chart      */}
             </div>
             {/* end::Tab Pane 1 */}
@@ -257,7 +257,7 @@ const StatsWidget2: React.FC<Props> = ({ className, innerPadding = "" }) => {
             {/* begin::Tab Pane 2 */}
             <div
               className={`tab-pane fade ${
-                activeTab === "#tab2" ? "show active" : ""
+                activeTab === '#tab2' ? 'show active' : ''
               }`}
               id="tab2_content"
             >
@@ -293,7 +293,7 @@ const StatsWidget2: React.FC<Props> = ({ className, innerPadding = "" }) => {
               {/* end::Content  */}
 
               {/* begin::Chart */}
-              <div id="tab2_chart" style={{ height: "250px" }} />
+              <div id="tab2_chart" style={{ height: '250px' }} />
               {/* end::Chart */}
             </div>
             {/* end::Tab Pane 2 */}
@@ -301,7 +301,7 @@ const StatsWidget2: React.FC<Props> = ({ className, innerPadding = "" }) => {
             {/* begin::Tab Pane 3 */}
             <div
               className={`tab-pane fade ${
-                activeTab === "#tab3" ? "show active" : ""
+                activeTab === '#tab3' ? 'show active' : ''
               }`}
               id="tab3_content"
             >
@@ -337,7 +337,7 @@ const StatsWidget2: React.FC<Props> = ({ className, innerPadding = "" }) => {
               {/* end::Content  */}
 
               {/* begin::Chart */}
-              <div id="tab3_chart" style={{ height: "250px" }} />
+              <div id="tab3_chart" style={{ height: '250px' }} />
               {/* end::Chart      */}
             </div>
             {/* end::Tab Pane 3 */}
@@ -345,7 +345,7 @@ const StatsWidget2: React.FC<Props> = ({ className, innerPadding = "" }) => {
             {/* begin::Tab Pane 4 */}
             <div
               className={`tab-pane fade ${
-                activeTab === "#tab4" ? "show active" : ""
+                activeTab === '#tab4' ? 'show active' : ''
               }`}
               id="tab4_content"
             >
@@ -381,7 +381,7 @@ const StatsWidget2: React.FC<Props> = ({ className, innerPadding = "" }) => {
               {/* end::Content  */}
 
               {/* begin::Chart */}
-              <div id="tab4_chart" style={{ height: "250px" }} />
+              <div id="tab4_chart" style={{ height: '250px' }} />
               {/* end::Chart      */}
             </div>
             {/* end::Tab Pane 4 */}
@@ -403,111 +403,111 @@ function getChartOptions(
   return {
     series: [
       {
-        name: "Net Profit",
-        data: data1[tabNumber - 1],
+        name: 'Net Profit',
+        data: data1[tabNumber - 1]
       },
       {
-        name: "Revenue",
-        data: data2[tabNumber - 1],
-      },
+        name: 'Revenue',
+        data: data2[tabNumber - 1]
+      }
     ],
     chart: {
-      fontFamily: "inherit",
-      type: "bar",
+      fontFamily: 'inherit',
+      type: 'bar',
       height: height,
       toolbar: {
-        show: false,
-      },
+        show: false
+      }
     },
     plotOptions: {
       bar: {
         horizontal: false,
-        columnWidth: "30%",
+        columnWidth: '30%',
         /* @ts-ignore */
-        endingShape: "rounded",
-      },
+        endingShape: 'rounded'
+      }
     },
     legend: {
-      show: false,
+      show: false
     },
     dataLabels: {
-      enabled: false,
+      enabled: false
     },
     stroke: {
       show: true,
       width: 2,
-      colors: ["transparent"],
+      colors: ['transparent']
     },
     xaxis: {
-      categories: ["Feb", "Mar", "Apr", "May", "Jun", "Jul"],
+      categories: ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
       axisBorder: {
-        show: false,
+        show: false
       },
       axisTicks: {
-        show: false,
+        show: false
       },
       labels: {
         style: {
-          colors: getCSSVariableValue("--bs-gray-700"),
-          fontSize: "12px",
-        },
-      },
+          colors: getCSSVariableValue('--bs-gray-700'),
+          fontSize: '12px'
+        }
+      }
     },
     yaxis: {
       labels: {
         style: {
-          colors: getCSSVariableValue("--bs-gray-700"),
-          fontSize: "12px",
-        },
-      },
+          colors: getCSSVariableValue('--bs-gray-700'),
+          fontSize: '12px'
+        }
+      }
     },
     fill: {
-      opacity: 1,
+      opacity: 1
     },
     states: {
       normal: {
         filter: {
-          type: "none",
-          value: 0,
-        },
+          type: 'none',
+          value: 0
+        }
       },
       hover: {
         filter: {
-          type: "none",
-          value: 0,
-        },
+          type: 'none',
+          value: 0
+        }
       },
       active: {
         allowMultipleDataPointsSelection: false,
         filter: {
-          type: "none",
-          value: 0,
-        },
-      },
+          type: 'none',
+          value: 0
+        }
+      }
     },
     tooltip: {
       style: {
-        fontSize: "12px",
+        fontSize: '12px'
       },
       y: {
         formatter: function (val: number) {
           return `$${val} thousands`;
-        },
-      },
+        }
+      }
     },
     colors: [
-      getCSSVariableValue("--bs-primary"),
-      getCSSVariableValue("--bs-light-primary"),
+      getCSSVariableValue('--bs-primary'),
+      getCSSVariableValue('--bs-light-primary')
     ],
     grid: {
-      borderColor: getCSSVariableValue("--bs-gray-200"),
+      borderColor: getCSSVariableValue('--bs-gray-200'),
       strokeDashArray: 4,
       yaxis: {
         lines: {
-          show: true,
-        },
-      },
-    },
+          show: true
+        }
+      }
+    }
   };
 }
 
@@ -515,24 +515,24 @@ const data1 = [
   [44, 55, 57, 56, 61, 58],
   [35, 60, 35, 50, 45, 30],
   [25, 40, 45, 50, 40, 60],
-  [50, 35, 45, 55, 30, 40],
+  [50, 35, 45, 55, 30, 40]
 ];
 
 const data2 = [
   [76, 85, 101, 98, 87, 105],
   [65, 80, 50, 80, 75, 105],
   [76, 85, 101, 98, 87, 105],
-  [76, 85, 101, 98, 87, 105],
+  [76, 85, 101, 98, 87, 105]
 ];
 
 function getCss(el: HTMLElement, styleProp: string) {
   const defaultView = (el.ownerDocument || document).defaultView;
   if (!defaultView) {
-    return "";
+    return '';
   }
 
   // sanitize property name to css notation
   // (hyphen separated words eg. font-Size)
-  styleProp = styleProp.replace(/([A-Z])/g, "-$1").toLowerCase();
+  styleProp = styleProp.replace(/([A-Z])/g, '-$1').toLowerCase();
   return defaultView.getComputedStyle(el, null).getPropertyValue(styleProp);
 }

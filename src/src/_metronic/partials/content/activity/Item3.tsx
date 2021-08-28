@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import { FC } from "react";
-import { KTSVG, toAbsoluteUrl } from "../../../helpers";
+import { FC } from 'react';
+import { KTSVG, toAbsoluteUrl } from '../../../helpers';
 
 const Item3: FC = () => {
   return (
@@ -35,7 +35,7 @@ const Item3: FC = () => {
               data-bs-placement="top"
               title="Jan Hummer"
             >
-              <img src={toAbsoluteUrl("/media/avatars/150-6.jpg")} alt="img" />
+              <img src={toAbsoluteUrl('/media/avatars/150-6.jpg')} alt="img" />
             </div>
           </div>
         </div>
@@ -46,7 +46,7 @@ const Item3: FC = () => {
               <img
                 alt=""
                 className="w-30px me-3"
-                src={toAbsoluteUrl("/media/svg/files/pdf.svg")}
+                src={toAbsoluteUrl('/media/svg/files/pdf.svg')}
               />
 
               <div className="ms-1 fw-bold">
@@ -62,7 +62,7 @@ const Item3: FC = () => {
               <img
                 alt=""
                 className="w-30px me-3"
-                src={toAbsoluteUrl("/media/svg/files/doc.svg")}
+                src={toAbsoluteUrl('/media/svg/files/doc.svg')}
               />
 
               <div className="ms-1 fw-bold">
@@ -78,7 +78,7 @@ const Item3: FC = () => {
               <img
                 alt=""
                 className="w-30px me-3"
-                src={toAbsoluteUrl("/media/svg/files/css.svg")}
+                src={toAbsoluteUrl('/media/svg/files/css.svg')}
               />
 
               <div className="ms-1 fw-bold">

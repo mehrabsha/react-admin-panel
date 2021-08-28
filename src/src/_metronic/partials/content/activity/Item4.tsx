@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import { FC } from "react";
-import { KTSVG, toAbsoluteUrl } from "../../../helpers";
+import { FC } from 'react';
+import { KTSVG, toAbsoluteUrl } from '../../../helpers';
 
 const Item4: FC = () => {
   return (
@@ -19,14 +19,14 @@ const Item4: FC = () => {
       <div className="timeline-content mb-10 mt-n1">
         <div className="pe-3 mb-5">
           <div className="fs-5 fw-bold mb-2">
-            Task{" "}
+            Task{' '}
             <a href="#" className="text-primary fw-bolder me-1">
               #45890
             </a>
-            merged with{" "}
+            merged with{' '}
             <a href="#" className="text-primary fw-bolder me-1">
               #45890
-            </a>{" "}
+            </a>{' '}
             in “Ads Pro Admin Dashboard project:
           </div>
 
@@ -40,7 +40,7 @@ const Item4: FC = () => {
               data-bs-placement="top"
               title="Nina Nilson"
             >
-              <img src={toAbsoluteUrl("/media/avatars/150-11.jpg")} alt="img" />
+              <img src={toAbsoluteUrl('/media/avatars/150-11.jpg')} alt="img" />
             </div>
           </div>
         </div>

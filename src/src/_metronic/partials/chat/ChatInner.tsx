@@ -1,14 +1,14 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import { FC, useState } from "react";
-import clsx from "clsx";
+import { FC, useState } from 'react';
+import clsx from 'clsx';
 import {
   toAbsoluteUrl,
   defaultMessages,
   defaultUserInfos,
   MessageModel,
   UserInfoModel,
-  messageFromClient,
-} from "../../helpers";
+  messageFromClient
+} from '../../helpers';
 
 type Props = {
   isDrawer?: boolean;
@@ -18,26 +18,26 @@ const bufferMessages = defaultMessages;
 
 const ChatInner: FC<Props> = ({ isDrawer = false }) => {
   const [chatUpdateFlag, toggleChatUpdateFlat] = useState<boolean>(false);
-  const [message, setMessage] = useState<string>("");
+  const [message, setMessage] = useState<string>('');
   const [messages, setMessages] = useState<MessageModel[]>(bufferMessages);
   const [userInfos] = useState<UserInfoModel[]>(defaultUserInfos);
 
   const sendMessage = () => {
     const newMessage: MessageModel = {
       user: 2,
-      type: "out",
+      type: 'out',
       text: message,
-      time: "Just now",
+      time: 'Just now'
     };
 
     bufferMessages.push(newMessage);
     setMessages(bufferMessages);
     toggleChatUpdateFlat(!chatUpdateFlag);
-    setMessage("");
+    setMessage('');
     setTimeout(() => {
       bufferMessages.push(messageFromClient);
       setMessages(() => bufferMessages);
-      toggleChatUpdateFlat((flag) => !flag);
+      toggleChatUpdateFlat(flag => !flag);
     }, 1000);
   };
 
@@ -51,11 +51,11 @@ const ChatInner: FC<Props> = ({ isDrawer = false }) => {
   return (
     <div
       className="card-body"
-      id={isDrawer ? "kt_drawer_chat_messenger_body" : "kt_chat_messenger_body"}
+      id={isDrawer ? 'kt_drawer_chat_messenger_body' : 'kt_chat_messenger_body'}
     >
       <div
-        className={clsx("scroll-y me-n5 pe-5", {
-          "h-300px h-lg-auto": !isDrawer,
+        className={clsx('scroll-y me-n5 pe-5', {
+          'h-300px h-lg-auto': !isDrawer
         })}
         data-kt-element="messages"
         data-kt-scroll="true"
@@ -63,44 +63,44 @@ const ChatInner: FC<Props> = ({ isDrawer = false }) => {
         data-kt-scroll-max-height="auto"
         data-kt-scroll-dependencies={
           isDrawer
-            ? "#kt_drawer_chat_messenger_header, #kt_drawer_chat_messenger_footer"
-            : "#kt_header, #kt_toolbar, #kt_footer, #kt_chat_messenger_header, #kt_chat_messenger_footer"
+            ? '#kt_drawer_chat_messenger_header, #kt_drawer_chat_messenger_footer'
+            : '#kt_header, #kt_toolbar, #kt_footer, #kt_chat_messenger_header, #kt_chat_messenger_footer'
         }
         data-kt-scroll-wrappers={
           isDrawer
-            ? "#kt_drawer_chat_messenger_body"
-            : "#kt_content, #kt_chat_messenger_body"
+            ? '#kt_drawer_chat_messenger_body'
+            : '#kt_content, #kt_chat_messenger_body'
         }
-        data-kt-scroll-offset={isDrawer ? "0px" : "-2px"}
+        data-kt-scroll-offset={isDrawer ? '0px' : '-2px'}
       >
         {messages.map((message, index) => {
           const userInfo = userInfos[message.user];
-          const state = message.type === "in" ? "info" : "primary";
+          const state = message.type === 'in' ? 'info' : 'primary';
           const templateAttr = {};
           if (message.template) {
-            Object.defineProperty(templateAttr, "data-kt-element", {
-              value: `template-${message.type}`,
+            Object.defineProperty(templateAttr, 'data-kt-element', {
+              value: `template-${message.type}`
             });
           }
-          const contentClass = `${isDrawer ? "" : "d-flex"} justify-content-${
-            message.type === "in" ? "start" : "end"
+          const contentClass = `${isDrawer ? '' : 'd-flex'} justify-content-${
+            message.type === 'in' ? 'start' : 'end'
           } mb-10`;
           return (
             <div
               key={`message${index}`}
-              className={clsx("d-flex", contentClass, "mb-10", {
-                "d-none": message.template,
+              className={clsx('d-flex', contentClass, 'mb-10', {
+                'd-none': message.template
               })}
               {...templateAttr}
             >
               <div
                 className={clsx(
-                  "d-flex flex-column align-items",
-                  `align-items-${message.type === "in" ? "start" : "end"}`
+                  'd-flex flex-column align-items',
+                  `align-items-${message.type === 'in' ? 'start' : 'end'}`
                 )}
               >
                 <div className="d-flex align-items-center mb-2">
-                  {message.type === "in" ? (
+                  {message.type === 'in' ? (
                     <>
                       <div className="symbol  symbol-35px symbol-circle ">
                         <img
@@ -145,10 +145,10 @@ const ChatInner: FC<Props> = ({ isDrawer = false }) => {
 
                 <div
                   className={clsx(
-                    "p-5 rounded",
+                    'p-5 rounded',
                     `bg-light-${state}`,
-                    "text-dark fw-bold mw-lg-400px",
-                    `text-${message.type === "in" ? "start" : "end"}`
+                    'text-dark fw-bold mw-lg-400px',
+                    `text-${message.type === 'in' ? 'start' : 'end'}`
                   )}
                   data-kt-element="message-text"
                   dangerouslySetInnerHTML={{ __html: message.text }}
@@ -163,8 +163,8 @@ const ChatInner: FC<Props> = ({ isDrawer = false }) => {
         className="card-footer pt-4"
         id={
           isDrawer
-            ? "kt_drawer_chat_messenger_footer"
-            : "kt_chat_messenger_footer"
+            ? 'kt_drawer_chat_messenger_footer'
+            : 'kt_chat_messenger_footer'
         }
       >
         <textarea
@@ -173,7 +173,7 @@ const ChatInner: FC<Props> = ({ isDrawer = false }) => {
           data-kt-element="input"
           placeholder="Type a message"
           value={message}
-          onChange={(e) => setMessage(e.target.value)}
+          onChange={e => setMessage(e.target.value)}
           onKeyDown={onEnterPress}
         ></textarea>
 

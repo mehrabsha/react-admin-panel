@@ -118,7 +118,7 @@
     }
 
     // Minimize aside mode
-    [data-kt-aside-minimize="on"] & {
+    [data-kt-aside-minimize='on'] & {
       width: get($aside-config, minimized-width);
       transition: width get($aside-config, transition-speed) ease;
 

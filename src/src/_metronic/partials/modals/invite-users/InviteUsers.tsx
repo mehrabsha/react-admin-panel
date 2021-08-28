@@ -1,111 +1,111 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { FC } from "react";
-import { KTSVG, toAbsoluteUrl } from "../../../helpers";
+import React, { FC } from 'react';
+import { KTSVG, toAbsoluteUrl } from '../../../helpers';
 
 const InviteUsers: FC = () => {
   const users = [
     {
-      avatar: "/media/avatars/150-1.jpg",
-      name: "Emma Smith",
-      email: "e.smith@kpmg.com.au",
-      access: "1",
+      avatar: '/media/avatars/150-1.jpg',
+      name: 'Emma Smith',
+      email: 'e.smith@kpmg.com.au',
+      access: '1'
     },
     {
-      state: "danger",
-      name: "Melody Macy",
-      email: "melody@altbox.com",
-      access: "1",
+      state: 'danger',
+      name: 'Melody Macy',
+      email: 'melody@altbox.com',
+      access: '1'
     },
     {
-      avatar: "/media/avatars/150-2.jpg",
-      name: "Max Smith",
-      email: "max@kt.com",
-      access: "3",
+      avatar: '/media/avatars/150-2.jpg',
+      name: 'Max Smith',
+      email: 'max@kt.com',
+      access: '3'
     },
     {
-      avatar: "/media/avatars/150-2.jpg",
-      name: "Sean Bean",
-      email: "sean@dellito.com",
-      access: "2",
+      avatar: '/media/avatars/150-2.jpg',
+      name: 'Sean Bean',
+      email: 'sean@dellito.com',
+      access: '2'
     },
     {
-      avatar: "/media/avatars/150-15.jpg",
-      name: "Brian Cox",
-      email: "brian@exchange.com",
-      access: "3",
+      avatar: '/media/avatars/150-15.jpg',
+      name: 'Brian Cox',
+      email: 'brian@exchange.com',
+      access: '3'
     },
     {
-      state: "warning",
-      name: "Mikaela Collins",
-      email: "mikaela@pexcom.com",
-      access: "2",
+      state: 'warning',
+      name: 'Mikaela Collins',
+      email: 'mikaela@pexcom.com',
+      access: '2'
     },
     {
-      avatar: "/media/avatars/150-8.jpg",
-      name: "Francis Mitcham",
-      email: "f.mitcham@kpmg.com.au",
-      access: "3",
+      avatar: '/media/avatars/150-8.jpg',
+      name: 'Francis Mitcham',
+      email: 'f.mitcham@kpmg.com.au',
+      access: '3'
     },
     {
-      state: "danger",
-      name: "Olivia Wild",
-      email: "olivia@corpmail.com",
-      access: "2",
+      state: 'danger',
+      name: 'Olivia Wild',
+      email: 'olivia@corpmail.com',
+      access: '2'
     },
     {
-      state: "info",
-      name: "Neil Owen",
-      email: "owen.neil@gmail.com",
-      access: "1",
+      state: 'info',
+      name: 'Neil Owen',
+      email: 'owen.neil@gmail.com',
+      access: '1'
     },
     {
-      avatar: "/media/avatars/150-6.jpg",
-      name: "Dan Wilson",
-      email: "dam@consilting.com",
-      access: "3",
+      avatar: '/media/avatars/150-6.jpg',
+      name: 'Dan Wilson',
+      email: 'dam@consilting.com',
+      access: '3'
     },
     {
-      state: "danger",
-      name: "Emma Bold",
-      email: "emma@intenso.com",
-      access: "2",
+      state: 'danger',
+      name: 'Emma Bold',
+      email: 'emma@intenso.com',
+      access: '2'
     },
     {
-      avatar: "/media/avatars/150-7.jpg",
-      name: "Ana Crown",
-      email: "ana.cf@limtel.com",
-      access: "1",
+      avatar: '/media/avatars/150-7.jpg',
+      name: 'Ana Crown',
+      email: 'ana.cf@limtel.com',
+      access: '1'
     },
     {
-      state: "primary",
-      name: "Robert Doe",
-      email: "robert@benko.com",
-      access: "3",
+      state: 'primary',
+      name: 'Robert Doe',
+      email: 'robert@benko.com',
+      access: '3'
     },
     {
-      avatar: "/media/avatars/150-17.jpg",
-      name: "John Miller",
-      email: "miller@mapple.com",
-      access: "3",
+      avatar: '/media/avatars/150-17.jpg',
+      name: 'John Miller',
+      email: 'miller@mapple.com',
+      access: '3'
     },
     {
-      state: "success",
-      name: "Lucy Kunic",
-      email: "lucy.m@fentech.com",
-      access: "2",
+      state: 'success',
+      name: 'Lucy Kunic',
+      email: 'lucy.m@fentech.com',
+      access: '2'
     },
     {
-      avatar: "/media/avatars/150-10.jpg",
-      name: "Ethan Wilder",
-      email: "ethan@loop.com.au",
-      access: "1",
+      avatar: '/media/avatars/150-10.jpg',
+      name: 'Ethan Wilder',
+      email: 'ethan@loop.com.au',
+      access: '1'
     },
     {
-      avatar: "/media/avatars/150-7.jpg",
-      name: "Ana Crown",
-      email: "ana.cf@limtel.com",
-      access: "3",
-    },
+      avatar: '/media/avatars/150-7.jpg',
+      name: 'Ana Crown',
+      email: 'ana.cf@limtel.com',
+      access: '3'
+    }
   ];
 
   return (
@@ -131,7 +131,7 @@ const InviteUsers: FC = () => {
               <div className="text-muted fw-bold fs-5">
                 If you need more info, please check out
                 <a href="#" className="link-primary fw-bolder">
-                  {" "}
+                  {' '}
                   FAQ Page
                 </a>
                 .
@@ -141,7 +141,7 @@ const InviteUsers: FC = () => {
             <div className="btn btn-light-primary fw-bolder w-100 mb-8">
               <img
                 alt="Logo"
-                src={toAbsoluteUrl("/media/svg/brand-logos/google-icon.svg")}
+                src={toAbsoluteUrl('/media/svg/brand-logos/google-icon.svg')}
                 className="h-20px me-3"
               />
               Invite Gmail Contacts
@@ -198,7 +198,7 @@ const InviteUsers: FC = () => {
 
                       <div className="ms-2 w-100px">
                         <select
-                          defaultValue={"2"}
+                          defaultValue={'2'}
                           className="form-select form-select-solid form-select-sm select2-hidden-accessible"
                         >
                           <option value="1">Guest</option>

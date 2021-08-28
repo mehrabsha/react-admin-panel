@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from "react";
-import { KTSVG, toAbsoluteUrl } from "../../../helpers";
-import { Dropdown1 } from "../../content/dropdown/Dropdown1";
+import React from 'react';
+import { KTSVG, toAbsoluteUrl } from '../../../helpers';
+import { Dropdown1 } from '../../content/dropdown/Dropdown1';
 
 type Props = {
   className: string;
@@ -18,7 +18,7 @@ const FeedsWidget5: React.FC<Props> = ({ className }) => {
           <div className="d-flex align-items-center flex-grow-1">
             {/* begin::Avatar */}
             <div className="symbol symbol-45px me-5">
-              <img src={toAbsoluteUrl("/media/avatars/150-15.jpg")} alt="" />
+              <img src={toAbsoluteUrl('/media/avatars/150-15.jpg')} alt="" />
             </div>
             {/* end::Avatar */}
 
@@ -64,8 +64,8 @@ const FeedsWidget5: React.FC<Props> = ({ className }) => {
             className="bgi-no-repeat bgi-size-cover rounded min-h-250px mb-5"
             style={{
               backgroundImage: `url('${toAbsoluteUrl(
-                "/media/stock/900x600/20.jpg"
-              )}')`,
+                '/media/stock/900x600/20.jpg'
+              )}')`
             }}
           ></div>
           {/* end::Image */}

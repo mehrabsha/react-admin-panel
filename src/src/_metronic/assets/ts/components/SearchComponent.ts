@@ -7,16 +7,16 @@ import {
   getObjectPropertyValueByKey,
   getViewPort,
   isVisibleElement,
-  throttle,
-} from "../_utils/index";
+  throttle
+} from '../_utils/index';
 
-import { MenuComponent, defaultMenuOptions } from "./MenuComponent";
+import { MenuComponent, defaultMenuOptions } from './MenuComponent';
 
 export interface ISearchOptions {
   minLength: number; // Miniam text lenght to query search
   keypress: boolean; // Enable search on keypress
   enter: boolean; // Enable search on enter key press
-  layout: "menu" | "inline"; // Use 'menu' or 'inline' layout options to display search results
+  layout: 'menu' | 'inline'; // Use 'menu' or 'inline' layout options to display search results
   responsive?: number; // Pass integer value or bootstrap compatible breakpoint key(sm,md,lg,xl,xxl) to enable reponsive form mode for device width below the breakpoint value
   showOnFocus: boolean; // Always show menu on input focus
 }
@@ -31,14 +31,14 @@ const defaultSearchOptions: ISearchOptions = {
   minLength: 2, // Miniam text lenght to query search
   keypress: true, // Enable search on keypress
   enter: true, // Enable search on enter key press
-  layout: "menu", // Use 'menu' or 'inline' layout options to display search results
-  showOnFocus: true, // Always show menu on input focus
+  layout: 'menu', // Use 'menu' or 'inline' layout options to display search results
+  showOnFocus: true // Always show menu on input focus
 };
 
 const defaultSearchQueires: ISearchQueries = {
-  componentName: "search",
-  instanseQuery: "[data-kt-search]",
-  attrQuery: "data-kt-search-",
+  componentName: 'search',
+  instanseQuery: '[data-kt-search]',
+  attrQuery: 'data-kt-search-'
 };
 
 class SearchComponent {
@@ -73,22 +73,22 @@ class SearchComponent {
 
     // Elements
     this.element = _element;
-    this.contentElement = this._getElement("content") as HTMLElement;
-    this.formElement = this._getElement("form") as HTMLFormElement;
-    this.inputElement = this._getElement("input") as HTMLInputElement;
-    this.spinnerElement = this._getElement("spinner") as HTMLElement;
-    this.clearElement = this._getElement("clear") as HTMLElement;
-    this.toggleElement = this._getElement("toggle") as HTMLElement;
-    this.submitElement = this._getElement("submit") as HTMLElement;
-    this.toolbarElement = this._getElement("toolbar") as HTMLElement;
+    this.contentElement = this._getElement('content') as HTMLElement;
+    this.formElement = this._getElement('form') as HTMLFormElement;
+    this.inputElement = this._getElement('input') as HTMLInputElement;
+    this.spinnerElement = this._getElement('spinner') as HTMLElement;
+    this.clearElement = this._getElement('clear') as HTMLElement;
+    this.toggleElement = this._getElement('toggle') as HTMLElement;
+    this.submitElement = this._getElement('submit') as HTMLElement;
+    this.toolbarElement = this._getElement('toolbar') as HTMLElement;
 
-    this.resultsElement = this._getElement("results") as HTMLElement;
-    this.suggestionElement = this._getElement("suggestion") as HTMLElement;
-    this.emptyElement = this._getElement("empty") as HTMLElement;
+    this.resultsElement = this._getElement('results') as HTMLElement;
+    this.suggestionElement = this._getElement('suggestion') as HTMLElement;
+    this.emptyElement = this._getElement('empty') as HTMLElement;
 
     // Layout
-    this.layout = this.getOption("layout");
-    if (this.layout === "menu") {
+    this.layout = this.getOption('layout');
+    if (this.layout === 'menu') {
       this.menuObject = new MenuComponent(
         this.contentElement,
         defaultMenuOptions
@@ -116,9 +116,9 @@ class SearchComponent {
     if (attr) {
       let value = getAttributeValueByBreakpoint(attr);
 
-      if (value !== null && String(value) === "true") {
+      if (value !== null && String(value) === 'true') {
         return true;
-      } else if (value !== null && String(value) === "false") {
+      } else if (value !== null && String(value) === 'false') {
         return false;
       }
 
@@ -137,7 +137,7 @@ class SearchComponent {
 
   // Check if responsive form mode is enabled
   private getResponsiveFormMode = () => {
-    const responsive = this.getOption("responsive") as string;
+    const responsive = this.getOption('responsive') as string;
     const width = getViewPort().width;
 
     if (!responsive) {
@@ -153,18 +153,18 @@ class SearchComponent {
     }
 
     if (width < breakPointNum) {
-      return "on";
+      return 'on';
     } else {
-      return "off";
+      return 'off';
     }
   };
 
   // Focus
   private focus = () => {
-    this.element.classList.add("focus");
+    this.element.classList.add('focus');
 
     if (
-      this.getOption("show-on-focus") === true ||
+      this.getOption('show-on-focus') === true ||
       this.inputElement.value.length >= this.options.minLength
     ) {
       this.show();
@@ -173,7 +173,7 @@ class SearchComponent {
 
   // Blur
   private blur = () => {
-    this.element.classList.remove("focus");
+    this.element.classList.remove('focus');
   };
 
   // Enter
@@ -189,8 +189,8 @@ class SearchComponent {
 
   // Input
   private input = () => {
-    if (this.getOption("min-length")) {
-      const minLength = parseInt(this.getOption("min-length") as string);
+    if (this.getOption('min-length')) {
+      const minLength = parseInt(this.getOption('min-length') as string);
 
       if (this.inputElement.value.length >= minLength) {
         this.search();
@@ -202,66 +202,66 @@ class SearchComponent {
 
   private handlers(): void {
     // Focus
-    this.inputElement.addEventListener("focus", this.focus);
+    this.inputElement.addEventListener('focus', this.focus);
 
     // Blur
-    this.inputElement.addEventListener("blur", this.blur);
+    this.inputElement.addEventListener('blur', this.blur);
 
     // Keypress
-    if (this.getOption("keypress") === true) {
-      this.inputElement.addEventListener("input", this.input);
+    if (this.getOption('keypress') === true) {
+      this.inputElement.addEventListener('input', this.input);
     }
 
     // Submit
     if (this.submitElement) {
-      this.submitElement.addEventListener("click", this.search);
+      this.submitElement.addEventListener('click', this.search);
     }
 
     // Enter
-    if (this.getOption("enter") === true) {
-      this.inputElement.addEventListener("keypress", this.enter);
+    if (this.getOption('enter') === true) {
+      this.inputElement.addEventListener('keypress', this.enter);
     }
 
     // Clear
     if (this.clearElement) {
-      this.clearElement.addEventListener("click", this.clear);
+      this.clearElement.addEventListener('click', this.clear);
     }
 
     // Menu
     if (this.menuObject) {
       // Toggle menu
       if (this.toggleElement) {
-        this.toggleElement.addEventListener("click", this.show);
+        this.toggleElement.addEventListener('click', this.show);
 
-        this.menuObject.on("kt.menu.dropdown.show", function () {
+        this.menuObject.on('kt.menu.dropdown.show', function () {
           // @ts-ignore
           if (isVisibleElement(this.toggleElement)) {
             // @ts-ignore
-            this.toggleElement.classList.add("active");
+            this.toggleElement.classList.add('active');
             // @ts-ignore
-            this.toggleElement.classList.add("show");
+            this.toggleElement.classList.add('show');
           }
         });
 
-        this.menuObject.on("kt.menu.dropdown.hide", function () {
+        this.menuObject.on('kt.menu.dropdown.hide', function () {
           // @ts-ignore
           if (isVisibleElement(this.toggleElement)) {
             // @ts-ignore
-            this.toggleElement.classList.remove("active");
+            this.toggleElement.classList.remove('active');
             // @ts-ignore
-            this.toggleElement.classList.remove("show");
+            this.toggleElement.classList.remove('show');
           }
         });
       }
 
-      this.menuObject.on("kt.menu.dropdown.shown", function () {
+      this.menuObject.on('kt.menu.dropdown.shown', function () {
         // @ts-ignore
         this.inputElement.focus();
       });
     }
 
     // Window resize handling
-    window.addEventListener("resize", () => {
+    window.addEventListener('resize', () => {
       let timer;
 
       throttle(
@@ -280,21 +280,21 @@ class SearchComponent {
   // Update
   public update = () => {
     // Handle responsive form
-    if (this.layout === "menu") {
+    if (this.layout === 'menu') {
       let responsiveFormMode = this.getResponsiveFormMode();
 
       if (
-        responsiveFormMode === "on" &&
+        responsiveFormMode === 'on' &&
         this.contentElement.contains(this.formElement) === false
       ) {
         this.contentElement.prepend(this.formElement);
-        this.formElement.classList.remove("d-none");
+        this.formElement.classList.remove('d-none');
       } else if (
-        responsiveFormMode === "off" &&
+        responsiveFormMode === 'off' &&
         this.contentElement.contains(this.formElement) === true
       ) {
         this.element.prepend(this.formElement);
-        this.formElement.classList.add("d-none");
+        this.formElement.classList.add('d-none');
       }
     }
   };
@@ -322,36 +322,36 @@ class SearchComponent {
     if (this.processing === false) {
       // Show search spinner
       if (this.spinnerElement) {
-        this.spinnerElement.classList.remove("d-none");
+        this.spinnerElement.classList.remove('d-none');
       }
 
       // Hide search clear button
       if (this.clearElement) {
-        this.clearElement.classList.add("d-none");
+        this.clearElement.classList.add('d-none');
       }
 
       // Hide search toolbar
       if (this.toolbarElement) {
-        this.toolbarElement.classList.add("d-none");
+        this.toolbarElement.classList.add('d-none');
       }
 
       // Focus input
       this.inputElement.focus();
 
       this.processing = true;
-      EventHandlerUtil.trigger(this.element, "kt.search.process");
+      EventHandlerUtil.trigger(this.element, 'kt.search.process');
     }
   };
 
   // Complete
   public complete = () => {
     if (this.spinnerElement) {
-      this.spinnerElement.classList.add("d-none");
+      this.spinnerElement.classList.add('d-none');
     }
 
     // Show search toolbar
     if (this.clearElement) {
-      this.clearElement.classList.remove("d-none");
+      this.clearElement.classList.remove('d-none');
     }
 
     if (this.inputElement.value.length === 0) {
@@ -368,30 +368,30 @@ class SearchComponent {
 
   // Clear
   public clear = () => {
-    if (EventHandlerUtil.trigger(this.element, "kt.search.clear") === false) {
+    if (EventHandlerUtil.trigger(this.element, 'kt.search.clear') === false) {
       return;
     }
 
     // Clear and focus input
-    this.inputElement.value = "";
+    this.inputElement.value = '';
     this.inputElement.focus();
 
     // Hide clear icon
     if (this.clearElement) {
-      this.clearElement.classList.add("d-none");
+      this.clearElement.classList.add('d-none');
     }
 
     // Show search toolbar
     if (this.toolbarElement) {
-      this.toolbarElement.classList.remove("d-none");
+      this.toolbarElement.classList.remove('d-none');
     }
 
     // Hide menu
-    if (this.getOption("show-on-focus") === false) {
+    if (this.getOption('show-on-focus') === false) {
       this.hide();
     }
 
-    EventHandlerUtil.trigger(this.element, "kt.search.cleared");
+    EventHandlerUtil.trigger(this.element, 'kt.search.cleared');
   };
 
   public isProcessing = () => {
@@ -454,7 +454,7 @@ class SearchComponent {
     queries: ISearchQueries = defaultSearchQueires
   ) => {
     const elements = document.body.querySelectorAll(selector);
-    elements.forEach((el) => {
+    elements.forEach(el => {
       const item = el as HTMLElement;
       let Search = SearchComponent.getInstance(item);
       if (!Search) {

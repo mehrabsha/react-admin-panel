@@ -2,8 +2,8 @@ import {
   EventHandlerUtil,
   DataUtil,
   getUniqueIdWithPrefix,
-  getCSS,
-} from "../_utils/index";
+  getCSS
+} from '../_utils/index';
 
 export interface IImageInputOptions {}
 
@@ -20,13 +20,13 @@ export interface IImageInputQueries {
 const defaultImageInputOptions = {};
 
 const defaultImageInputQueires: IImageInputQueries = {
-  componentName: "image-input",
-  instanseQuery: "[data-kt-image-input]",
+  componentName: 'image-input',
+  instanseQuery: '[data-kt-image-input]',
   inputQuery: 'input[type="file"]',
-  wrapperQuery: ".image-input-wrapper",
+  wrapperQuery: '.image-input-wrapper',
   cancelQuery: '[data-kt-image-input-action="cancel"]',
   removeQuery: '[data-kt-image-input-action="remove"]',
-  hiddenQuery: 'input[type="hidden"]',
+  hiddenQuery: 'input[type="hidden"]'
 };
 
 class ImageInputComponent {
@@ -36,11 +36,11 @@ class ImageInputComponent {
   cancelElement: HTMLElement | null;
   removeElement: HTMLElement | null;
   hiddenElement: HTMLInputElement | null;
-  src: string = "";
+  src: string = '';
   options: IImageInputOptions;
   queries: IImageInputQueries;
   uid: string;
-  value: string = "";
+  value: string = '';
 
   constructor(
     _element: HTMLElement,
@@ -60,7 +60,7 @@ class ImageInputComponent {
     this.removeElement = this.element.querySelector(this.queries.removeQuery);
     this.hiddenElement = this.element.querySelector(this.queries.hiddenQuery);
     if (this.wrapperElement) {
-      this.src = getCSS(this.wrapperElement, "backgroundImage");
+      this.src = getCSS(this.wrapperElement, 'backgroundImage');
     }
 
     // Event Handlers
@@ -70,13 +70,13 @@ class ImageInputComponent {
   }
 
   private handlers(): void {
-    this.element.addEventListener("change", this._change);
+    this.element.addEventListener('change', this._change);
     if (this.cancelElement) {
-      this.cancelElement.addEventListener("click", this._cancel);
+      this.cancelElement.addEventListener('click', this._cancel);
     }
 
     if (this.removeElement) {
-      this.removeElement.addEventListener("click", this._cancel);
+      this.removeElement.addEventListener('click', this._cancel);
     }
   }
 
@@ -91,7 +91,7 @@ class ImageInputComponent {
     ) {
       // Fire change event
       if (
-        EventHandlerUtil.trigger(this.element, "kt.imageinput.change", e) ===
+        EventHandlerUtil.trigger(this.element, 'kt.imageinput.change', e) ===
         false
       ) {
         return;
@@ -102,18 +102,18 @@ class ImageInputComponent {
       reader.onload = (e: ProgressEvent<FileReader>) => {
         if (this.wrapperElement && e.target) {
           this.wrapperElement.style.setProperty(
-            "background-image",
+            'background-image',
             `url('${e.target.result}')`
           );
         }
       };
 
       reader.readAsDataURL(this.inputElement.files[0]);
-      this.element.classList.add("image-input-changed");
-      this.element.classList.remove("image-input-empty");
+      this.element.classList.add('image-input-changed');
+      this.element.classList.remove('image-input-empty');
 
       // Fire removed event
-      EventHandlerUtil.trigger(this.element, "kt.imageinput.changed", e);
+      EventHandlerUtil.trigger(this.element, 'kt.imageinput.changed', e);
     }
   };
 
@@ -122,25 +122,25 @@ class ImageInputComponent {
 
     // Fire cancel event
     if (
-      EventHandlerUtil.trigger(this.element, "kt.imageinput.cancel", e) ===
+      EventHandlerUtil.trigger(this.element, 'kt.imageinput.cancel', e) ===
       false
     ) {
       return;
     }
 
-    this.element.classList.remove("image-input-changed");
-    this.element.classList.remove("image-input-empty");
-    this.element.style.setProperty("background-image", this.src);
+    this.element.classList.remove('image-input-changed');
+    this.element.classList.remove('image-input-empty');
+    this.element.style.setProperty('background-image', this.src);
     if (this.inputElement) {
-      this.inputElement.value = "";
+      this.inputElement.value = '';
     }
 
     if (this.hiddenElement !== null) {
-      this.hiddenElement.value = "0";
+      this.hiddenElement.value = '0';
     }
 
     // Fire canceled event
-    EventHandlerUtil.trigger(this.element, "kt.imageinput.canceled", e);
+    EventHandlerUtil.trigger(this.element, 'kt.imageinput.canceled', e);
   };
 
   private _remove = (e: Event) => {
@@ -148,28 +148,28 @@ class ImageInputComponent {
 
     // Fire remove event
     if (
-      EventHandlerUtil.trigger(this.element, "kt.imageinput.remove", e) ===
+      EventHandlerUtil.trigger(this.element, 'kt.imageinput.remove', e) ===
       false
     ) {
       return;
     }
 
-    this.element.classList.remove("image-input-changed");
-    this.element.classList.add("image-input-empty");
+    this.element.classList.remove('image-input-changed');
+    this.element.classList.add('image-input-empty');
     if (this.wrapperElement) {
-      this.wrapperElement.style.setProperty("background-image", "none");
+      this.wrapperElement.style.setProperty('background-image', 'none');
     }
 
     if (this.inputElement) {
-      this.inputElement.value = "";
+      this.inputElement.value = '';
     }
 
     if (this.hiddenElement !== null) {
-      this.hiddenElement.value = "1";
+      this.hiddenElement.value = '1';
     }
 
     // Fire removed event
-    EventHandlerUtil.trigger(this.element, "kt.imageinput.removed", e);
+    EventHandlerUtil.trigger(this.element, 'kt.imageinput.removed', e);
   };
 
   ///////////////////////
@@ -219,7 +219,7 @@ class ImageInputComponent {
     queries: IImageInputQueries = defaultImageInputQueires
   ) => {
     const elements = document.body.querySelectorAll(selector);
-    elements.forEach((el) => {
+    elements.forEach(el => {
       const item = el as HTMLElement;
       let ImageInput = ImageInputComponent.getInstance(item);
       if (!ImageInput) {
@@ -260,5 +260,5 @@ class ImageInputComponent {
 export {
   ImageInputComponent,
   defaultImageInputOptions,
-  defaultImageInputQueires,
+  defaultImageInputQueires
 };

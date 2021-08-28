@@ -1,10 +1,10 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useState, useRef } from "react";
-import { Modal } from "react-bootstrap-v5";
-import { StepperComponent } from "../../../../../_metronic/assets/ts/components";
-import { KTSVG } from "../../../../../_metronic/helpers";
-import { defaultCreateAppData, ICreateAppData } from "./IAppModels";
+import React, { useState, useRef } from 'react';
+import { Modal } from 'react-bootstrap-v5';
+import { StepperComponent } from '../../../../../_metronic/assets/ts/components';
+import { KTSVG } from '../../../../../_metronic/helpers';
+import { defaultCreateAppData, ICreateAppData } from './IAppModels';
 
 type Props = {
   show: boolean;
@@ -232,12 +232,12 @@ const CreateAppModal: React.FC<Props> = ({ show, handleClose }) => {
                         name="appname"
                         placeholder=""
                         value={data.appBasic.appName}
-                        onChange={(e) =>
+                        onChange={e =>
                           updateData({
                             appBasic: {
                               appName: e.target.value,
-                              appType: data.appBasic.appType,
-                            },
+                              appType: data.appBasic.appType
+                            }
                           })
                         }
                       />
@@ -286,14 +286,14 @@ const CreateAppModal: React.FC<Props> = ({ show, handleClose }) => {
                             name="appType"
                             value="Quick Online Courses"
                             checked={
-                              data.appBasic.appType === "Quick Online Courses"
+                              data.appBasic.appType === 'Quick Online Courses'
                             }
                             onChange={() =>
                               updateData({
                                 appBasic: {
                                   appName: data.appBasic.appName,
-                                  appType: "Quick Online Courses",
-                                },
+                                  appType: 'Quick Online Courses'
+                                }
                               })
                             }
                           />
@@ -331,14 +331,14 @@ const CreateAppModal: React.FC<Props> = ({ show, handleClose }) => {
                             value="Face to Face Discussions"
                             checked={
                               data.appBasic.appType ===
-                              "Face to Face Discussions"
+                              'Face to Face Discussions'
                             }
                             onChange={() =>
                               updateData({
                                 appBasic: {
                                   appName: data.appBasic.appName,
-                                  appType: "Face to Face Discussions",
-                                },
+                                  appType: 'Face to Face Discussions'
+                                }
                               })
                             }
                           />
@@ -375,14 +375,14 @@ const CreateAppModal: React.FC<Props> = ({ show, handleClose }) => {
                             name="appType"
                             value="Full Intro Training"
                             checked={
-                              data.appBasic.appType === "Full Intro Training"
+                              data.appBasic.appType === 'Full Intro Training'
                             }
                             onChange={() =>
                               updateData({
                                 appBasic: {
                                   appName: data.appBasic.appName,
-                                  appType: "Full Intro Training",
-                                },
+                                  appType: 'Full Intro Training'
+                                }
                               })
                             }
                           />
@@ -435,9 +435,9 @@ const CreateAppModal: React.FC<Props> = ({ show, handleClose }) => {
                             type="radio"
                             name="appFramework"
                             value="HTML5"
-                            checked={data.appFramework === "HTML5"}
+                            checked={data.appFramework === 'HTML5'}
                             onChange={() =>
-                              updateData({ appFramework: "HTML5" })
+                              updateData({ appFramework: 'HTML5' })
                             }
                           />
                         </span>
@@ -467,9 +467,9 @@ const CreateAppModal: React.FC<Props> = ({ show, handleClose }) => {
                             type="radio"
                             name="appFramework"
                             value="ReactJS"
-                            checked={data.appFramework === "ReactJS"}
+                            checked={data.appFramework === 'ReactJS'}
                             onChange={() =>
-                              updateData({ appFramework: "ReactJS" })
+                              updateData({ appFramework: 'ReactJS' })
                             }
                           />
                         </span>
@@ -499,9 +499,9 @@ const CreateAppModal: React.FC<Props> = ({ show, handleClose }) => {
                             type="radio"
                             name="appFramework"
                             value="Angular"
-                            checked={data.appFramework === "Angular"}
+                            checked={data.appFramework === 'Angular'}
                             onChange={() =>
-                              updateData({ appFramework: "Angular" })
+                              updateData({ appFramework: 'Angular' })
                             }
                           />
                         </span>
@@ -531,8 +531,8 @@ const CreateAppModal: React.FC<Props> = ({ show, handleClose }) => {
                             type="radio"
                             name="appFramework"
                             value="Vue"
-                            checked={data.appFramework === "Vue"}
-                            onChange={() => updateData({ appFramework: "Vue" })}
+                            checked={data.appFramework === 'Vue'}
+                            onChange={() => updateData({ appFramework: 'Vue' })}
                           />
                         </span>
                       </label>
@@ -564,13 +564,13 @@ const CreateAppModal: React.FC<Props> = ({ show, handleClose }) => {
                         className="form-control form-control-lg form-control-solid"
                         name="dbname"
                         value={data.appDatabase.databaseName}
-                        onChange={(e) =>
+                        onChange={e =>
                           updateData({
                             appDatabase: {
                               databaseName: e.target.value,
                               databaseSolution:
-                                data.appDatabase.databaseSolution,
-                            },
+                                data.appDatabase.databaseSolution
+                            }
                           })
                         }
                       />
@@ -618,14 +618,14 @@ const CreateAppModal: React.FC<Props> = ({ show, handleClose }) => {
                             name="databaseSolution"
                             value="MySQL"
                             checked={
-                              data.appDatabase.databaseSolution === "MySQL"
+                              data.appDatabase.databaseSolution === 'MySQL'
                             }
                             onChange={() =>
                               updateData({
                                 appDatabase: {
                                   databaseName: data.appDatabase.databaseName,
-                                  databaseSolution: "MySQL",
-                                },
+                                  databaseSolution: 'MySQL'
+                                }
                               })
                             }
                           />
@@ -657,14 +657,14 @@ const CreateAppModal: React.FC<Props> = ({ show, handleClose }) => {
                             name="databaseSolution"
                             value="Firebase"
                             checked={
-                              data.appDatabase.databaseSolution === "Firebase"
+                              data.appDatabase.databaseSolution === 'Firebase'
                             }
                             onChange={() =>
                               updateData({
                                 appDatabase: {
                                   databaseName: data.appDatabase.databaseName,
-                                  databaseSolution: "Firebase",
-                                },
+                                  databaseSolution: 'Firebase'
+                                }
                               })
                             }
                           />
@@ -696,14 +696,14 @@ const CreateAppModal: React.FC<Props> = ({ show, handleClose }) => {
                             name="databaseSolution"
                             value="DynamoDB"
                             checked={
-                              data.appDatabase.databaseSolution === "DynamoDB"
+                              data.appDatabase.databaseSolution === 'DynamoDB'
                             }
                             onChange={() =>
                               updateData({
                                 appDatabase: {
                                   databaseName: data.appDatabase.databaseName,
-                                  databaseSolution: "DynamoDB",
-                                },
+                                  databaseSolution: 'DynamoDB'
+                                }
                               })
                             }
                           />
@@ -756,9 +756,9 @@ const CreateAppModal: React.FC<Props> = ({ show, handleClose }) => {
                             type="radio"
                             name="appStorage"
                             value="Basic Server"
-                            checked={data.appStorage === "Basic Server"}
+                            checked={data.appStorage === 'Basic Server'}
                             onChange={() =>
-                              updateData({ appStorage: "Basic Server" })
+                              updateData({ appStorage: 'Basic Server' })
                             }
                           />
                         </span>
@@ -788,8 +788,8 @@ const CreateAppModal: React.FC<Props> = ({ show, handleClose }) => {
                             type="radio"
                             name="appStorage"
                             value="AWS"
-                            checked={data.appStorage === "AWS"}
-                            onChange={() => updateData({ appStorage: "AWS" })}
+                            checked={data.appStorage === 'AWS'}
+                            onChange={() => updateData({ appStorage: 'AWS' })}
                           />
                         </span>
                       </label>
@@ -818,9 +818,9 @@ const CreateAppModal: React.FC<Props> = ({ show, handleClose }) => {
                             type="radio"
                             name="appStorage"
                             value="Google"
-                            checked={data.appStorage === "Google"}
+                            checked={data.appStorage === 'Google'}
                             onChange={() =>
-                              updateData({ appStorage: "Google" })
+                              updateData({ appStorage: 'Google' })
                             }
                           />
                         </span>
@@ -891,7 +891,7 @@ const CreateAppModal: React.FC<Props> = ({ show, handleClose }) => {
                       <KTSVG
                         path="/media/icons/duotune/arrows/arr063.svg"
                         className="svg-icon-3 me-1"
-                      />{" "}
+                      />{' '}
                       Previous
                     </button>
                   </div>
@@ -902,7 +902,7 @@ const CreateAppModal: React.FC<Props> = ({ show, handleClose }) => {
                       data-kt-stepper-action="submit"
                       onClick={submit}
                     >
-                      Submit{" "}
+                      Submit{' '}
                       <KTSVG
                         path="/media/icons/duotune/arrows/arr064.svg"
                         className="svg-icon-3 ms-2"
@@ -915,7 +915,7 @@ const CreateAppModal: React.FC<Props> = ({ show, handleClose }) => {
                       data-kt-stepper-action="next"
                       onClick={nextStep}
                     >
-                      Next Step{" "}
+                      Next Step{' '}
                       <KTSVG
                         path="/media/icons/duotune/arrows/arr064.svg"
                         className="svg-icon-3 ms-1"

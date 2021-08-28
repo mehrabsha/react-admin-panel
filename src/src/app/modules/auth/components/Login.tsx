@@ -1,29 +1,29 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import * as Yup from "yup";
-import clsx from "clsx";
-import { Link } from "react-router-dom";
-import { useFormik } from "formik";
-import * as auth from "../redux/AuthRedux";
-import { login } from "../redux/AuthCRUD";
-import { toAbsoluteUrl } from "../../../../_metronic/helpers";
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import * as Yup from 'yup';
+import clsx from 'clsx';
+import { Link } from 'react-router-dom';
+import { useFormik } from 'formik';
+import * as auth from '../redux/AuthRedux';
+import { login } from '../redux/AuthCRUD';
+import { toAbsoluteUrl } from '../../../../_metronic/helpers';
 
 const loginSchema = Yup.object().shape({
   email: Yup.string()
-    .email("Wrong email format")
-    .min(3, "Minimum 3 symbols")
-    .max(50, "Maximum 50 symbols")
-    .required("Email is required"),
+    .email('Wrong email format')
+    .min(3, 'Minimum 3 symbols')
+    .max(50, 'Maximum 50 symbols')
+    .required('Email is required'),
   password: Yup.string()
-    .min(3, "Minimum 3 symbols")
-    .max(50, "Maximum 50 symbols")
-    .required("Password is required"),
+    .min(3, 'Minimum 3 symbols')
+    .max(50, 'Maximum 50 symbols')
+    .required('Password is required')
 });
 
 const initialValues = {
-  email: "admin@demo.com",
-  password: "demo",
+  email: 'admin@demo.com',
+  password: 'demo'
 };
 
 /*
@@ -49,10 +49,10 @@ export function Login() {
           .catch(() => {
             setLoading(false);
             setSubmitting(false);
-            setStatus("The login detail is incorrect");
+            setStatus('The login detail is incorrect');
           });
       }, 1000);
-    },
+    }
   });
 
   return (
@@ -66,7 +66,7 @@ export function Login() {
       <div className="text-center mb-10">
         <h1 className="text-dark mb-3">Sign In to Metronic</h1>
         <div className="text-gray-400 fw-bold fs-4">
-          New Here?{" "}
+          New Here?{' '}
           <Link to="/auth/registration" className="link-primary fw-bolder">
             Create an Account
           </Link>
@@ -81,7 +81,7 @@ export function Login() {
       ) : (
         <div className="mb-10 bg-light-info p-8 rounded">
           <div className="text-info">
-            Use account <strong>admin@demo.com</strong> and password{" "}
+            Use account <strong>admin@demo.com</strong> and password{' '}
             <strong>demo</strong> to continue.
           </div>
         </div>
@@ -92,12 +92,12 @@ export function Login() {
         <label className="form-label fs-6 fw-bolder text-dark">Email</label>
         <input
           placeholder="Email"
-          {...formik.getFieldProps("email")}
+          {...formik.getFieldProps('email')}
           className={clsx(
-            "form-control form-control-lg form-control-solid",
-            { "is-invalid": formik.touched.email && formik.errors.email },
+            'form-control form-control-lg form-control-solid',
+            { 'is-invalid': formik.touched.email && formik.errors.email },
             {
-              "is-valid": formik.touched.email && !formik.errors.email,
+              'is-valid': formik.touched.email && !formik.errors.email
             }
           )}
           type="email"
@@ -125,7 +125,7 @@ export function Login() {
             <Link
               to="/auth/forgot-password"
               className="link-primary fs-6 fw-bolder"
-              style={{ marginLeft: "5px" }}
+              style={{ marginLeft: '5px' }}
             >
               Forgot Password ?
             </Link>
@@ -135,14 +135,14 @@ export function Login() {
         <input
           type="password"
           autoComplete="off"
-          {...formik.getFieldProps("password")}
+          {...formik.getFieldProps('password')}
           className={clsx(
-            "form-control form-control-lg form-control-solid",
+            'form-control form-control-lg form-control-solid',
             {
-              "is-invalid": formik.touched.password && formik.errors.password,
+              'is-invalid': formik.touched.password && formik.errors.password
             },
             {
-              "is-valid": formik.touched.password && !formik.errors.password,
+              'is-valid': formik.touched.password && !formik.errors.password
             }
           )}
         />
@@ -166,7 +166,7 @@ export function Login() {
         >
           {!loading && <span className="indicator-label">Continue</span>}
           {loading && (
-            <span className="indicator-progress" style={{ display: "block" }}>
+            <span className="indicator-progress" style={{ display: 'block' }}>
               Please wait...
               <span className="spinner-border spinner-border-sm align-middle ms-2"></span>
             </span>
@@ -186,7 +186,7 @@ export function Login() {
         >
           <img
             alt="Logo"
-            src={toAbsoluteUrl("/media/svg/brand-logos/google-icon.svg")}
+            src={toAbsoluteUrl('/media/svg/brand-logos/google-icon.svg')}
             className="h-20px me-3"
           />
           Continue with Google
@@ -200,7 +200,7 @@ export function Login() {
         >
           <img
             alt="Logo"
-            src={toAbsoluteUrl("/media/svg/brand-logos/facebook-4.svg")}
+            src={toAbsoluteUrl('/media/svg/brand-logos/facebook-4.svg')}
             className="h-20px me-3"
           />
           Continue with Facebook
@@ -211,7 +211,7 @@ export function Login() {
         <a href="#" className="btn btn-flex flex-center btn-light btn-lg w-100">
           <img
             alt="Logo"
-            src={toAbsoluteUrl("/media/svg/brand-logos/apple-black.svg")}
+            src={toAbsoluteUrl('/media/svg/brand-logos/apple-black.svg')}
             className="h-20px me-3"
           />
           Continue with Apple

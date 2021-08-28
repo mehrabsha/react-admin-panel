@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from "react";
-import { KTSVG, toAbsoluteUrl } from "../../../helpers";
+import React from 'react';
+import { KTSVG, toAbsoluteUrl } from '../../../helpers';
 
 type Props = {
   className: string;
@@ -83,7 +83,7 @@ const TablesWidget5: React.FC<Props> = ({ className }) => {
                         <span className="symbol-label">
                           <img
                             src={toAbsoluteUrl(
-                              "/media/svg/brand-logos/plurk.svg"
+                              '/media/svg/brand-logos/plurk.svg'
                             )}
                             className="h-50 align-self-center"
                             alt=""
@@ -126,7 +126,7 @@ const TablesWidget5: React.FC<Props> = ({ className }) => {
                         <span className="symbol-label">
                           <img
                             src={toAbsoluteUrl(
-                              "/media/svg/brand-logos/telegram.svg"
+                              '/media/svg/brand-logos/telegram.svg'
                             )}
                             className="h-50 align-self-center"
                             alt=""
@@ -171,7 +171,7 @@ const TablesWidget5: React.FC<Props> = ({ className }) => {
                         <span className="symbol-label">
                           <img
                             src={toAbsoluteUrl(
-                              "/media/svg/brand-logos/vimeo.svg"
+                              '/media/svg/brand-logos/vimeo.svg'
                             )}
                             className="h-50 align-self-center"
                             alt=""
@@ -214,7 +214,7 @@ const TablesWidget5: React.FC<Props> = ({ className }) => {
                         <span className="symbol-label">
                           <img
                             src={toAbsoluteUrl(
-                              "/media/svg/brand-logos/bebo.svg"
+                              '/media/svg/brand-logos/bebo.svg'
                             )}
                             className="h-50 align-self-center"
                             alt=""
@@ -257,7 +257,7 @@ const TablesWidget5: React.FC<Props> = ({ className }) => {
                         <span className="symbol-label">
                           <img
                             src={toAbsoluteUrl(
-                              "/media/svg/brand-logos/kickstarter.svg"
+                              '/media/svg/brand-logos/kickstarter.svg'
                             )}
                             className="h-50 align-self-center"
                             alt=""
@@ -328,7 +328,7 @@ const TablesWidget5: React.FC<Props> = ({ className }) => {
                         <span className="symbol-label">
                           <img
                             src={toAbsoluteUrl(
-                              "/media/svg/brand-logos/plurk.svg"
+                              '/media/svg/brand-logos/plurk.svg'
                             )}
                             className="h-50 align-self-center"
                             alt=""
@@ -371,7 +371,7 @@ const TablesWidget5: React.FC<Props> = ({ className }) => {
                         <span className="symbol-label">
                           <img
                             src={toAbsoluteUrl(
-                              "/media/svg/brand-logos/telegram.svg"
+                              '/media/svg/brand-logos/telegram.svg'
                             )}
                             className="h-50 align-self-center"
                             alt=""
@@ -416,7 +416,7 @@ const TablesWidget5: React.FC<Props> = ({ className }) => {
                         <span className="symbol-label">
                           <img
                             src={toAbsoluteUrl(
-                              "/media/svg/brand-logos/bebo.svg"
+                              '/media/svg/brand-logos/bebo.svg'
                             )}
                             className="h-50 align-self-center"
                             alt=""
@@ -485,7 +485,7 @@ const TablesWidget5: React.FC<Props> = ({ className }) => {
                         <span className="symbol-label">
                           <img
                             src={toAbsoluteUrl(
-                              "/media/svg/brand-logos/kickstarter.svg"
+                              '/media/svg/brand-logos/kickstarter.svg'
                             )}
                             className="h-50 align-self-center"
                             alt=""
@@ -530,7 +530,7 @@ const TablesWidget5: React.FC<Props> = ({ className }) => {
                         <span className="symbol-label">
                           <img
                             src={toAbsoluteUrl(
-                              "/media/svg/brand-logos/bebo.svg"
+                              '/media/svg/brand-logos/bebo.svg'
                             )}
                             className="h-50 align-self-center"
                             alt=""
@@ -573,7 +573,7 @@ const TablesWidget5: React.FC<Props> = ({ className }) => {
                         <span className="symbol-label">
                           <img
                             src={toAbsoluteUrl(
-                              "/media/svg/brand-logos/vimeo.svg"
+                              '/media/svg/brand-logos/vimeo.svg'
                             )}
                             className="h-50 align-self-center"
                             alt=""
@@ -616,7 +616,7 @@ const TablesWidget5: React.FC<Props> = ({ className }) => {
                         <span className="symbol-label">
                           <img
                             src={toAbsoluteUrl(
-                              "/media/svg/brand-logos/telegram.svg"
+                              '/media/svg/brand-logos/telegram.svg'
                             )}
                             className="h-50 align-self-center"
                             alt=""

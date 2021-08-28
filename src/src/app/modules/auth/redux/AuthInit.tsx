@@ -1,21 +1,21 @@
-import { FC, useRef, useEffect, useState } from "react";
+import { FC, useRef, useEffect, useState } from 'react';
 import {
   shallowEqual,
   useSelector,
   connect,
   useDispatch,
-  ConnectedProps,
-} from "react-redux";
-import { LayoutSplashScreen } from "../../../../_metronic/layout/core";
-import * as auth from "./AuthRedux";
-import { getUserByToken } from "./AuthCRUD";
-import { RootState } from "../../../../setup";
+  ConnectedProps
+} from 'react-redux';
+import { LayoutSplashScreen } from '../../../../_metronic/layout/core';
+import * as auth from './AuthRedux';
+import { getUserByToken } from './AuthCRUD';
+import { RootState } from '../../../../setup';
 
 const mapState = (state: RootState) => ({ auth: state.auth });
 const connector = connect(mapState, auth.actions);
 type PropsFromRedux = ConnectedProps<typeof connector>;
 
-const AuthInit: FC<PropsFromRedux> = (props) => {
+const AuthInit: FC<PropsFromRedux> = props => {
   const didRequest = useRef(false);
   const dispatch = useDispatch();
   const [showSplashScreen, setShowSplashScreen] = useState(true);

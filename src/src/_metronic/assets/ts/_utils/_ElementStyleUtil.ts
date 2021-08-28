@@ -6,7 +6,7 @@ export class ElementStyleUtil {
     important?: boolean
   ) {
     if (important) {
-      element.style.setProperty(property, value, "important");
+      element.style.setProperty(property, value, 'important');
     } else {
       element.style.setProperty(property, value);
     }

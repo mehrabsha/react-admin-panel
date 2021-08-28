@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from "react";
-import { KTSVG } from "../../../helpers";
+import React from 'react';
+import { KTSVG } from '../../../helpers';
 
 type Props = {
   className: string;
@@ -17,7 +17,7 @@ const StatisticsWidget5: React.FC<Props> = ({
   svgIcon,
   iconColor,
   title,
-  description,
+  description
 }) => {
   return (
     <a href="#" className={`card bg-${color} hoverable ${className}`}>

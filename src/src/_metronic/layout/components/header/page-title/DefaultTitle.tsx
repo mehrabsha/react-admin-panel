@@ -1,8 +1,8 @@
-import clsx from "clsx";
-import React, { FC } from "react";
-import { Link } from "react-router-dom";
-import { useLayout } from "../../../core/LayoutProvider";
-import { usePageData } from "../../../core/PageData";
+import clsx from 'clsx';
+import React, { FC } from 'react';
+import { Link } from 'react-router-dom';
+import { useLayout } from '../../../core/LayoutProvider';
+import { usePageData } from '../../../core/PageData';
 
 const DefaultTitle: FC = () => {
   const { pageTitle, pageDescription, pageBreadcrumbs } = usePageData();
@@ -10,7 +10,7 @@ const DefaultTitle: FC = () => {
   return (
     <div
       {...attributes.pageTitle}
-      className={clsx("page-title d-flex", classes.pageTitle.join(" "))}
+      className={clsx('page-title d-flex', classes.pageTitle.join(' '))}
     >
       {/* begin::Title */}
       {pageTitle && (
@@ -33,15 +33,15 @@ const DefaultTitle: FC = () => {
         config.pageTitle &&
         config.pageTitle.breadCrumbs && (
           <>
-            {config.pageTitle.direction === "row" && (
+            {config.pageTitle.direction === 'row' && (
               <span className="h-20px border-gray-200 border-start mx-4"></span>
             )}
             <ul className="breadcrumb breadcrumb-separatorless fw-bold fs-7 my-1">
               {Array.from(pageBreadcrumbs).map((item, index) => (
                 <li
-                  className={clsx("breadcrumb-item", {
-                    "text-dark": !item.isSeparator && item.isActive,
-                    "text-muted": !item.isSeparator && !item.isActive,
+                  className={clsx('breadcrumb-item', {
+                    'text-dark': !item.isSeparator && item.isActive,
+                    'text-muted': !item.isSeparator && !item.isActive
                   })}
                   key={`${item.path}${index}`}
                 >

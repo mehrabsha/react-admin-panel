@@ -1,5 +1,5 @@
-import { DataUtil } from "./_DataUtil";
-import { getUniqueIdWithPrefix } from "./_TypesHelpers";
+import { DataUtil } from './_DataUtil';
+import { getUniqueIdWithPrefix } from './_TypesHelpers';
 
 export interface EventMeta {
   name: string;
@@ -70,13 +70,13 @@ export class EventHandlerUtil {
     callback: Function,
     one: boolean = false
   ) {
-    const handlerId = getUniqueIdWithPrefix("event");
+    const handlerId = getUniqueIdWithPrefix('event');
     DataUtil.set(element, name, handlerId);
     const meta: EventMeta = {
       name: name,
       callback: callback,
       one: one,
-      fired: false,
+      fired: false
     };
 
     EventHandlerUtil.setEventMetaByNameAndHandlerId(name, handlerId, meta);

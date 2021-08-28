@@ -1,8 +1,8 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import clsx from "clsx";
-import React from "react";
-import { KTSVG, toAbsoluteUrl } from "../../../helpers";
-import { Dropdown1 } from "../../content/dropdown/Dropdown1";
+import clsx from 'clsx';
+import React from 'react';
+import { KTSVG, toAbsoluteUrl } from '../../../helpers';
+import { Dropdown1 } from '../../content/dropdown/Dropdown1';
 
 type Props = {
   className: string;
@@ -19,7 +19,7 @@ const MixedWidget4: React.FC<Props> = ({
   image,
   title,
   date,
-  progress,
+  progress
 }) => {
   return (
     <div className={`card ${className}`}>
@@ -101,7 +101,7 @@ const MixedWidget4: React.FC<Props> = ({
               data-bs-toggle="tooltip"
               title="Ana Stone"
             >
-              <img src={toAbsoluteUrl("/media/avatars/150-1.jpg")} alt="" />
+              <img src={toAbsoluteUrl('/media/avatars/150-1.jpg')} alt="" />
             </a>
 
             <a
@@ -110,7 +110,7 @@ const MixedWidget4: React.FC<Props> = ({
               data-bs-toggle="tooltip"
               title="Mark Larson"
             >
-              <img src={toAbsoluteUrl("/media/avatars/150-4.jpg")} alt="" />
+              <img src={toAbsoluteUrl('/media/avatars/150-4.jpg')} alt="" />
             </a>
 
             <a
@@ -119,7 +119,7 @@ const MixedWidget4: React.FC<Props> = ({
               data-bs-toggle="tooltip"
               title="Sam Harris"
             >
-              <img src={toAbsoluteUrl("/media/avatars/150-8.jpg")} alt="" />
+              <img src={toAbsoluteUrl('/media/avatars/150-8.jpg')} alt="" />
             </a>
 
             <a
@@ -128,7 +128,7 @@ const MixedWidget4: React.FC<Props> = ({
               data-bs-toggle="tooltip"
               title="Alice Micto"
             >
-              <img src={toAbsoluteUrl("/media/avatars/150-9.jpg")} alt="" />
+              <img src={toAbsoluteUrl('/media/avatars/150-9.jpg')} alt="" />
             </a>
           </div>
         </div>

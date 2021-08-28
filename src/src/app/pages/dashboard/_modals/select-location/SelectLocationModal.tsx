@@ -1,6 +1,6 @@
-import React, { Dispatch, SetStateAction, useState, useEffect } from "react";
-import { Modal } from "react-bootstrap-v5";
-import { KTSVG } from "../../../../../_metronic/helpers";
+import React, { Dispatch, SetStateAction, useState, useEffect } from 'react';
+import { Modal } from 'react-bootstrap-v5';
+import { KTSVG } from '../../../../../_metronic/helpers';
 
 type Props = {
   data: { location: string; setLocation: Dispatch<SetStateAction<string>> };
@@ -54,7 +54,7 @@ const SelectLocationModal: React.FC<Props> = ({ show, handleClose, data }) => {
           <input
             type="text"
             value={location}
-            onChange={(e) => setLocation(e.target.value)}
+            onChange={e => setLocation(e.target.value)}
           />
           <div id="kt_modal_select_location_map" className="map h-450px"></div>
         </div>

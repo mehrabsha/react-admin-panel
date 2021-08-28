@@ -1,17 +1,17 @@
-import React, { createContext, useContext, useState, useEffect } from "react";
-import { DefaultLayoutConfig } from "./DefaultLayoutConfig";
+import React, { createContext, useContext, useState, useEffect } from 'react';
+import { DefaultLayoutConfig } from './DefaultLayoutConfig';
 import {
   getEmptyCssClasses,
   getEmptyCSSVariables,
   getEmptyHTMLAttributes,
-  LayoutSetup,
-} from "./LayoutSetup";
+  LayoutSetup
+} from './LayoutSetup';
 import {
   ILayout,
   ILayoutCSSVariables,
   ILayoutCSSClasses,
-  ILayoutHTMLAttributes,
-} from "./LayoutModels";
+  ILayoutHTMLAttributes
+} from './LayoutModels';
 
 export interface LayoutContextModel {
   config: ILayout;
@@ -26,20 +26,20 @@ const LayoutContext = createContext<LayoutContextModel>({
   classes: getEmptyCssClasses(),
   attributes: getEmptyHTMLAttributes(),
   cssVariables: getEmptyCSSVariables(),
-  setLayout: (config: LayoutSetup) => {},
+  setLayout: (config: LayoutSetup) => {}
 });
 
 const enableSplashScreen = () => {
-  const splashScreen = document.getElementById("splash-screen");
+  const splashScreen = document.getElementById('splash-screen');
   if (splashScreen) {
-    splashScreen.style.setProperty("display", "flex");
+    splashScreen.style.setProperty('display', 'flex');
   }
 };
 
 const disableSplashScreen = () => {
-  const splashScreen = document.getElementById("splash-screen");
+  const splashScreen = document.getElementById('splash-screen');
   if (splashScreen) {
-    splashScreen.style.setProperty("display", "none");
+    splashScreen.style.setProperty('display', 'none');
   }
 };
 
@@ -51,7 +51,7 @@ const LayoutProvider: React.FC = ({ children }) => {
   const setLayout = (_themeConfig: Partial<ILayout>) => {
     enableSplashScreen();
     const bodyClasses = Array.from(document.body.classList);
-    bodyClasses.forEach((cl) => document.body.classList.remove(cl));
+    bodyClasses.forEach(cl => document.body.classList.remove(cl));
     LayoutSetup.updatePartialConfig(_themeConfig);
     setConfig(Object.assign({}, LayoutSetup.config));
     setClasses(LayoutSetup.classes);
@@ -66,7 +66,7 @@ const LayoutProvider: React.FC = ({ children }) => {
     classes,
     attributes,
     cssVariables,
-    setLayout,
+    setLayout
   };
 
   useEffect(() => {

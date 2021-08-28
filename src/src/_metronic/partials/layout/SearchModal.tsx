@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from "react";
-import { Modal } from "react-bootstrap-v5";
-import { KTSVG, toAbsoluteUrl } from "../../helpers";
+import React from 'react';
+import { Modal } from 'react-bootstrap-v5';
+import { KTSVG, toAbsoluteUrl } from '../../helpers';
 // import {ListsWidget4, ListsWidget5} from '../widgets'
 
 type Props = {
@@ -61,8 +61,8 @@ const SearchModal: React.FC<Props> = ({ show, handleClose }) => {
                             className="overlay-wrapper flex-grow-1 bgi-no-repeat bgi-size-cover bgi-position-center card-rounded"
                             style={{
                               backgroundImage: `url('${toAbsoluteUrl(
-                                "/media/stock/600x400/img-17.jpg"
-                              )}')`,
+                                '/media/stock/600x400/img-17.jpg'
+                              )}')`
                             }}
                           />
                           <div className="overlay-layer bg-white bg-opacity-50">
@@ -81,8 +81,8 @@ const SearchModal: React.FC<Props> = ({ show, handleClose }) => {
                             className="overlay-wrapper flex-grow-1 bgi-no-repeat bgi-size-cover bgi-position-center card-rounded"
                             style={{
                               backgroundImage: `url('${toAbsoluteUrl(
-                                "/media/stock/600x400/img-1.jpg"
-                              )}')`,
+                                '/media/stock/600x400/img-1.jpg'
+                              )}')`
                             }}
                           />
                           <div className="overlay-layer bg-white bg-opacity-50">
@@ -103,8 +103,8 @@ const SearchModal: React.FC<Props> = ({ show, handleClose }) => {
                             className="overlay-wrapper flex-grow-1 bgi-no-repeat bgi-size-cover bgi-position-center card-rounded"
                             style={{
                               backgroundImage: `url('${toAbsoluteUrl(
-                                "/media/stock/600x400/img-23.jpg"
-                              )}')`,
+                                '/media/stock/600x400/img-23.jpg'
+                              )}')`
                             }}
                           />
                           <div className="overlay-layer bg-white bg-opacity-50">
@@ -127,8 +127,8 @@ const SearchModal: React.FC<Props> = ({ show, handleClose }) => {
                         className="overlay-wrapper flex-grow-1 bgi-no-repeat bgi-size-cover bgi-position-center card-rounded"
                         style={{
                           backgroundImage: `url('${toAbsoluteUrl(
-                            "/media/stock/600x400/img-11.jpg"
-                          )}')`,
+                            '/media/stock/600x400/img-11.jpg'
+                          )}')`
                         }}
                       ></div>
                       <div className="overlay-layer bg-white bg-opacity-50">

@@ -4,8 +4,8 @@ import {
   stringSnakeToCamel,
   getObjectPropertyValueByKey,
   EventHandlerUtil,
-  throttle,
-} from "../_utils/index";
+  throttle
+} from '../_utils/index';
 
 export interface IPlaceOptions {
   mode: string;
@@ -18,13 +18,13 @@ export interface IPlaceQueries {
 }
 
 const defaultPlaceOptions: IPlaceOptions = {
-  mode: "append",
+  mode: 'append'
 };
 
 const defaultPlaceQueires: IPlaceQueries = {
-  componentName: "place",
+  componentName: 'place',
   instanseQuery: '[data-kt-place="true"]',
-  attrQuery: "data-kt-place-",
+  attrQuery: 'data-kt-place-'
 };
 
 class PlaceComponent {
@@ -51,9 +51,9 @@ class PlaceComponent {
     const attr = this.element.getAttribute(`${this.queries.attrQuery}${name}`);
     if (attr) {
       let value = getAttributeValueByBreakpoint(attr);
-      if (attr != null && String(value) === "true") {
+      if (attr != null && String(value) === 'true') {
         return true;
-      } else if (value !== null && String(value) === "false") {
+      } else if (value !== null && String(value) === 'false') {
         return false;
       }
       return value;
@@ -72,16 +72,16 @@ class PlaceComponent {
   // ** Public API  ** //
   ///////////////////////
   public update = () => {
-    const parentSelector = this.getOption("parent")?.toString();
-    const mode = this.getOption("mode");
+    const parentSelector = this.getOption('parent')?.toString();
+    const mode = this.getOption('mode');
     const parentElement = parentSelector
       ? document.querySelector(parentSelector)
       : null;
 
     if (parentElement && this.element.parentNode !== parentElement) {
-      if (mode === "prepend") {
+      if (mode === 'prepend') {
         parentElement.prepend(this.element);
-      } else if (mode === "append") {
+      } else if (mode === 'append') {
         parentElement.append(this.element);
       }
     }
@@ -123,7 +123,7 @@ class PlaceComponent {
     queries: IPlaceQueries = defaultPlaceQueires
   ) => {
     const elements = document.body.querySelectorAll(selector);
-    elements.forEach((el) => {
+    elements.forEach(el => {
       const item = el as HTMLElement;
       let place = PlaceComponent.getInstance(item);
       if (!place) {
@@ -163,7 +163,7 @@ class PlaceComponent {
 }
 
 // Window resize handler
-window.addEventListener("resize", function () {
+window.addEventListener('resize', function () {
   let timer;
 
   throttle(
@@ -173,7 +173,7 @@ window.addEventListener("resize", function () {
       const elements = document.querySelectorAll(
         defaultPlaceQueires.instanseQuery
       );
-      elements.forEach((el) => {
+      elements.forEach(el => {
         const place = PlaceComponent.getInstance(el as HTMLElement);
         if (place) {
           place.update();

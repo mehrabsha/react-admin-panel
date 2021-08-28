@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from "react";
-import { KTSVG, toAbsoluteUrl } from "../../../helpers";
+import React from 'react';
+import { KTSVG, toAbsoluteUrl } from '../../../helpers';
 
 type Props = {
   className: string;
@@ -82,7 +82,7 @@ const TablesWidget6: React.FC<Props> = ({ className }) => {
                         <span className="symbol-label">
                           <img
                             src={toAbsoluteUrl(
-                              "/media/svg/avatars/001-boy.svg"
+                              '/media/svg/avatars/001-boy.svg'
                             )}
                             className="h-75 align-self-end"
                             alt=""
@@ -130,7 +130,7 @@ const TablesWidget6: React.FC<Props> = ({ className }) => {
                         <span className="symbol-label">
                           <img
                             src={toAbsoluteUrl(
-                              "/media/svg/avatars/018-girl-9.svg"
+                              '/media/svg/avatars/018-girl-9.svg'
                             )}
                             className="h-75 align-self-end"
                             alt=""
@@ -178,7 +178,7 @@ const TablesWidget6: React.FC<Props> = ({ className }) => {
                         <span className="symbol-label">
                           <img
                             src={toAbsoluteUrl(
-                              "/media/svg/avatars/047-girl-25.svg"
+                              '/media/svg/avatars/047-girl-25.svg'
                             )}
                             className="h-75 align-self-end"
                             alt=""
@@ -226,7 +226,7 @@ const TablesWidget6: React.FC<Props> = ({ className }) => {
                         <span className="symbol-label">
                           <img
                             src={toAbsoluteUrl(
-                              "/media/svg/avatars/014-girl-7.svg"
+                              '/media/svg/avatars/014-girl-7.svg'
                             )}
                             className="h-75 align-self-end"
                             alt=""
@@ -274,7 +274,7 @@ const TablesWidget6: React.FC<Props> = ({ className }) => {
                         <span className="symbol-label">
                           <img
                             src={toAbsoluteUrl(
-                              "/media/svg/avatars/043-boy-18.svg"
+                              '/media/svg/avatars/043-boy-18.svg'
                             )}
                             className="h-75 align-self-end"
                             alt=""
@@ -347,7 +347,7 @@ const TablesWidget6: React.FC<Props> = ({ className }) => {
                         <span className="symbol-label">
                           <img
                             src={toAbsoluteUrl(
-                              "/media/svg/avatars/018-girl-9.svg"
+                              '/media/svg/avatars/018-girl-9.svg'
                             )}
                             className="h-75 align-self-end"
                             alt=""
@@ -395,7 +395,7 @@ const TablesWidget6: React.FC<Props> = ({ className }) => {
                         <span className="symbol-label">
                           <img
                             src={toAbsoluteUrl(
-                              "/media/svg/avatars/014-girl-7.svg"
+                              '/media/svg/avatars/014-girl-7.svg'
                             )}
                             className="h-75 align-self-end"
                             alt=""
@@ -443,7 +443,7 @@ const TablesWidget6: React.FC<Props> = ({ className }) => {
                         <span className="symbol-label">
                           <img
                             src={toAbsoluteUrl(
-                              "/media/svg/avatars/001-boy.svg"
+                              '/media/svg/avatars/001-boy.svg'
                             )}
                             className="h-75 align-self-end"
                             alt=""
@@ -516,7 +516,7 @@ const TablesWidget6: React.FC<Props> = ({ className }) => {
                         <span className="symbol-label">
                           <img
                             src={toAbsoluteUrl(
-                              "/media/svg/avatars/047-girl-25.svg"
+                              '/media/svg/avatars/047-girl-25.svg'
                             )}
                             className="h-75 align-self-end"
                             alt=""
@@ -564,7 +564,7 @@ const TablesWidget6: React.FC<Props> = ({ className }) => {
                         <span className="symbol-label">
                           <img
                             src={toAbsoluteUrl(
-                              "/media/svg/avatars/014-girl-7.svg"
+                              '/media/svg/avatars/014-girl-7.svg'
                             )}
                             className="h-75 align-self-end"
                             alt=""
@@ -612,7 +612,7 @@ const TablesWidget6: React.FC<Props> = ({ className }) => {
                         <span className="symbol-label">
                           <img
                             src={toAbsoluteUrl(
-                              "/media/svg/avatars/043-boy-18.svg"
+                              '/media/svg/avatars/043-boy-18.svg'
                             )}
                             className="h-75 align-self-end"
                             alt=""
@@ -660,7 +660,7 @@ const TablesWidget6: React.FC<Props> = ({ className }) => {
                         <span className="symbol-label">
                           <img
                             src={toAbsoluteUrl(
-                              "/media/svg/avatars/001-boy.svg"
+                              '/media/svg/avatars/001-boy.svg'
                             )}
                             className="h-75 align-self-end"
                             alt=""

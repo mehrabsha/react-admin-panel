@@ -20,11 +20,11 @@ body {
     padding: 0 get($content-spacing, desktop);
   }
 
-  .container .page-title[data-kt-swapper="true"] {
+  .container .page-title[data-kt-swapper='true'] {
     display: none !important;
   }
 
-  .container-fluid .page-title[data-kt-swapper="true"] {
+  .container-fluid .page-title[data-kt-swapper='true'] {
     display: none !important;
   }
 
@@ -40,7 +40,7 @@ body {
     }
 
     // Aside default enabled, aside fixed and aside minimize modes
-    .aside-enabled.aside-fixed[data-kt-aside-minimize="on"] & {
+    .aside-enabled.aside-fixed[data-kt-aside-minimize='on'] & {
       transition: padding-left get($aside-config, transition-speed) ease;
       padding-left: get($aside-config, minimized-width);
     }
@@ -68,11 +68,11 @@ body {
     padding: 0 get($content-spacing, tablet-and-mobile);
   }
 
-  .container .page-title[data-kt-swapper="true"] {
+  .container .page-title[data-kt-swapper='true'] {
     display: flex !important;
   }
 
-  .container-fluid .page-title[data-kt-swapper="true"] {
+  .container-fluid .page-title[data-kt-swapper='true'] {
     display: flex !important;
   }
 

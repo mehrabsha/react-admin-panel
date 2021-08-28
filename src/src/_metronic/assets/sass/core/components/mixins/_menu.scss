@@ -8,7 +8,7 @@
   transform: rotateZ($angle);
   transition: get($menu, accordion, arrow-transition);
 
-  [direction="rtl"] & {
+  [direction='rtl'] & {
     /*rtl:ignore*/
     transform: rotateZ($angleRtl);
   }
@@ -180,10 +180,10 @@
   $bg-color: null,
   $all-links: true
 ) {
-  $sel: "";
+  $sel: '';
 
   @if ($all-links == false) {
-    $sel: "& > ";
+    $sel: '& > ';
   }
 
   #{$sel}.menu-link {
@@ -206,10 +206,10 @@
   $bg-color: null,
   $all-links: true
 ) {
-  $sel: "";
+  $sel: '';
 
   @if ($all-links == false) {
-    $sel: "& > ";
+    $sel: '& > ';
   }
 
   &.hover > .menu-link:not(.disabled):not(.active),
@@ -235,10 +235,10 @@
   $bg-color: null,
   $all-links: true
 ) {
-  $sel: "";
+  $sel: '';
 
   @if ($all-links == false) {
-    $sel: "& > ";
+    $sel: '& > ';
   }
 
   #{$sel}.menu-link.active {

@@ -1,14 +1,14 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef } from 'react';
 import {
   MenuComponent,
   DrawerComponent,
   ScrollComponent,
   ScrollTopComponent,
   StickyComponent,
-  ToggleComponent,
-} from "../assets/ts/components";
+  ToggleComponent
+} from '../assets/ts/components';
 
-import { useLayout } from "./core";
+import { useLayout } from './core';
 
 export function MasterInit() {
   const { config } = useLayout();

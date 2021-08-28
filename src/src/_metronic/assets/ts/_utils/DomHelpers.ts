@@ -1,20 +1,20 @@
-import { OffsetModel } from "./models/OffsetModel";
-import { ViewPortModel } from "./models/ViewPortModel";
-import { ElementStyleUtil } from "./_ElementStyleUtil";
-import { DataUtil } from "./_DataUtil";
-import { ElementAnimateUtil } from "./ElementAnimateUtil";
-import { getObjectPropertyValueByKey, toJSON } from "./_TypesHelpers";
+import { OffsetModel } from './models/OffsetModel';
+import { ViewPortModel } from './models/ViewPortModel';
+import { ElementStyleUtil } from './_ElementStyleUtil';
+import { DataUtil } from './_DataUtil';
+import { ElementAnimateUtil } from './ElementAnimateUtil';
+import { getObjectPropertyValueByKey, toJSON } from './_TypesHelpers';
 
 function getCSS(el: HTMLElement, styleProp: string) {
   const defaultView = (el.ownerDocument || document).defaultView;
 
   if (!defaultView) {
-    return "";
+    return '';
   }
 
   // sanitize property name to css notation
   // (hyphen separated words eg. font-Size)
-  styleProp = styleProp.replace(/([A-Z])/g, "-$1").toLowerCase();
+  styleProp = styleProp.replace(/([A-Z])/g, '-$1').toLowerCase();
 
   return defaultView.getComputedStyle(el, null).getPropertyValue(styleProp);
 }
@@ -31,20 +31,20 @@ function getCSSVariableValue(variableName: string) {
 }
 
 function getElementActualCss(el: HTMLElement, prop: any, cache: boolean) {
-  let css = "";
+  let css = '';
 
-  if (!el.getAttribute("kt-hidden-" + prop) || cache === false) {
+  if (!el.getAttribute('kt-hidden-' + prop) || cache === false) {
     let value;
 
     // the element is hidden so:
     // making the el block so we can meassure its height but still be hidden
     css = el.style.cssText;
     el.style.cssText =
-      "position: absolute; visibility: hidden; display: block;";
+      'position: absolute; visibility: hidden; display: block;';
 
-    if (prop === "width") {
+    if (prop === 'width') {
       value = el.offsetWidth;
-    } else if (prop === "height") {
+    } else if (prop === 'height') {
       value = el.offsetHeight;
     }
 
@@ -52,25 +52,25 @@ function getElementActualCss(el: HTMLElement, prop: any, cache: boolean) {
 
     // store it in cache
     if (value !== undefined) {
-      el.setAttribute("kt-hidden-" + prop, value.toString());
+      el.setAttribute('kt-hidden-' + prop, value.toString());
       return parseFloat(value.toString());
     }
     return 0;
   } else {
     // store it in cache
-    const attributeValue = el.getAttribute("kt-hidden-" + prop);
-    if (attributeValue || attributeValue === "0") {
+    const attributeValue = el.getAttribute('kt-hidden-' + prop);
+    if (attributeValue || attributeValue === '0') {
       return parseFloat(attributeValue);
     }
   }
 }
 
 function getElementActualHeight(el: HTMLElement) {
-  return getElementActualCss(el, "height", false);
+  return getElementActualCss(el, 'height', false);
 }
 
 function getElementActualWidth(el: HTMLElement, cache?: boolean) {
-  return getElementActualCss(el, "width", false);
+  return getElementActualCss(el, 'width', false);
 }
 
 function getElementIndex(element: HTMLElement) {
@@ -110,7 +110,7 @@ function getElementOffset(el: HTMLElement): OffsetModel {
   if (win) {
     return {
       top: rect.top + win.pageYOffset,
-      left: rect.left + win.pageXOffset,
+      left: rect.left + win.pageXOffset
     };
   }
 
@@ -155,17 +155,17 @@ function getHighestZindex(el: HTMLElement) {
     // Ignore z-index if position is set to a value where z-index is ignored by the browser
     // This makes behavior of this function consistent across browsers
     // WebKit always returns auto if the element is positioned
-    const position = buffer.style.getPropertyValue("position");
+    const position = buffer.style.getPropertyValue('position');
     if (
-      position === "absolute" ||
-      position === "relative" ||
-      position === "fixed"
+      position === 'absolute' ||
+      position === 'relative' ||
+      position === 'fixed'
     ) {
       // IE returns 0 when zIndex is not specified
       // other browsers return a string
       // we ignore the case of nested elements with an explicit value of 0
       // <div style="z-index: -10;"><div style="z-index: 0;"></div></div>
-      const value = parseInt(buffer.style.getPropertyValue("z-index"));
+      const value = parseInt(buffer.style.getPropertyValue('z-index'));
       if (!isNaN(value) && value !== 0) {
         return value;
       }
@@ -185,7 +185,7 @@ function getScrollTop(): number {
 function getViewPort(): ViewPortModel {
   return {
     width: window.innerWidth,
-    height: window.innerHeight,
+    height: window.innerHeight
   };
 }
 
@@ -197,7 +197,7 @@ function isElementHasClasses(
   element: HTMLElement,
   classesStr: string
 ): boolean {
-  const classes = classesStr.split(" ");
+  const classes = classesStr.split(' ');
   for (let i = 0; i < classes.length; i++) {
     if (!element.classList.contains(classes[i])) {
       return false;
@@ -260,7 +260,7 @@ function getElementChild(
 }
 
 function isMobileDevice(): boolean {
-  let test = getViewPort().width < +getBreakpoint("lg") ? true : false;
+  let test = getViewPort().width < +getBreakpoint('lg') ? true : false;
 
   if (test === false) {
     // For use within normal web clients
@@ -273,8 +273,8 @@ function isMobileDevice(): boolean {
 function slide(el: HTMLElement, dir: string, speed: number, callback: any) {
   if (
     !el ||
-    (dir === "up" && isVisibleElement(el) === false) ||
-    (dir === "down" && isVisibleElement(el) === true)
+    (dir === 'up' && isVisibleElement(el) === false) ||
+    (dir === 'down' && isVisibleElement(el) === true)
   ) {
     return;
   }
@@ -285,38 +285,38 @@ function slide(el: HTMLElement, dir: string, speed: number, callback: any) {
   let calcPaddingBottom: number = 0;
 
   if (
-    ElementStyleUtil.get(el, "padding-top") &&
-    DataUtil.get(el, "slide-padding-top") !== true
+    ElementStyleUtil.get(el, 'padding-top') &&
+    DataUtil.get(el, 'slide-padding-top') !== true
   ) {
     DataUtil.set(
       el,
-      "slide-padding-top",
-      ElementStyleUtil.get(el, "padding-top")
+      'slide-padding-top',
+      ElementStyleUtil.get(el, 'padding-top')
     );
   }
 
   if (
-    ElementStyleUtil.get(el, "padding-bottom") &&
-    DataUtil.has(el, "slide-padding-bottom") !== true
+    ElementStyleUtil.get(el, 'padding-bottom') &&
+    DataUtil.has(el, 'slide-padding-bottom') !== true
   ) {
     DataUtil.set(
       el,
-      "slide-padding-bottom",
-      ElementStyleUtil.get(el, "padding-bottom")
+      'slide-padding-bottom',
+      ElementStyleUtil.get(el, 'padding-bottom')
     );
   }
 
-  if (DataUtil.has(el, "slide-padding-top")) {
-    calcPaddingTop = parseInt(DataUtil.get(el, "slide-padding-top"));
+  if (DataUtil.has(el, 'slide-padding-top')) {
+    calcPaddingTop = parseInt(DataUtil.get(el, 'slide-padding-top'));
   }
 
-  if (DataUtil.has(el, "slide-padding-bottom")) {
-    calcPaddingBottom = parseInt(DataUtil.get(el, "slide-padding-bottom"));
+  if (DataUtil.has(el, 'slide-padding-bottom')) {
+    calcPaddingBottom = parseInt(DataUtil.get(el, 'slide-padding-bottom'));
   }
 
-  if (dir === "up") {
+  if (dir === 'up') {
     // up
-    el.style.cssText = "display: block; overflow: hidden;";
+    el.style.cssText = 'display: block; overflow: hidden;';
 
     if (calcPaddingTop) {
       ElementAnimateUtil.animate(
@@ -324,7 +324,7 @@ function slide(el: HTMLElement, dir: string, speed: number, callback: any) {
         calcPaddingTop,
         speed,
         function (value: number) {
-          el.style.paddingTop = calcPaddingTop - value + "px";
+          el.style.paddingTop = calcPaddingTop - value + 'px';
         }
       );
     }
@@ -335,7 +335,7 @@ function slide(el: HTMLElement, dir: string, speed: number, callback: any) {
         calcPaddingBottom,
         speed,
         function (value: number) {
-          el.style.paddingBottom = calcPaddingBottom - value + "px";
+          el.style.paddingBottom = calcPaddingBottom - value + 'px';
         }
       );
     }
@@ -345,20 +345,20 @@ function slide(el: HTMLElement, dir: string, speed: number, callback: any) {
       calcHeight || 0,
       speed,
       function (value: number) {
-        el.style.height = (calcHeight || 0) - value + "px";
+        el.style.height = (calcHeight || 0) - value + 'px';
       },
       function () {
-        el.style.height = "";
-        el.style.display = "none";
+        el.style.height = '';
+        el.style.display = 'none';
 
-        if (typeof callback === "function") {
+        if (typeof callback === 'function') {
           callback();
         }
       }
     );
-  } else if (dir === "down") {
+  } else if (dir === 'down') {
     // down
-    el.style.cssText = "display: block; overflow: hidden;";
+    el.style.cssText = 'display: block; overflow: hidden;';
 
     if (calcPaddingTop) {
       ElementAnimateUtil.animate(
@@ -367,10 +367,10 @@ function slide(el: HTMLElement, dir: string, speed: number, callback: any) {
         speed,
         function (value: number) {
           //
-          el.style.paddingTop = value + "px";
+          el.style.paddingTop = value + 'px';
         },
         function () {
-          el.style.paddingTop = "";
+          el.style.paddingTop = '';
         }
       );
     }
@@ -381,10 +381,10 @@ function slide(el: HTMLElement, dir: string, speed: number, callback: any) {
         calcPaddingBottom,
         speed,
         function (value: number) {
-          el.style.paddingBottom = value + "px";
+          el.style.paddingBottom = value + 'px';
         },
         function () {
-          el.style.paddingBottom = "";
+          el.style.paddingBottom = '';
         }
       );
     }
@@ -394,14 +394,14 @@ function slide(el: HTMLElement, dir: string, speed: number, callback: any) {
       calcHeight || 0,
       speed,
       function (value: number) {
-        el.style.height = value + "px";
+        el.style.height = value + 'px';
       },
       function () {
-        el.style.height = "";
-        el.style.display = "";
-        el.style.overflow = "";
+        el.style.height = '';
+        el.style.display = '';
+        el.style.overflow = '';
 
-        if (typeof callback === "function") {
+        if (typeof callback === 'function') {
           callback();
         }
       }
@@ -410,15 +410,15 @@ function slide(el: HTMLElement, dir: string, speed: number, callback: any) {
 }
 
 function slideUp(el: HTMLElement, speed: number, callback: any) {
-  slide(el, "up", speed, callback);
+  slide(el, 'up', speed, callback);
 }
 
 function slideDown(el: HTMLElement, speed: number, callback: any) {
-  slide(el, "down", speed, callback);
+  slide(el, 'down', speed, callback);
 }
 
 function getBreakpoint(breakpoint: string) {
-  let value: number | string = getCSSVariableValue("--bs-" + breakpoint);
+  let value: number | string = getCSSVariableValue('--bs-' + breakpoint);
   if (value) {
     value = parseInt(value.trim());
   }
@@ -428,7 +428,7 @@ function getBreakpoint(breakpoint: string) {
 
 function getAttributeValueByBreakpoint(incomingAttr: string): string | JSON {
   let value = toJSON(incomingAttr);
-  if (typeof value !== "object") {
+  if (typeof value !== 'object') {
     return incomingAttr;
   }
 
@@ -438,7 +438,7 @@ function getAttributeValueByBreakpoint(incomingAttr: string): string | JSON {
   let breakpoint;
 
   for (let key in value) {
-    if (key === "default") {
+    if (key === 'default') {
       breakpoint = 0;
     } else {
       breakpoint = getBreakpoint(key) ? +getBreakpoint(key) : parseInt(key);
@@ -464,7 +464,7 @@ function colorLighten(color: string, amount: number) {
     return c;
   };
 
-  color = color.indexOf("#") >= 0 ? color.substring(1, color.length) : color;
+  color = color.indexOf('#') >= 0 ? color.substring(1, color.length) : color;
   amount = parseInt(((255 * amount) / 100).toString());
   return (color = `#${addLight(color.substring(0, 2), amount)}${addLight(
     color.substring(2, 4),
@@ -483,7 +483,7 @@ function colorDarken(color: string, amount: number) {
     return c;
   };
 
-  color = color.indexOf("#") >= 0 ? color.substring(1, color.length) : color;
+  color = color.indexOf('#') >= 0 ? color.substring(1, color.length) : color;
   amount = parseInt(((255 * amount) / 100).toString());
 
   return (color = `#${subtractLight(
@@ -521,5 +521,5 @@ export {
   slideDown,
   getAttributeValueByBreakpoint,
   colorLighten,
-  colorDarken,
+  colorDarken
 };

@@ -1,9 +1,9 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { FC, useEffect, useRef, useState } from "react";
-import { KTSVG, toAbsoluteUrl } from "../../../helpers";
-import { Formik, Form, FormikValues, Field, ErrorMessage } from "formik";
-import * as Yup from "yup";
-import { StepperComponent } from "../../../assets/ts/components";
+import React, { FC, useEffect, useRef, useState } from 'react';
+import { KTSVG, toAbsoluteUrl } from '../../../helpers';
+import { Formik, Form, FormikValues, Field, ErrorMessage } from 'formik';
+import * as Yup from 'yup';
+import { StepperComponent } from '../../../assets/ts/components';
 
 interface ICreateAccount {
   appName: string;
@@ -20,38 +20,38 @@ interface ICreateAccount {
 }
 
 const inits: ICreateAccount = {
-  appName: "",
-  category: "1",
-  framework: "1",
-  dbName: "",
-  dbType: "1",
-  nameOnCard: "Max Doe",
-  cardNumber: "4111 1111 1111 1111",
-  cardExpiryMonth: "1",
-  cardExpiryYear: "2025",
-  cardCvv: "123",
-  saveCard: "1",
+  appName: '',
+  category: '1',
+  framework: '1',
+  dbName: '',
+  dbType: '1',
+  nameOnCard: 'Max Doe',
+  cardNumber: '4111 1111 1111 1111',
+  cardExpiryMonth: '1',
+  cardExpiryYear: '2025',
+  cardCvv: '123',
+  saveCard: '1'
 };
 
 const createAppSchema = [
   Yup.object({
-    appName: Yup.string().required().label("App name"),
-    category: Yup.string().required().label("Category"),
+    appName: Yup.string().required().label('App name'),
+    category: Yup.string().required().label('Category')
   }),
   Yup.object({
-    framework: Yup.string().required().label("Framework"),
+    framework: Yup.string().required().label('Framework')
   }),
   Yup.object({
-    dbName: Yup.string().required().label("Database name"),
-    dbType: Yup.string().required().label("Database engine"),
+    dbName: Yup.string().required().label('Database name'),
+    dbType: Yup.string().required().label('Database engine')
   }),
   Yup.object({
-    nameOnCard: Yup.string().required().label("Name"),
-    cardNumber: Yup.string().required().label("Card Number"),
-    cardExpiryMonth: Yup.string().required().label("Expiration Month"),
-    cardExpiryYear: Yup.string().required().label("Expiration Year"),
-    cardCvv: Yup.string().required().label("CVV"),
-  }),
+    nameOnCard: Yup.string().required().label('Name'),
+    cardNumber: Yup.string().required().label('Card Number'),
+    cardExpiryMonth: Yup.string().required().label('Expiration Month'),
+    cardExpiryYear: Yup.string().required().label('Expiration Year'),
+    cardCvv: Yup.string().required().label('CVV')
+  })
 ];
 
 const Main: FC = () => {
@@ -672,21 +672,21 @@ const Main: FC = () => {
                               <div className="position-absolute translate-middle-y top-50 end-0 me-5">
                                 <img
                                   src={toAbsoluteUrl(
-                                    "/media/svg/card-logos/visa.svg"
+                                    '/media/svg/card-logos/visa.svg'
                                   )}
                                   alt=""
                                   className="h-25px"
                                 />
                                 <img
                                   src={toAbsoluteUrl(
-                                    "/media/svg/card-logos/mastercard.svg"
+                                    '/media/svg/card-logos/mastercard.svg'
                                   )}
                                   alt=""
                                   className="h-25px"
                                 />
                                 <img
                                   src={toAbsoluteUrl(
-                                    "/media/svg/card-logos/american-express.svg"
+                                    '/media/svg/card-logos/american-express.svg'
                                   )}
                                   alt=""
                                   className="h-25px"
@@ -817,7 +817,7 @@ const Main: FC = () => {
                           <div className="text-center px-4 py-15">
                             <img
                               src={toAbsoluteUrl(
-                                "/media/illustrations/sketchy-1/9.png"
+                                '/media/illustrations/sketchy-1/9.png'
                               )}
                               alt=""
                               className="w-100 mh-300px"
@@ -850,10 +850,10 @@ const Main: FC = () => {
                             <span className="indicator-label">
                               {stepper.current?.currentStepIndex !==
                                 stepper.current?.totatStepsNumber! - 1 &&
-                                "Continue"}
+                                'Continue'}
                               {stepper.current?.currentStepIndex ===
                                 stepper.current?.totatStepsNumber! - 1 &&
-                                "Submit"}
+                                'Submit'}
                               <KTSVG
                                 path="/media/icons/duotune/arrows/arr064.svg"
                                 className="svg-icon-3 ms-2 me-0"

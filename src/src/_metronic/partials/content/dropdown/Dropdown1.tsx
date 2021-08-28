@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from "react";
+import React from 'react';
 
 export function Dropdown1() {
   return (
@@ -23,7 +23,7 @@ export function Dropdown1() {
               data-kt-select2="true"
               data-placeholder="Select option"
               data-allow-clear="true"
-              defaultValue={"1"}
+              defaultValue={'1'}
             >
               <option></option>
               <option value="1">Approved</option>

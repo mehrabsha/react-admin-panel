@@ -43,7 +43,7 @@
     }
 
     // Aside default enabled, aside header sticky & aside minimize modes
-    .aside-enabled.aside-fixed.toolbar-fixed[data-kt-aside-minimize="on"] & {
+    .aside-enabled.aside-fixed.toolbar-fixed[data-kt-aside-minimize='on'] & {
       left: get($aside-config, minimized-width);
       transition: left get($aside-config, transition-speed) ease;
     }
@@ -77,7 +77,7 @@
     }
 
     // Page title
-    .page-title[data-kt-swapper="true"] {
+    .page-title[data-kt-swapper='true'] {
       display: none !important;
     }
   }

@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useEffect, useRef } from "react";
-import ApexCharts, { ApexOptions } from "apexcharts";
-import { getCSS, getCSSVariableValue } from "../../../assets/ts/_utils";
+import React, { useEffect, useRef } from 'react';
+import ApexCharts, { ApexOptions } from 'apexcharts';
+import { getCSS, getCSSVariableValue } from '../../../assets/ts/_utils';
 
 type Props = {
   className: string;
@@ -15,7 +15,7 @@ const ChartsWidget8: React.FC<Props> = ({ className }) => {
       return;
     }
 
-    const height = parseInt(getCSS(chartRef.current, "height"));
+    const height = parseInt(getCSS(chartRef.current, 'height'));
 
     const chart = new ApexCharts(chartRef.current, getChartOptions(height));
     if (chart) {
@@ -74,7 +74,7 @@ const ChartsWidget8: React.FC<Props> = ({ className }) => {
         <div
           ref={chartRef}
           id="kt_charts_widget_8_chart"
-          style={{ height: "350px" }}
+          style={{ height: '350px' }}
           className="card-rounded-bottom"
         ></div>
         {/* end::Chart */}
@@ -87,139 +87,139 @@ const ChartsWidget8: React.FC<Props> = ({ className }) => {
 export { ChartsWidget8 };
 
 function getChartOptions(height: number): ApexOptions {
-  const labelColor = getCSSVariableValue("--bs-gray-500");
-  const borderColor = getCSSVariableValue("--bs-gray-200");
-  const strokeColor = getCSSVariableValue("--bs-gray-300");
+  const labelColor = getCSSVariableValue('--bs-gray-500');
+  const borderColor = getCSSVariableValue('--bs-gray-200');
+  const strokeColor = getCSSVariableValue('--bs-gray-300');
 
-  const color1 = getCSSVariableValue("--bs-warning");
-  const color1Light = getCSSVariableValue("--bs-light-warning");
+  const color1 = getCSSVariableValue('--bs-warning');
+  const color1Light = getCSSVariableValue('--bs-light-warning');
 
-  const color2 = getCSSVariableValue("--bs-success");
-  const color2Light = getCSSVariableValue("--bs-light-success");
+  const color2 = getCSSVariableValue('--bs-success');
+  const color2Light = getCSSVariableValue('--bs-light-success');
 
-  const color3 = getCSSVariableValue("--bs-primary");
-  const color3Light = getCSSVariableValue("--bs-light-primary");
+  const color3 = getCSSVariableValue('--bs-primary');
+  const color3Light = getCSSVariableValue('--bs-light-primary');
 
   return {
     series: [
       {
-        name: "Net Profit",
-        data: [30, 30, 50, 50, 35, 35],
+        name: 'Net Profit',
+        data: [30, 30, 50, 50, 35, 35]
       },
       {
-        name: "Revenue",
-        data: [55, 20, 20, 20, 70, 70],
+        name: 'Revenue',
+        data: [55, 20, 20, 20, 70, 70]
       },
       {
-        name: "Expenses",
-        data: [60, 60, 40, 40, 30, 30],
-      },
+        name: 'Expenses',
+        data: [60, 60, 40, 40, 30, 30]
+      }
     ],
     chart: {
-      fontFamily: "inherit",
-      type: "area",
+      fontFamily: 'inherit',
+      type: 'area',
       height: height,
       toolbar: {
-        show: false,
+        show: false
       },
       zoom: {
-        enabled: false,
+        enabled: false
       },
       sparkline: {
-        enabled: true,
-      },
+        enabled: true
+      }
     },
     plotOptions: {},
     legend: {
-      show: false,
+      show: false
     },
     dataLabels: {
-      enabled: false,
+      enabled: false
     },
     fill: {
-      type: "solid",
-      opacity: 1,
+      type: 'solid',
+      opacity: 1
     },
     stroke: {
-      curve: "smooth",
+      curve: 'smooth',
       show: true,
       width: 2,
-      colors: [color1, color2, color3],
+      colors: [color1, color2, color3]
     },
     xaxis: {
       offsetX: 0,
       offsetY: 0,
-      categories: ["Feb", "Mar", "Apr", "May", "Jun", "Jul"],
+      categories: ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
       axisBorder: {
-        show: false,
+        show: false
       },
       axisTicks: {
-        show: false,
+        show: false
       },
       labels: {
         show: false,
         style: {
           colors: labelColor,
-          fontSize: "12px",
-        },
+          fontSize: '12px'
+        }
       },
       crosshairs: {
         show: false,
-        position: "front",
+        position: 'front',
         stroke: {
           color: strokeColor,
           width: 1,
-          dashArray: 3,
-        },
+          dashArray: 3
+        }
       },
       tooltip: {
         enabled: true,
         formatter: undefined,
         offsetY: 0,
         style: {
-          fontSize: "12px",
-        },
-      },
+          fontSize: '12px'
+        }
+      }
     },
     yaxis: {
       labels: {
         show: false,
         style: {
           colors: labelColor,
-          fontSize: "12px",
-        },
-      },
+          fontSize: '12px'
+        }
+      }
     },
     states: {
       normal: {
         filter: {
-          type: "none",
-          value: 0,
-        },
+          type: 'none',
+          value: 0
+        }
       },
       hover: {
         filter: {
-          type: "none",
-          value: 0,
-        },
+          type: 'none',
+          value: 0
+        }
       },
       active: {
         allowMultipleDataPointsSelection: false,
         filter: {
-          type: "none",
-          value: 0,
-        },
-      },
+          type: 'none',
+          value: 0
+        }
+      }
     },
     tooltip: {
       style: {
-        fontSize: "12px",
+        fontSize: '12px'
       },
       y: {
         formatter: function (val) {
-          return "$" + val + " thousands";
-        },
-      },
+          return '$' + val + ' thousands';
+        }
+      }
     },
     colors: [color1Light, color2Light, color3Light],
     grid: {
@@ -229,13 +229,13 @@ function getChartOptions(height: number): ApexOptions {
         top: 0,
         bottom: 0,
         left: 0,
-        right: 0,
-      },
+        right: 0
+      }
     },
     markers: {
       colors: [color1, color2, color3],
       strokeColors: [color1, color2, color3],
-      strokeWidth: 3,
-    },
+      strokeWidth: 3
+    }
   };
 }

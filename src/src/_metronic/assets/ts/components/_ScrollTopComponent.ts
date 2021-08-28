@@ -6,8 +6,8 @@ import {
   stringSnakeToCamel,
   getUniqueIdWithPrefix,
   DataUtil,
-  ElementAnimateUtil,
-} from "../_utils/index";
+  ElementAnimateUtil
+} from '../_utils/index';
 
 export interface IScrollTopOptions {
   offset: number;
@@ -16,7 +16,7 @@ export interface IScrollTopOptions {
 
 const defaultScrollTopOptions: IScrollTopOptions = {
   offset: 200,
-  speed: 600,
+  speed: 600
 };
 
 class ScrollTopComponent {
@@ -27,45 +27,45 @@ class ScrollTopComponent {
   constructor(_element: HTMLElement, options: IScrollTopOptions) {
     this.element = _element;
     this.options = Object.assign(defaultScrollTopOptions, options);
-    this.instanceUid = getUniqueIdWithPrefix("scrolltop");
+    this.instanceUid = getUniqueIdWithPrefix('scrolltop');
 
     // Event Handlers
     this._handlers();
 
     // Bind Instance
-    DataUtil.set(this.element, "scrolltop", this);
+    DataUtil.set(this.element, 'scrolltop', this);
   }
 
   private _handlers = () => {
     let timer: number;
-    window.addEventListener("scroll", () => {
+    window.addEventListener('scroll', () => {
       throttle(timer, () => {
         this._scroll();
       });
     });
 
-    this.element.addEventListener("click", (e: Event) => {
+    this.element.addEventListener('click', (e: Event) => {
       e.preventDefault();
       this._go();
     });
   };
 
   private _scroll = () => {
-    const offset = parseInt(this._getOption("offset") as string);
+    const offset = parseInt(this._getOption('offset') as string);
     const pos = getScrollTop(); // current vertical position
     if (pos > offset) {
-      if (!document.body.hasAttribute("data-kt-scrolltop")) {
-        document.body.setAttribute("data-kt-scrolltop", "on");
+      if (!document.body.hasAttribute('data-kt-scrolltop')) {
+        document.body.setAttribute('data-kt-scrolltop', 'on');
       }
     } else {
-      if (document.body.hasAttribute("data-kt-scrolltop")) {
-        document.body.removeAttribute("data-kt-scrolltop");
+      if (document.body.hasAttribute('data-kt-scrolltop')) {
+        document.body.removeAttribute('data-kt-scrolltop');
       }
     }
   };
 
   private _go = () => {
-    const speed = parseInt(this._getOption("speed") as string);
+    const speed = parseInt(this._getOption('speed') as string);
     ElementAnimateUtil.scrollTop(0, speed);
   };
 
@@ -73,7 +73,7 @@ class ScrollTopComponent {
     const attr = this.element.getAttribute(`data-kt-scrolltop-${name}`);
     if (attr) {
       const value = getAttributeValueByBreakpoint(attr);
-      return value !== null && String(value) === "true";
+      return value !== null && String(value) === 'true';
     }
 
     const optionName = stringSnakeToCamel(name);
@@ -100,7 +100,7 @@ class ScrollTopComponent {
 
   // Static methods
   public static getInstance = (el: HTMLElement) => {
-    const scrollTop = DataUtil.get(el, "scrolltop");
+    const scrollTop = DataUtil.get(el, 'scrolltop');
     if (scrollTop) {
       return scrollTop;
     }
@@ -110,7 +110,7 @@ class ScrollTopComponent {
 
   public static createInstances = (selector: string) => {
     const elements = document.body.querySelectorAll(selector);
-    elements.forEach((el) => {
+    elements.forEach(el => {
       const item = el as HTMLElement;
       let scrollTop = ScrollTopComponent.getInstance(item);
       if (!scrollTop) {

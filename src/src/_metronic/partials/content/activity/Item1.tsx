@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import { FC } from "react";
-import { KTSVG, toAbsoluteUrl } from "../../../helpers";
+import { FC } from 'react';
+import { KTSVG, toAbsoluteUrl } from '../../../helpers';
 
 const Item1: FC = () => {
   return (
@@ -32,7 +32,7 @@ const Item1: FC = () => {
               data-bs-placement="top"
               title="Nina Nilson"
             >
-              <img src={toAbsoluteUrl("/media/avatars/150-11.jpg")} alt="img" />
+              <img src={toAbsoluteUrl('/media/avatars/150-11.jpg')} alt="img" />
             </div>
           </div>
         </div>
@@ -55,14 +55,14 @@ const Item1: FC = () => {
             <div className="symbol-group symbol-hover flex-nowrap flex-grow-1 min-w-100px pe-2">
               <div className="symbol symbol-circle symbol-25px">
                 <img
-                  src={toAbsoluteUrl("/media/avatars/150-3.jpg")}
+                  src={toAbsoluteUrl('/media/avatars/150-3.jpg')}
                   alt="img"
                 />
               </div>
 
               <div className="symbol symbol-circle symbol-25px">
                 <img
-                  src={toAbsoluteUrl("/media/avatars/150-11.jpg")}
+                  src={toAbsoluteUrl('/media/avatars/150-11.jpg')}
                   alt="img"
                 />
               </div>
@@ -103,7 +103,7 @@ const Item1: FC = () => {
             <div className="symbol-group symbol-hover flex-nowrap flex-grow-1 min-w-100px">
               <div className="symbol symbol-circle symbol-25px">
                 <img
-                  src={toAbsoluteUrl("/media/avatars/150-5.jpg")}
+                  src={toAbsoluteUrl('/media/avatars/150-5.jpg')}
                   alt="img"
                 />
               </div>

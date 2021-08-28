@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useEffect, useRef } from "react";
-import ApexCharts, { ApexOptions } from "apexcharts";
-import { getCSSVariableValue } from "../../../assets/ts/_utils";
+import React, { useEffect, useRef } from 'react';
+import ApexCharts, { ApexOptions } from 'apexcharts';
+import { getCSSVariableValue } from '../../../assets/ts/_utils';
 
 type Props = {
   className: string;
@@ -12,7 +12,7 @@ type Props = {
 const MixedWidget11: React.FC<Props> = ({
   className,
   chartColor,
-  chartHeight,
+  chartHeight
 }) => {
   const chartRef = useRef<HTMLDivElement | null>(null);
 
@@ -62,118 +62,118 @@ const MixedWidget11: React.FC<Props> = ({
 };
 
 const chartOptions = (chartColor: string, chartHeight: string): ApexOptions => {
-  const labelColor = getCSSVariableValue("--bs-gray-500");
-  const borderColor = getCSSVariableValue("--bs-gray-200");
-  const secondaryColor = getCSSVariableValue("--bs-gray-300");
-  const baseColor = getCSSVariableValue("--bs-" + chartColor);
+  const labelColor = getCSSVariableValue('--bs-gray-500');
+  const borderColor = getCSSVariableValue('--bs-gray-200');
+  const secondaryColor = getCSSVariableValue('--bs-gray-300');
+  const baseColor = getCSSVariableValue('--bs-' + chartColor);
 
   return {
     series: [
       {
-        name: "Net Profit",
-        data: [50, 60, 70, 80, 60, 50, 70, 60],
+        name: 'Net Profit',
+        data: [50, 60, 70, 80, 60, 50, 70, 60]
       },
       {
-        name: "Revenue",
-        data: [50, 60, 70, 80, 60, 50, 70, 60],
-      },
+        name: 'Revenue',
+        data: [50, 60, 70, 80, 60, 50, 70, 60]
+      }
     ],
     chart: {
-      fontFamily: "inherit",
-      type: "bar",
+      fontFamily: 'inherit',
+      type: 'bar',
       height: chartHeight,
       toolbar: {
-        show: false,
-      },
+        show: false
+      }
     },
     plotOptions: {
       bar: {
         horizontal: false,
-        columnWidth: "50%",
-        borderRadius: 5,
-      },
+        columnWidth: '50%',
+        borderRadius: 5
+      }
     },
     legend: {
-      show: false,
+      show: false
     },
     dataLabels: {
-      enabled: false,
+      enabled: false
     },
     stroke: {
       show: true,
       width: 2,
-      colors: ["transparent"],
+      colors: ['transparent']
     },
     xaxis: {
-      categories: ["Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep"],
+      categories: ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
       axisBorder: {
-        show: false,
+        show: false
       },
       axisTicks: {
-        show: false,
+        show: false
       },
       labels: {
         style: {
           colors: labelColor,
-          fontSize: "12px",
-        },
-      },
+          fontSize: '12px'
+        }
+      }
     },
     yaxis: {
       labels: {
         style: {
           colors: labelColor,
-          fontSize: "12px",
-        },
-      },
+          fontSize: '12px'
+        }
+      }
     },
     fill: {
-      type: "solid",
+      type: 'solid'
     },
     states: {
       normal: {
         filter: {
-          type: "none",
-          value: 0,
-        },
+          type: 'none',
+          value: 0
+        }
       },
       hover: {
         filter: {
-          type: "none",
-          value: 0,
-        },
+          type: 'none',
+          value: 0
+        }
       },
       active: {
         allowMultipleDataPointsSelection: false,
         filter: {
-          type: "none",
-          value: 0,
-        },
-      },
+          type: 'none',
+          value: 0
+        }
+      }
     },
     tooltip: {
       style: {
-        fontSize: "12px",
+        fontSize: '12px'
       },
       y: {
         formatter: function (val) {
-          return "$" + val + " revenue";
-        },
-      },
+          return '$' + val + ' revenue';
+        }
+      }
     },
     colors: [baseColor, secondaryColor],
     grid: {
       padding: {
-        top: 10,
+        top: 10
       },
       borderColor: borderColor,
       strokeDashArray: 4,
       yaxis: {
         lines: {
-          show: true,
-        },
-      },
-    },
+          show: true
+        }
+      }
+    }
   };
 };
 

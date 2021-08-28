@@ -4,8 +4,8 @@ import React, {
   createContext,
   useContext,
   useEffect,
-  useState,
-} from "react";
+  useState
+} from 'react';
 
 export interface PageLink {
   title: string;
@@ -26,12 +26,12 @@ export interface PageDataContextModel {
 const PageDataContext = createContext<PageDataContextModel>({
   setPageTitle: (_title: string) => {},
   setPageBreadcrumbs: (_breadcrumbs: Array<PageLink>) => {},
-  setPageDescription: (_description: string) => {},
+  setPageDescription: (_description: string) => {}
 });
 
 const PageDataProvider: React.FC = ({ children }) => {
-  const [pageTitle, setPageTitle] = useState<string>("");
-  const [pageDescription, setPageDescription] = useState<string>("");
+  const [pageTitle, setPageTitle] = useState<string>('');
+  const [pageDescription, setPageDescription] = useState<string>('');
   const [pageBreadcrumbs, setPageBreadcrumbs] = useState<Array<PageLink>>([]);
   const value: PageDataContextModel = {
     pageTitle,
@@ -39,7 +39,7 @@ const PageDataProvider: React.FC = ({ children }) => {
     pageDescription,
     setPageDescription,
     pageBreadcrumbs,
-    setPageBreadcrumbs,
+    setPageBreadcrumbs
   };
   return (
     <PageDataContext.Provider value={value}>
@@ -65,7 +65,7 @@ const PageTitle: FC<Props> = ({ children, description, breadcrumbs }) => {
       setPageTitle(children.toString());
     }
     return () => {
-      setPageTitle("");
+      setPageTitle('');
     };
   }, [children]);
 
@@ -74,7 +74,7 @@ const PageTitle: FC<Props> = ({ children, description, breadcrumbs }) => {
       setPageDescription(description);
     }
     return () => {
-      setPageDescription("");
+      setPageDescription('');
     };
   }, [description]);
 
@@ -97,7 +97,7 @@ const PageDescription: React.FC = ({ children }) => {
       setPageDescription(children.toString());
     }
     return () => {
-      setPageDescription("");
+      setPageDescription('');
     };
   }, [children]);
   return <></>;

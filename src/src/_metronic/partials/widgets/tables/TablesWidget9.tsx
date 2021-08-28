@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from "react";
-import { KTSVG, toAbsoluteUrl } from "../../../helpers";
+import React from 'react';
+import { KTSVG, toAbsoluteUrl } from '../../../helpers';
 
 type Props = {
   className: string;
@@ -82,7 +82,7 @@ const TablesWidget9: React.FC<Props> = ({ className }) => {
                   <div className="d-flex align-items-center">
                     <div className="symbol symbol-45px me-5">
                       <img
-                        src={toAbsoluteUrl("/media/avatars/150-11.jpg")}
+                        src={toAbsoluteUrl('/media/avatars/150-11.jpg')}
                         alt=""
                       />
                     </div>
@@ -119,7 +119,7 @@ const TablesWidget9: React.FC<Props> = ({ className }) => {
                       <div
                         className="progress-bar bg-primary"
                         role="progressbar"
-                        style={{ width: "50%" }}
+                        style={{ width: '50%' }}
                       ></div>
                     </div>
                   </div>
@@ -170,7 +170,7 @@ const TablesWidget9: React.FC<Props> = ({ className }) => {
                   <div className="d-flex align-items-center">
                     <div className="symbol symbol-45px me-5">
                       <img
-                        src={toAbsoluteUrl("/media/avatars/150-3.jpg")}
+                        src={toAbsoluteUrl('/media/avatars/150-3.jpg')}
                         alt=""
                       />
                     </div>
@@ -207,7 +207,7 @@ const TablesWidget9: React.FC<Props> = ({ className }) => {
                       <div
                         className="progress-bar bg-danger"
                         role="progressbar"
-                        style={{ width: "70%" }}
+                        style={{ width: '70%' }}
                       ></div>
                     </div>
                   </div>
@@ -258,7 +258,7 @@ const TablesWidget9: React.FC<Props> = ({ className }) => {
                   <div className="d-flex align-items-center">
                     <div className="symbol symbol-45px me-5">
                       <img
-                        src={toAbsoluteUrl("/media/avatars/150-4.jpg")}
+                        src={toAbsoluteUrl('/media/avatars/150-4.jpg')}
                         alt=""
                       />
                     </div>
@@ -295,7 +295,7 @@ const TablesWidget9: React.FC<Props> = ({ className }) => {
                       <div
                         className="progress-bar bg-success"
                         role="progressbar"
-                        style={{ width: "60%" }}
+                        style={{ width: '60%' }}
                       ></div>
                     </div>
                   </div>
@@ -346,7 +346,7 @@ const TablesWidget9: React.FC<Props> = ({ className }) => {
                   <div className="d-flex align-items-center">
                     <div className="symbol symbol-45px me-5">
                       <img
-                        src={toAbsoluteUrl("/media/avatars/150-5.jpg")}
+                        src={toAbsoluteUrl('/media/avatars/150-5.jpg')}
                         alt=""
                       />
                     </div>
@@ -383,7 +383,7 @@ const TablesWidget9: React.FC<Props> = ({ className }) => {
                       <div
                         className="progress-bar bg-warning"
                         role="progressbar"
-                        style={{ width: "50%" }}
+                        style={{ width: '50%' }}
                       ></div>
                     </div>
                   </div>
@@ -434,7 +434,7 @@ const TablesWidget9: React.FC<Props> = ({ className }) => {
                   <div className="d-flex align-items-center">
                     <div className="symbol symbol-45px me-5">
                       <img
-                        src={toAbsoluteUrl("/media/avatars/150-6.jpg")}
+                        src={toAbsoluteUrl('/media/avatars/150-6.jpg')}
                         alt=""
                       />
                     </div>
@@ -471,7 +471,7 @@ const TablesWidget9: React.FC<Props> = ({ className }) => {
                       <div
                         className="progress-bar bg-info"
                         role="progressbar"
-                        style={{ width: "90%" }}
+                        style={{ width: '90%' }}
                       ></div>
                     </div>
                   </div>

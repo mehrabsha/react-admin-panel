@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from "react";
-import { KTSVG, toAbsoluteUrl } from "../../../helpers";
-import { Dropdown2 } from "../../content/dropdown/Dropdown2";
+import React from 'react';
+import { KTSVG, toAbsoluteUrl } from '../../../helpers';
+import { Dropdown2 } from '../../content/dropdown/Dropdown2';
 
 type Props = {
   className: string;
@@ -18,7 +18,7 @@ const FeedsWidget3: React.FC<Props> = ({ className }) => {
           <div className="d-flex align-items-center flex-grow-1">
             {/* begin::Avatar */}
             <div className="symbol symbol-45px me-5">
-              <img src={toAbsoluteUrl("/media/avatars/150-10.jpg")} alt="" />
+              <img src={toAbsoluteUrl('/media/avatars/150-10.jpg')} alt="" />
             </div>
             {/* end::Avatar */}
 
@@ -102,7 +102,7 @@ const FeedsWidget3: React.FC<Props> = ({ className }) => {
           <div className="d-flex mb-5">
             {/* begin::Avatar */}
             <div className="symbol symbol-45px me-5">
-              <img src={toAbsoluteUrl("/media/avatars/150-11.jpg")} alt="" />
+              <img src={toAbsoluteUrl('/media/avatars/150-11.jpg')} alt="" />
             </div>
             {/* end::Avatar */}
 
@@ -143,7 +143,7 @@ const FeedsWidget3: React.FC<Props> = ({ className }) => {
           <div className="d-flex">
             {/* begin::Avatar */}
             <div className="symbol symbol-45px me-5">
-              <img src={toAbsoluteUrl("/media/avatars/150-8.jpg")} alt="" />
+              <img src={toAbsoluteUrl('/media/avatars/150-8.jpg')} alt="" />
             </div>
             {/* end::Avatar */}
 

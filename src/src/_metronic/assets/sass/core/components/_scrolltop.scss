@@ -39,7 +39,7 @@
     }
   }
 
-  [data-kt-scrolltop="on"] & {
+  [data-kt-scrolltop='on'] & {
     opacity: 0.3;
     animation: animation-scrolltop 0.4s ease-out 1;
     display: flex;

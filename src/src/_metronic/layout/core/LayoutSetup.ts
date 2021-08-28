@@ -8,12 +8,12 @@ import {
   ILayoutCSSClasses,
   ILayoutHTMLAttributes,
   ILayoutCSSVariables,
-  IPageTitle,
-} from "./LayoutModels";
-import { DefaultLayoutConfig } from "./DefaultLayoutConfig";
+  IPageTitle
+} from './LayoutModels';
+import { DefaultLayoutConfig } from './DefaultLayoutConfig';
 
 const LAYOUT_CONFIG_KEY =
-  process.env.REACT_APP_BASE_LAYOUT_CONFIG_KEY || "LayoutConfig";
+  process.env.REACT_APP_BASE_LAYOUT_CONFIG_KEY || 'LayoutConfig';
 
 export function getLayout(): ILayout {
   const ls = localStorage.getItem(LAYOUT_CONFIG_KEY);
@@ -50,7 +50,7 @@ export function getEmptyCssClasses() {
     contentContainer: [],
     footerContainer: [],
     sidebar: [],
-    pageTitle: [],
+    pageTitle: []
   };
 }
 
@@ -60,13 +60,13 @@ export function getEmptyHTMLAttributes() {
     headerMobile: new Map(),
     headerMenu: new Map(),
     headerContainer: new Map(),
-    pageTitle: new Map(),
+    pageTitle: new Map()
   };
 }
 
 export function getEmptyCSSVariables() {
   return {
-    body: new Map(),
+    body: new Map()
   };
 }
 
@@ -90,11 +90,11 @@ export class LayoutSetup {
   }
 
   private static initLayout(config: ILayout): void {
-    Array.from(document.body.attributes).forEach((attr) => {
+    Array.from(document.body.attributes).forEach(attr => {
       document.body.removeAttribute(attr.name);
     });
-    document.body.setAttribute("style", "");
-    document.body.setAttribute("id", "kt_body");
+    document.body.setAttribute('style', '');
+    document.body.setAttribute('id', 'kt_body');
     if (config.main?.body?.backgroundImage) {
       document.body.style.backgroundImage = `url('${config.main.body.backgroundImage}')`;
     }
@@ -111,15 +111,15 @@ export class LayoutSetup {
 
   private static initHeader(config: IHeader): void {
     LayoutSetup.classes.headerContainer.push(
-      config.width === "fluid" ? "container-fluid" : "container"
+      config.width === 'fluid' ? 'container-fluid' : 'container'
     );
 
     if (config.fixed.desktop) {
-      document.body.classList.add("header-fixed");
+      document.body.classList.add('header-fixed');
     }
 
     if (config.fixed.tabletAndMobile) {
-      document.body.classList.add("header-tablet-and-mobile-fixed");
+      document.body.classList.add('header-tablet-and-mobile-fixed');
     }
   }
 
@@ -128,24 +128,24 @@ export class LayoutSetup {
       return;
     }
 
-    document.body.classList.add("toolbar-enabled");
+    document.body.classList.add('toolbar-enabled');
     LayoutSetup.classes.toolbarContainer.push(
-      config.width === "fluid" ? "container-fluid" : "container"
+      config.width === 'fluid' ? 'container-fluid' : 'container'
     );
 
     if (config.fixed.desktop) {
-      document.body.classList.add("toolbar-fixed");
+      document.body.classList.add('toolbar-fixed');
     }
 
     if (config.fixed.tabletAndMobileMode) {
-      document.body.classList.add("toolbar-tablet-and-mobile-fixed");
+      document.body.classList.add('toolbar-tablet-and-mobile-fixed');
     }
 
     // Height setup
     const type = config.layout;
     const typeOptions = config.layouts[type];
     if (typeOptions) {
-      let bodyStyles: string = "";
+      let bodyStyles: string = '';
       if (typeOptions.height) {
         bodyStyles += ` --kt-toolbar-height: ${typeOptions.height};`;
       }
@@ -153,7 +153,7 @@ export class LayoutSetup {
       if (typeOptions.heightAndTabletMobileMode) {
         bodyStyles += ` --kt-toolbar-height-tablet-and-mobile: ${typeOptions.heightAndTabletMobileMode};`;
       }
-      document.body.setAttribute("style", bodyStyles);
+      document.body.setAttribute('style', bodyStyles);
     }
   }
 
@@ -162,23 +162,23 @@ export class LayoutSetup {
       return;
     }
 
-    if (config.direction === "column") {
-      this.classes.pageTitle.push("flex-column");
-      this.classes.pageTitle.push("align-items-start");
+    if (config.direction === 'column') {
+      this.classes.pageTitle.push('flex-column');
+      this.classes.pageTitle.push('align-items-start');
     } else {
-      this.classes.pageTitle.push("align-items-center");
-      this.classes.pageTitle.push("flex-wrap");
+      this.classes.pageTitle.push('align-items-center');
+      this.classes.pageTitle.push('flex-wrap');
     }
-    this.classes.pageTitle.push("me-3");
+    this.classes.pageTitle.push('me-3');
 
     if (config.responsive) {
-      this.classes.pageTitle.push("mb-5");
-      this.classes.pageTitle.push("mb-lg-0");
+      this.classes.pageTitle.push('mb-5');
+      this.classes.pageTitle.push('mb-lg-0');
 
-      LayoutSetup.attributes.pageTitle.set("data-kt-swapper", true);
-      LayoutSetup.attributes.pageTitle.set("data-kt-swapper-mode", "prepend");
+      LayoutSetup.attributes.pageTitle.set('data-kt-swapper', true);
+      LayoutSetup.attributes.pageTitle.set('data-kt-swapper-mode', 'prepend');
       LayoutSetup.attributes.pageTitle.set(
-        "data-kt-swapper-parent",
+        'data-kt-swapper-parent',
         `{ default: '#kt_content_container', '${config.responsiveBreakpoint}': '${config.responsiveTarget}'}`
       );
     }
@@ -186,7 +186,7 @@ export class LayoutSetup {
 
   private static initContent(config: IContent): void {
     LayoutSetup.classes.contentContainer.push(
-      config.width === "fluid" ? "container-fluid" : "container"
+      config.width === 'fluid' ? 'container-fluid' : 'container'
     );
     // if (Theme::getOption('layout', 'content/container-class')) {
     // 	Theme::addHtmlClass('content-container', Theme::getOption('layout', 'content/container-class'));
@@ -200,22 +200,22 @@ export class LayoutSetup {
     }
 
     // Enable Aside
-    document.body.classList.add("aside-enabled");
+    document.body.classList.add('aside-enabled');
     LayoutSetup.classes.aside.push(`aside-${config.theme}`);
 
     // Fixed Aside
     if (config.fixed) {
-      document.body.classList.add("aside-fixed");
+      document.body.classList.add('aside-fixed');
     }
 
     // Default minimized
     if (config.minimized) {
-      document.body.setAttribute("data-kt-aside-minimize", "on");
+      document.body.setAttribute('data-kt-aside-minimize', 'on');
     }
 
     // Hoverable on minimize
     if (config.hoverable) {
-      LayoutSetup.classes.aside.push("aside-hoverable");
+      LayoutSetup.classes.aside.push('aside-hoverable');
     }
   }
 
@@ -250,18 +250,18 @@ export class LayoutSetup {
 
   private static initFooter(config: IFooter): void {
     LayoutSetup.classes.footerContainer.push(
-      `container${config.width === "fluid" ? "-fluid" : ""}`
+      `container${config.width === 'fluid' ? '-fluid' : ''}`
     );
   }
 
   private static initConfig(config: ILayout): void {
     if (config.main?.darkSkinEnabled) {
-      document.body.classList.add("dark-skin");
+      document.body.classList.add('dark-skin');
     }
 
     // Init layout
     LayoutSetup.initLayout(config);
-    if (config.main?.type !== "default") {
+    if (config.main?.type !== 'default') {
       return;
     }
 

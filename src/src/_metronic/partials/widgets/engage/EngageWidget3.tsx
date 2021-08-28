@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from "react";
-import { toAbsoluteUrl } from "../../../helpers";
+import React from 'react';
+import { toAbsoluteUrl } from '../../../helpers';
 
 type Props = {
   className: string;
@@ -11,9 +11,9 @@ type Props = {
 
 const EngageWidget3: React.FC<Props> = ({
   className,
-  imagePath = "",
-  innerPadding = "",
-  color = "primary",
+  imagePath = '',
+  innerPadding = '',
+  color = 'primary'
 }) => {
   return (
     <div className={`card card-custom ${className}`}>
@@ -25,7 +25,7 @@ const EngageWidget3: React.FC<Props> = ({
         <div
           className="bgi-no-repeat bgi-position-center bgi-size-cover h-300px h-md-auto h-lg-300px h-xxl-auto mw-100 w-650px mx-auto"
           style={{
-            backgroundImage: `url('${toAbsoluteUrl("/media/products/12.png")}'`,
+            backgroundImage: `url('${toAbsoluteUrl('/media/products/12.png')}'`
           }}
         ></div>
         {/*end::Image*/}

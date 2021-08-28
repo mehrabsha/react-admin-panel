@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from "react";
-import { toAbsoluteUrl } from "../../../helpers";
+import React from 'react';
+import { toAbsoluteUrl } from '../../../helpers';
 
 type Props = {
   className: string;
@@ -15,7 +15,7 @@ const MixedWidget5: React.FC<Props> = ({
   time,
   image,
   title,
-  description,
+  description
 }) => {
   return (
     <div className={`card ${className}`}>
@@ -62,7 +62,7 @@ const MixedWidget5: React.FC<Props> = ({
             data-bs-toggle="tooltip"
             title="Ana Stone"
           >
-            <img src={toAbsoluteUrl("/media/avatars/150-1.jpg")} alt="" />
+            <img src={toAbsoluteUrl('/media/avatars/150-1.jpg')} alt="" />
           </a>
 
           <a
@@ -71,7 +71,7 @@ const MixedWidget5: React.FC<Props> = ({
             data-bs-toggle="tooltip"
             title="Mark Larson"
           >
-            <img src={toAbsoluteUrl("/media/avatars/150-4.jpg")} alt="" />
+            <img src={toAbsoluteUrl('/media/avatars/150-4.jpg')} alt="" />
           </a>
 
           <a
@@ -80,7 +80,7 @@ const MixedWidget5: React.FC<Props> = ({
             data-bs-toggle="tooltip"
             title="Sam Harris"
           >
-            <img src={toAbsoluteUrl("/media/avatars/150-8.jpg")} alt="" />
+            <img src={toAbsoluteUrl('/media/avatars/150-8.jpg')} alt="" />
           </a>
         </div>
         {/* end::Team */}

@@ -1,10 +1,10 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import clsx from "clsx";
-import React, { useState, useEffect } from "react";
-import ApexCharts from "apexcharts";
-import { toAbsoluteUrl, KTSVG } from "../../../helpers";
-import { Dropdown1 } from "../../content/dropdown/Dropdown1";
+import clsx from 'clsx';
+import React, { useState, useEffect } from 'react';
+import ApexCharts from 'apexcharts';
+import { toAbsoluteUrl, KTSVG } from '../../../helpers';
+import { Dropdown1 } from '../../content/dropdown/Dropdown1';
 
 const chartsData: Array<{
   tabId: number;
@@ -13,29 +13,29 @@ const chartsData: Array<{
 }> = [
   {
     tabId: 0,
-    selector: "#kt_sidebar_tab_1_chart",
-    values: [40, 30, 25, 40, 50, 30],
+    selector: '#kt_sidebar_tab_1_chart',
+    values: [40, 30, 25, 40, 50, 30]
   },
   {
     tabId: 1,
-    selector: "#kt_sidebar_tab_2_chart",
-    values: [30, 30, 25, 45, 30, 40],
+    selector: '#kt_sidebar_tab_2_chart',
+    values: [30, 30, 25, 45, 30, 40]
   },
   {
     tabId: 2,
-    selector: "#kt_sidebar_tab_3_chart",
-    values: [25, 30, 40, 30, 35, 30],
+    selector: '#kt_sidebar_tab_3_chart',
+    values: [25, 30, 40, 30, 35, 30]
   },
   {
     tabId: 3,
-    selector: "#kt_sidebar_tab_4_chart",
-    values: [25, 30, 35, 40, 50, 30],
+    selector: '#kt_sidebar_tab_4_chart',
+    values: [25, 30, 35, 40, 50, 30]
   },
   {
     tabId: 4,
-    selector: "#kt_sidebar_tab_5_chart",
-    values: [40, 20, 50, 50, 55, 45],
-  },
+    selector: '#kt_sidebar_tab_5_chart',
+    values: [40, 20, 50, 50, 55, 45]
+  }
 ];
 
 export function SidebarGeneral() {
@@ -62,113 +62,113 @@ export function SidebarGeneral() {
         activeChart.destroy();
       }
 
-      const height = parseInt(getCss(element as HTMLElement, "height"));
+      const height = parseInt(getCss(element as HTMLElement, 'height'));
 
       const options = {
         series: [
           {
-            name: "Profit",
-            data: chartData.values,
-          },
+            name: 'Profit',
+            data: chartData.values
+          }
         ],
         chart: {
-          fontFamily: "inherit",
-          type: "bar",
+          fontFamily: 'inherit',
+          type: 'bar',
           height: height,
           toolbar: {
-            show: false,
-          },
+            show: false
+          }
         },
         plotOptions: {
           bar: {
             horizontal: false,
-            columnWidth: ["30%"],
-            endingShape: "rounded",
-          },
+            columnWidth: ['30%'],
+            endingShape: 'rounded'
+          }
         },
         legend: {
-          show: false,
+          show: false
         },
         dataLabels: {
-          enabled: false,
+          enabled: false
         },
         stroke: {
           show: true,
           width: 2,
-          colors: ["transparent"],
+          colors: ['transparent']
         },
         xaxis: {
           crosshairs: {
-            show: false,
+            show: false
           },
-          categories: ["Feb", "Mar", "Apr", "May", "Jun", "Jul"],
+          categories: ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
           axisBorder: {
-            show: false,
+            show: false
           },
           axisTicks: {
-            show: false,
+            show: false
           },
           labels: {
             style: {
-              colors: "#823FD9",
-              fontSize: "12px",
-            },
-          },
+              colors: '#823FD9',
+              fontSize: '12px'
+            }
+          }
         },
         yaxis: {
           crosshairs: {
-            show: false,
+            show: false
           },
           labels: {
             style: {
-              colors: "#823FD9",
-              fontSize: "12px",
-            },
-          },
+              colors: '#823FD9',
+              fontSize: '12px'
+            }
+          }
         },
         states: {
           normal: {
             filter: {
-              type: "none",
-              value: 0,
-            },
+              type: 'none',
+              value: 0
+            }
           },
           hover: {
             filter: {
-              type: "none",
-            },
+              type: 'none'
+            }
           },
           active: {
             allowMultipleDataPointsSelection: false,
             filter: {
-              type: "none",
-              value: 0,
-            },
-          },
+              type: 'none',
+              value: 0
+            }
+          }
         },
         fill: {
-          opacity: 1,
+          opacity: 1
         },
         tooltip: {
           style: {
-            fontSize: "12px",
+            fontSize: '12px'
           },
           y: {
             formatter: (val: string) => {
-              return "$" + val + "k";
-            },
-          },
+              return '$' + val + 'k';
+            }
+          }
         },
-        colors: ["#661DC5"],
+        colors: ['#661DC5'],
         grid: {
-          borderColor: "#661DC5",
+          borderColor: '#661DC5',
           strokeDashArray: 4,
           yaxis: {
             lines: {
-              show: true,
-            },
-          },
-        },
+              show: true
+            }
+          }
+        }
       };
 
       const chart = new ApexCharts(element, options);
@@ -202,17 +202,17 @@ export function SidebarGeneral() {
               setTab(0);
               activateChart(0);
             }}
-            className={clsx("nav-link", { active: activeTab === 0 })}
+            className={clsx('nav-link', { active: activeTab === 0 })}
             id="kt_sidebar_tab_1"
           >
             <img
               alt=""
-              src={toAbsoluteUrl("/media/svg/logo/purple/aven.svg")}
+              src={toAbsoluteUrl('/media/svg/logo/purple/aven.svg')}
               className="default"
             />
             <img
               alt=""
-              src={toAbsoluteUrl("/media/svg/logo/colored/aven.svg")}
+              src={toAbsoluteUrl('/media/svg/logo/colored/aven.svg')}
               className="active"
             />
           </a>
@@ -224,17 +224,17 @@ export function SidebarGeneral() {
               setTab(1);
               activateChart(1);
             }}
-            className={clsx("nav-link", { active: activeTab === 1 })}
+            className={clsx('nav-link', { active: activeTab === 1 })}
             id="kt_sidebar_tab_2"
           >
             <img
               alt=""
-              src={toAbsoluteUrl("/media/svg/logo/purple/kanba.svg")}
+              src={toAbsoluteUrl('/media/svg/logo/purple/kanba.svg')}
               className="default"
             />
             <img
               alt=""
-              src={toAbsoluteUrl("/media/svg/logo/colored/kanba.svg")}
+              src={toAbsoluteUrl('/media/svg/logo/colored/kanba.svg')}
               className="active"
             />
           </a>
@@ -246,17 +246,17 @@ export function SidebarGeneral() {
               setTab(2);
               activateChart(2);
             }}
-            className={clsx("nav-link", { active: activeTab === 2 })}
+            className={clsx('nav-link', { active: activeTab === 2 })}
             id="kt_sidebar_tab_3"
           >
             <img
               alt=""
-              src={toAbsoluteUrl("/media/svg/logo/purple/fox-hub-2.svg")}
+              src={toAbsoluteUrl('/media/svg/logo/purple/fox-hub-2.svg')}
               className="default"
             />
             <img
               alt=""
-              src={toAbsoluteUrl("/media/svg/logo/colored/fox-hub-2.svg")}
+              src={toAbsoluteUrl('/media/svg/logo/colored/fox-hub-2.svg')}
               className="active"
             />
           </a>
@@ -268,17 +268,17 @@ export function SidebarGeneral() {
               setTab(3);
               activateChart(3);
             }}
-            className={clsx("nav-link", { active: activeTab === 3 })}
+            className={clsx('nav-link', { active: activeTab === 3 })}
             id="kt_sidebar_tab_4"
           >
             <img
               alt=""
-              src={toAbsoluteUrl("/media/svg/logo/purple/tower.svg")}
+              src={toAbsoluteUrl('/media/svg/logo/purple/tower.svg')}
               className="default"
             />
             <img
               alt=""
-              src={toAbsoluteUrl("/media/svg/logo/colored/tower.svg")}
+              src={toAbsoluteUrl('/media/svg/logo/colored/tower.svg')}
               className="active"
             />
           </a>
@@ -290,17 +290,17 @@ export function SidebarGeneral() {
               setTab(4);
               activateChart(4);
             }}
-            className={clsx("nav-link", { active: activeTab === 4 })}
+            className={clsx('nav-link', { active: activeTab === 4 })}
             id="kt_sidebar_tab_5"
           >
             <img
               alt=""
-              src={toAbsoluteUrl("/media/svg/logo/purple/treva.svg")}
+              src={toAbsoluteUrl('/media/svg/logo/purple/treva.svg')}
               className="default"
             />
             <img
               alt=""
-              src={toAbsoluteUrl("/media/svg/logo/colored/treva.svg")}
+              src={toAbsoluteUrl('/media/svg/logo/colored/treva.svg')}
               className="active"
             />
           </a>
@@ -321,7 +321,7 @@ export function SidebarGeneral() {
         >
           <div className="tab-content">
             <div
-              className={clsx("tab-pane", { active: activeTab === 0 })}
+              className={clsx('tab-pane', { active: activeTab === 0 })}
               id="kt_sidebar_tab_pane_1"
               role="tabpanel"
             >
@@ -357,7 +357,7 @@ export function SidebarGeneral() {
                   <div
                     id="kt_sidebar_tab_1_chart"
                     className="apexcharts-bar-hover-danger"
-                    style={{ height: "250px" }}
+                    style={{ height: '250px' }}
                   ></div>
                   {/* end::Chart */}
                 </div>
@@ -399,7 +399,7 @@ export function SidebarGeneral() {
                     <div className="symbol symbol-40px symbol-2by3 me-4">
                       <img
                         alt=""
-                        src={toAbsoluteUrl("/media/stock/600x400/img-1.jpg")}
+                        src={toAbsoluteUrl('/media/stock/600x400/img-1.jpg')}
                         className="mw-100"
                       />
                     </div>
@@ -427,7 +427,7 @@ export function SidebarGeneral() {
                     <div className="symbol symbol-40px symbol-2by3 me-4">
                       <img
                         alt=""
-                        src={toAbsoluteUrl("/media/stock/600x400/img-2.jpg")}
+                        src={toAbsoluteUrl('/media/stock/600x400/img-2.jpg')}
                         className="mw-100"
                       />
                     </div>
@@ -455,7 +455,7 @@ export function SidebarGeneral() {
                     <div className="symbol symbol-40px symbol-2by3 me-4">
                       <img
                         alt=""
-                        src={toAbsoluteUrl("/media/stock/600x400/img-3.jpg")}
+                        src={toAbsoluteUrl('/media/stock/600x400/img-3.jpg')}
                         className="mw-100"
                       />
                     </div>
@@ -483,7 +483,7 @@ export function SidebarGeneral() {
                     <div className="symbol symbol-40px symbol-2by3 me-4">
                       <img
                         alt=""
-                        src={toAbsoluteUrl("/media/stock/600x400/img-5.jpg")}
+                        src={toAbsoluteUrl('/media/stock/600x400/img-5.jpg')}
                         className="mw-100"
                       />
                     </div>
@@ -511,7 +511,7 @@ export function SidebarGeneral() {
                     <div className="symbol symbol-40px symbol-2by3 me-4">
                       <img
                         alt=""
-                        src={toAbsoluteUrl("/media/stock/600x400/img-6.jpg")}
+                        src={toAbsoluteUrl('/media/stock/600x400/img-6.jpg')}
                         className="mw-100"
                       />
                     </div>
@@ -539,7 +539,7 @@ export function SidebarGeneral() {
             </div>
 
             <div
-              className={clsx("tab-pane", { active: activeTab === 1 })}
+              className={clsx('tab-pane', { active: activeTab === 1 })}
               id="kt_sidebar_tab_pane_2"
               role="tabpanel"
             >
@@ -575,7 +575,7 @@ export function SidebarGeneral() {
                   <div
                     id="kt_sidebar_tab_2_chart"
                     className="apexcharts-bar-hover-danger"
-                    style={{ height: "250px" }}
+                    style={{ height: '250px' }}
                   ></div>
                   {/* end::Chart */}
                 </div>
@@ -616,7 +616,7 @@ export function SidebarGeneral() {
                     {/* begin::Symbol */}
                     <div className="symbol symbol-40px symbol-2by3 me-4">
                       <img
-                        src={toAbsoluteUrl("/media/stock/600x400/img-7.jpg")}
+                        src={toAbsoluteUrl('/media/stock/600x400/img-7.jpg')}
                         alt=""
                         className="mw-100"
                       />
@@ -645,7 +645,7 @@ export function SidebarGeneral() {
                     <div className="symbol symbol-40px symbol-2by3 me-4">
                       <img
                         alt=""
-                        src={toAbsoluteUrl("/media/stock/600x400/img-8.jpg")}
+                        src={toAbsoluteUrl('/media/stock/600x400/img-8.jpg')}
                         className="mw-100"
                       />
                     </div>
@@ -673,7 +673,7 @@ export function SidebarGeneral() {
                     <div className="symbol symbol-40px symbol-2by3 me-4">
                       <img
                         alt=""
-                        src={toAbsoluteUrl("/media/stock/600x400/img-9.jpg")}
+                        src={toAbsoluteUrl('/media/stock/600x400/img-9.jpg')}
                         className="mw-100"
                       />
                     </div>
@@ -701,7 +701,7 @@ export function SidebarGeneral() {
                     <div className="symbol symbol-40px symbol-2by3 me-4">
                       <img
                         alt=""
-                        src={toAbsoluteUrl("/media/stock/600x400/img-19.jpg")}
+                        src={toAbsoluteUrl('/media/stock/600x400/img-19.jpg')}
                         className="mw-100"
                       />
                     </div>
@@ -729,7 +729,7 @@ export function SidebarGeneral() {
                     <div className="symbol symbol-40px symbol-2by3 me-4">
                       <img
                         alt=""
-                        src={toAbsoluteUrl("/media/stock/600x400/img-6.jpg")}
+                        src={toAbsoluteUrl('/media/stock/600x400/img-6.jpg')}
                         className="mw-100"
                       />
                     </div>
@@ -757,7 +757,7 @@ export function SidebarGeneral() {
             </div>
 
             <div
-              className={clsx("tab-pane", { active: activeTab === 2 })}
+              className={clsx('tab-pane', { active: activeTab === 2 })}
               id="kt_sidebar_tab_pane_3"
               role="tabpanel"
             >
@@ -793,7 +793,7 @@ export function SidebarGeneral() {
                   <div
                     id="kt_sidebar_tab_3_chart"
                     className="apexcharts-bar-hover-danger"
-                    style={{ height: "250px" }}
+                    style={{ height: '250px' }}
                   ></div>
                   {/* end::Chart */}
                 </div>
@@ -834,7 +834,7 @@ export function SidebarGeneral() {
                     {/* begin::Symbol */}
                     <div className="symbol symbol-40px symbol-2by3 me-4">
                       <img
-                        src={toAbsoluteUrl("/media/stock/600x400/img-17.jpg")}
+                        src={toAbsoluteUrl('/media/stock/600x400/img-17.jpg')}
                         alt=""
                         className="mw-100"
                       />
@@ -863,7 +863,7 @@ export function SidebarGeneral() {
                     <div className="symbol symbol-40px symbol-2by3 me-4">
                       <img
                         alt=""
-                        src={toAbsoluteUrl("/media/stock/600x400/img-10.jpg")}
+                        src={toAbsoluteUrl('/media/stock/600x400/img-10.jpg')}
                         className="mw-100"
                       />
                     </div>
@@ -891,7 +891,7 @@ export function SidebarGeneral() {
                     <div className="symbol symbol-40px symbol-2by3 me-4">
                       <img
                         alt=""
-                        src={toAbsoluteUrl("/media/stock/600x400/img-1.jpg")}
+                        src={toAbsoluteUrl('/media/stock/600x400/img-1.jpg')}
                         className="mw-100"
                       />
                     </div>
@@ -919,7 +919,7 @@ export function SidebarGeneral() {
                     <div className="symbol symbol-40px symbol-2by3 me-4">
                       <img
                         alt=""
-                        src={toAbsoluteUrl("/media/stock/600x400/img-9.jpg")}
+                        src={toAbsoluteUrl('/media/stock/600x400/img-9.jpg')}
                         className="mw-100"
                       />
                     </div>
@@ -947,7 +947,7 @@ export function SidebarGeneral() {
                     <div className="symbol symbol-40px symbol-2by3 me-4">
                       <img
                         alt=""
-                        src={toAbsoluteUrl("/media/stock/600x400/img-4.jpg")}
+                        src={toAbsoluteUrl('/media/stock/600x400/img-4.jpg')}
                         className="mw-100"
                       />
                     </div>
@@ -975,7 +975,7 @@ export function SidebarGeneral() {
             </div>
 
             <div
-              className={clsx("tab-pane", { active: activeTab === 3 })}
+              className={clsx('tab-pane', { active: activeTab === 3 })}
               id="kt_sidebar_tab_pane_4"
               role="tabpanel"
             >
@@ -1011,7 +1011,7 @@ export function SidebarGeneral() {
                   <div
                     id="kt_sidebar_tab_4_chart"
                     className="apexcharts-bar-hover-danger"
-                    style={{ height: "250px" }}
+                    style={{ height: '250px' }}
                   ></div>
                   {/* end::Chart */}
                 </div>
@@ -1053,7 +1053,7 @@ export function SidebarGeneral() {
                     <div className="symbol symbol-40px symbol-2by3 me-4">
                       <img
                         alt=""
-                        src={toAbsoluteUrl("/media/stock/600x400/img-8.jpg")}
+                        src={toAbsoluteUrl('/media/stock/600x400/img-8.jpg')}
                         className="mw-100"
                       />
                     </div>
@@ -1081,7 +1081,7 @@ export function SidebarGeneral() {
                     <div className="symbol symbol-40px symbol-2by3 me-4">
                       <img
                         alt=""
-                        src={toAbsoluteUrl("/media/stock/600x400/img-11.jpg")}
+                        src={toAbsoluteUrl('/media/stock/600x400/img-11.jpg')}
                         className="mw-100"
                       />
                     </div>
@@ -1109,7 +1109,7 @@ export function SidebarGeneral() {
                     <div className="symbol symbol-40px symbol-2by3 me-4">
                       <img
                         alt=""
-                        src={toAbsoluteUrl("/media/stock/600x400/img-19.jpg")}
+                        src={toAbsoluteUrl('/media/stock/600x400/img-19.jpg')}
                         className="mw-100"
                       />
                     </div>
@@ -1136,7 +1136,7 @@ export function SidebarGeneral() {
                     {/* begin::Symbol */}
                     <div className="symbol symbol-40px symbol-2by3 me-4">
                       <img
-                        src={toAbsoluteUrl("/media/stock/600x400/img-9.jpg")}
+                        src={toAbsoluteUrl('/media/stock/600x400/img-9.jpg')}
                         alt=""
                         className="mw-100"
                       />
@@ -1165,7 +1165,7 @@ export function SidebarGeneral() {
                     <div className="symbol symbol-40px symbol-2by3 me-4">
                       <img
                         alt=""
-                        src={toAbsoluteUrl("/media/stock/600x400/img-6.jpg")}
+                        src={toAbsoluteUrl('/media/stock/600x400/img-6.jpg')}
                         className="mw-100"
                       />
                     </div>
@@ -1193,7 +1193,7 @@ export function SidebarGeneral() {
             </div>
 
             <div
-              className={clsx("tab-pane", { active: activeTab === 4 })}
+              className={clsx('tab-pane', { active: activeTab === 4 })}
               id="kt_sidebar_tab_pane_5"
               role="tabpanel"
             >
@@ -1229,7 +1229,7 @@ export function SidebarGeneral() {
                   <div
                     id="kt_sidebar_tab_5_chart"
                     className="apexcharts-bar-hover-danger"
-                    style={{ height: "250px" }}
+                    style={{ height: '250px' }}
                   ></div>
                   {/* end::Chart */}
                 </div>
@@ -1271,7 +1271,7 @@ export function SidebarGeneral() {
                     <div className="symbol symbol-40px symbol-2by3 me-4">
                       <img
                         alt=""
-                        src={toAbsoluteUrl("/media/stock/600x400/img-12.jpg")}
+                        src={toAbsoluteUrl('/media/stock/600x400/img-12.jpg')}
                         className="mw-100"
                       />
                     </div>
@@ -1299,7 +1299,7 @@ export function SidebarGeneral() {
                     <div className="symbol symbol-40px symbol-2by3 me-4">
                       <img
                         alt=""
-                        src={toAbsoluteUrl("/media/stock/600x400/img-13.jpg")}
+                        src={toAbsoluteUrl('/media/stock/600x400/img-13.jpg')}
                         className="mw-100"
                       />
                     </div>
@@ -1327,7 +1327,7 @@ export function SidebarGeneral() {
                     <div className="symbol symbol-40px symbol-2by3 me-4">
                       <img
                         alt=""
-                        src={toAbsoluteUrl("/media/stock/600x400/img-14.jpg")}
+                        src={toAbsoluteUrl('/media/stock/600x400/img-14.jpg')}
                         className="mw-100"
                       />
                     </div>
@@ -1355,7 +1355,7 @@ export function SidebarGeneral() {
                     <div className="symbol symbol-40px symbol-2by3 me-4">
                       <img
                         alt=""
-                        src={toAbsoluteUrl("/media/stock/600x400/img-15.jpg")}
+                        src={toAbsoluteUrl('/media/stock/600x400/img-15.jpg')}
                         className="mw-100"
                       />
                     </div>
@@ -1383,7 +1383,7 @@ export function SidebarGeneral() {
                     <div className="symbol symbol-40px symbol-2by3 me-4">
                       <img
                         alt=""
-                        src={toAbsoluteUrl("/media/stock/600x400/img-16.jpg")}
+                        src={toAbsoluteUrl('/media/stock/600x400/img-16.jpg')}
                         className="mw-100"
                       />
                     </div>
@@ -1431,11 +1431,11 @@ export function SidebarGeneral() {
 function getCss(el: HTMLElement, styleProp: string) {
   const defaultView = (el.ownerDocument || document).defaultView;
   if (!defaultView) {
-    return "";
+    return '';
   }
 
   // sanitize property name to css notation
   // (hyphen separated words eg. font-Size)
-  styleProp = styleProp.replace(/([A-Z])/g, "-$1").toLowerCase();
+  styleProp = styleProp.replace(/([A-Z])/g, '-$1').toLowerCase();
   return defaultView.getComputedStyle(el, null).getPropertyValue(styleProp);
 }

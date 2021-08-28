@@ -1,13 +1,13 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useEffect, useRef } from "react";
-import { Carousel } from "bootstrap";
+import React, { useEffect, useRef } from 'react';
+import { Carousel } from 'bootstrap';
 
 type Props = {
   className: string;
   innerPadding?: string;
 };
 
-const StatsWidget8: React.FC<Props> = ({ className, innerPadding = "" }) => {
+const StatsWidget8: React.FC<Props> = ({ className, innerPadding = '' }) => {
   const carouselRef = useRef<HTMLDivElement | null>(null);
   useEffect(() => {
     const element = carouselRef.current;
@@ -123,7 +123,7 @@ const StatsWidget8: React.FC<Props> = ({ className, innerPadding = "" }) => {
           <div
             className="progress-bar bg-danger"
             role="progressbar"
-            style={{ width: "70%" }}
+            style={{ width: '70%' }}
             aria-valuenow={24}
             aria-valuemin={0}
             aria-valuemax={100}

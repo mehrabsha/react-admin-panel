@@ -1,4 +1,4 @@
-import { getUniqueIdWithPrefix } from "./_TypesHelpers";
+import { getUniqueIdWithPrefix } from './_TypesHelpers';
 
 export class DOMEventHandlerUtil {
   public static store = new Map();
@@ -9,7 +9,7 @@ export class DOMEventHandlerUtil {
     eventName: string,
     callBack: any
   ): string {
-    const eventId = getUniqueIdWithPrefix("DOMEvent");
+    const eventId = getUniqueIdWithPrefix('DOMEvent');
     DOMEventHandlerUtil.store.set(eventId, (e: Event) => {
       const targets = element.querySelectorAll(selector);
       let target: HTMLElement | null = e.target as HTMLElement;

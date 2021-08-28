@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from "react";
+import React from 'react';
 
 type Props = {
   className: string;
@@ -14,7 +14,7 @@ const StatisticsWidget6: React.FC<Props> = ({
   color,
   title,
   description,
-  progress,
+  progress
 }) => {
   return (
     <div className={`card bg-light-${color} ${className}`}>

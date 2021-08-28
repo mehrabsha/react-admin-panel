@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useEffect, useRef } from "react";
-import ApexCharts, { ApexOptions } from "apexcharts";
-import { getCSS, getCSSVariableValue } from "../../../assets/ts/_utils";
+import React, { useEffect, useRef } from 'react';
+import ApexCharts, { ApexOptions } from 'apexcharts';
+import { getCSS, getCSSVariableValue } from '../../../assets/ts/_utils';
 
 type Props = {
   className: string;
@@ -15,7 +15,7 @@ const ChartsWidget6: React.FC<Props> = ({ className }) => {
       return;
     }
 
-    const height = parseInt(getCSS(chartRef.current, "height"));
+    const height = parseInt(getCSS(chartRef.current, 'height'));
 
     const chart = new ApexCharts(chartRef.current, getChartOptions(height));
     if (chart) {
@@ -67,7 +67,7 @@ const ChartsWidget6: React.FC<Props> = ({ className }) => {
         <div
           ref={chartRef}
           id="kt_charts_widget_6_chart"
-          style={{ height: "350px" }}
+          style={{ height: '350px' }}
         ></div>
         {/* end::Chart */}
       </div>
@@ -79,115 +79,115 @@ const ChartsWidget6: React.FC<Props> = ({ className }) => {
 export { ChartsWidget6 };
 
 function getChartOptions(height: number): ApexOptions {
-  const labelColor = getCSSVariableValue("--bs-gray-500");
-  const borderColor = getCSSVariableValue("--bs-gray-200");
+  const labelColor = getCSSVariableValue('--bs-gray-500');
+  const borderColor = getCSSVariableValue('--bs-gray-200');
 
-  const baseColor = getCSSVariableValue("--bs-primary");
-  const baseLightColor = getCSSVariableValue("--bs-light-primary");
-  const secondaryColor = getCSSVariableValue("--bs-info");
+  const baseColor = getCSSVariableValue('--bs-primary');
+  const baseLightColor = getCSSVariableValue('--bs-light-primary');
+  const secondaryColor = getCSSVariableValue('--bs-info');
 
   return {
     series: [
       {
-        name: "Net Profit",
-        type: "bar",
-        data: [40, 50, 65, 70, 50, 30],
+        name: 'Net Profit',
+        type: 'bar',
+        data: [40, 50, 65, 70, 50, 30]
       },
       {
-        name: "Revenue",
-        type: "bar",
-        data: [20, 20, 25, 30, 30, 20],
+        name: 'Revenue',
+        type: 'bar',
+        data: [20, 20, 25, 30, 30, 20]
       },
       {
-        name: "Expenses",
-        type: "area",
-        data: [50, 80, 60, 90, 50, 70],
-      },
+        name: 'Expenses',
+        type: 'area',
+        data: [50, 80, 60, 90, 50, 70]
+      }
     ],
     chart: {
-      fontFamily: "inherit",
+      fontFamily: 'inherit',
       stacked: true,
       height: 350,
       toolbar: {
-        show: false,
-      },
+        show: false
+      }
     },
     plotOptions: {
       bar: {
         horizontal: false,
         borderRadius: 5,
-        columnWidth: "12%",
-      },
+        columnWidth: '12%'
+      }
     },
     legend: {
-      show: false,
+      show: false
     },
     dataLabels: {
-      enabled: false,
+      enabled: false
     },
     stroke: {
-      curve: "smooth",
+      curve: 'smooth',
       show: true,
       width: 2,
-      colors: ["transparent"],
+      colors: ['transparent']
     },
     xaxis: {
-      categories: ["Feb", "Mar", "Apr", "May", "Jun", "Jul"],
+      categories: ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
       axisBorder: {
-        show: false,
+        show: false
       },
       axisTicks: {
-        show: false,
+        show: false
       },
       labels: {
         style: {
           colors: labelColor,
-          fontSize: "12px",
-        },
-      },
+          fontSize: '12px'
+        }
+      }
     },
     yaxis: {
       max: 120,
       labels: {
         style: {
           colors: labelColor,
-          fontSize: "12px",
-        },
-      },
+          fontSize: '12px'
+        }
+      }
     },
     fill: {
-      opacity: 1,
+      opacity: 1
     },
     states: {
       normal: {
         filter: {
-          type: "none",
-          value: 0,
-        },
+          type: 'none',
+          value: 0
+        }
       },
       hover: {
         filter: {
-          type: "none",
-          value: 0,
-        },
+          type: 'none',
+          value: 0
+        }
       },
       active: {
         allowMultipleDataPointsSelection: false,
         filter: {
-          type: "none",
-          value: 0,
-        },
-      },
+          type: 'none',
+          value: 0
+        }
+      }
     },
     tooltip: {
       style: {
-        fontSize: "12px",
+        fontSize: '12px'
       },
       y: {
         formatter: function (val) {
-          return "$" + val + " thousands";
-        },
-      },
+          return '$' + val + ' thousands';
+        }
+      }
     },
     colors: [baseColor, secondaryColor, baseLightColor],
     grid: {
@@ -195,15 +195,15 @@ function getChartOptions(height: number): ApexOptions {
       strokeDashArray: 4,
       yaxis: {
         lines: {
-          show: true,
-        },
+          show: true
+        }
       },
       padding: {
         top: 0,
         right: 0,
         bottom: 0,
-        left: 0,
-      },
-    },
+        left: 0
+      }
+    }
   };
 }

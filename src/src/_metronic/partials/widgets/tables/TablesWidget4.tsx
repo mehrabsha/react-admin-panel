@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from "react";
-import { toAbsoluteUrl } from "../../../helpers";
+import React from 'react';
+import { toAbsoluteUrl } from '../../../helpers';
 
 type Props = {
   className: string;
@@ -78,7 +78,7 @@ const TablesWidget4: React.FC<Props> = ({ className }) => {
                     <td>
                       <div className="symbol symbol-50px">
                         <img
-                          src={toAbsoluteUrl("/media/avatars/150-11.jpg")}
+                          src={toAbsoluteUrl('/media/avatars/150-11.jpg')}
                           alt=""
                         />
                       </div>
@@ -135,7 +135,7 @@ const TablesWidget4: React.FC<Props> = ({ className }) => {
                     <td>
                       <div className="symbol symbol-50px">
                         <img
-                          src={toAbsoluteUrl("/media/avatars/150-4.jpg")}
+                          src={toAbsoluteUrl('/media/avatars/150-4.jpg')}
                           alt=""
                         />
                       </div>
@@ -192,7 +192,7 @@ const TablesWidget4: React.FC<Props> = ({ className }) => {
                     <td>
                       <div className="symbol symbol-50px">
                         <img
-                          src={toAbsoluteUrl("/media/avatars/150-5.jpg")}
+                          src={toAbsoluteUrl('/media/avatars/150-5.jpg')}
                           alt=""
                         />
                       </div>
@@ -249,7 +249,7 @@ const TablesWidget4: React.FC<Props> = ({ className }) => {
                     <td>
                       <div className="symbol symbol-50px">
                         <img
-                          src={toAbsoluteUrl("/media/avatars/150-6.jpg")}
+                          src={toAbsoluteUrl('/media/avatars/150-6.jpg')}
                           alt=""
                         />
                       </div>
@@ -306,7 +306,7 @@ const TablesWidget4: React.FC<Props> = ({ className }) => {
                     <td>
                       <div className="symbol symbol-50px">
                         <img
-                          src={toAbsoluteUrl("/media/avatars/150-9.jpg")}
+                          src={toAbsoluteUrl('/media/avatars/150-9.jpg')}
                           alt=""
                         />
                       </div>
@@ -389,7 +389,7 @@ const TablesWidget4: React.FC<Props> = ({ className }) => {
                       <div className="symbol symbol-50px">
                         <img
                           src={toAbsoluteUrl(
-                            "/media/svg/avatars/043-boy-18.svg"
+                            '/media/svg/avatars/043-boy-18.svg'
                           )}
                           alt=""
                         />
@@ -448,7 +448,7 @@ const TablesWidget4: React.FC<Props> = ({ className }) => {
                       <div className="symbol symbol-50px">
                         <img
                           src={toAbsoluteUrl(
-                            "/media/svg/avatars/014-girl-7.svg"
+                            '/media/svg/avatars/014-girl-7.svg'
                           )}
                           alt=""
                         />
@@ -507,7 +507,7 @@ const TablesWidget4: React.FC<Props> = ({ className }) => {
                       <div className="symbol symbol-50px">
                         <img
                           src={toAbsoluteUrl(
-                            "/media/svg/avatars/018-girl-9.svg"
+                            '/media/svg/avatars/018-girl-9.svg'
                           )}
                           alt=""
                         />
@@ -565,7 +565,7 @@ const TablesWidget4: React.FC<Props> = ({ className }) => {
                     <td>
                       <div className="symbol symbol-50px">
                         <img
-                          src={toAbsoluteUrl("/media/svg/avatars/001-boy.svg")}
+                          src={toAbsoluteUrl('/media/svg/avatars/001-boy.svg')}
                           alt=""
                         />
                       </div>
@@ -648,7 +648,7 @@ const TablesWidget4: React.FC<Props> = ({ className }) => {
                       <div className="symbol symbol-50px">
                         <img
                           src={toAbsoluteUrl(
-                            "/media/svg/avatars/018-girl-9.svg"
+                            '/media/svg/avatars/018-girl-9.svg'
                           )}
                           alt=""
                         />
@@ -707,7 +707,7 @@ const TablesWidget4: React.FC<Props> = ({ className }) => {
                       <div className="symbol symbol-50px">
                         <img
                           src={toAbsoluteUrl(
-                            "/media/svg/avatars/047-girl-25.svg"
+                            '/media/svg/avatars/047-girl-25.svg'
                           )}
                           alt=""
                         />
@@ -766,7 +766,7 @@ const TablesWidget4: React.FC<Props> = ({ className }) => {
                       <div className="symbol symbol-50px">
                         <img
                           src={toAbsoluteUrl(
-                            "/media/svg/avatars/014-girl-7.svg"
+                            '/media/svg/avatars/014-girl-7.svg'
                           )}
                           alt=""
                         />

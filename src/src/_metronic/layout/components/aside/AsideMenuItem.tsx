@@ -1,9 +1,9 @@
-import React from "react";
-import clsx from "clsx";
-import { Link } from "react-router-dom";
-import { useLocation } from "react-router";
-import { checkIsActive, KTSVG } from "../../../helpers";
-import { useLayout } from "../../core";
+import React from 'react';
+import clsx from 'clsx';
+import { Link } from 'react-router-dom';
+import { useLocation } from 'react-router';
+import { checkIsActive, KTSVG } from '../../../helpers';
+import { useLayout } from '../../core';
 
 type Props = {
   to: string;
@@ -19,7 +19,7 @@ const AsideMenuItem: React.FC<Props> = ({
   title,
   icon,
   fontIcon,
-  hasBullet = false,
+  hasBullet = false
 }) => {
   const { pathname } = useLocation();
   const isActive = checkIsActive(pathname, to);
@@ -29,7 +29,7 @@ const AsideMenuItem: React.FC<Props> = ({
   return (
     <div className="menu-item">
       <Link
-        className={clsx("menu-link without-sub", { active: isActive })}
+        className={clsx('menu-link without-sub', { active: isActive })}
         to={to}
       >
         {hasBullet && (
@@ -37,13 +37,13 @@ const AsideMenuItem: React.FC<Props> = ({
             <span className="bullet bullet-dot"></span>
           </span>
         )}
-        {icon && aside.menuIcon === "svg" && (
+        {icon && aside.menuIcon === 'svg' && (
           <span className="menu-icon">
             <KTSVG path={icon} className="svg-icon-2" />
           </span>
         )}
-        {fontIcon && aside.menuIcon === "font" && (
-          <i className={clsx("bi fs-3", fontIcon)}></i>
+        {fontIcon && aside.menuIcon === 'font' && (
+          <i className={clsx('bi fs-3', fontIcon)}></i>
         )}
         <span className="menu-title">{title}</span>
       </Link>

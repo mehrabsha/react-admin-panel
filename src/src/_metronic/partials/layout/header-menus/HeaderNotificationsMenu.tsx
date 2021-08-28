@@ -1,13 +1,13 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import clsx from "clsx";
-import { FC } from "react";
-import { Link } from "react-router-dom";
+import clsx from 'clsx';
+import { FC } from 'react';
+import { Link } from 'react-router-dom';
 import {
   KTSVG,
   toAbsoluteUrl,
   defaultAlerts,
-  defaultLogs,
-} from "../../../helpers";
+  defaultLogs
+} from '../../../helpers';
 
 const HeaderNotificationsMenu: FC = () => (
   <div
@@ -17,7 +17,7 @@ const HeaderNotificationsMenu: FC = () => (
     <div
       className="d-flex flex-column bgi-no-repeat rounded-top"
       style={{
-        backgroundImage: `url('${toAbsoluteUrl("/media/misc/pattern-1.jpg")}')`,
+        backgroundImage: `url('${toAbsoluteUrl('/media/misc/pattern-1.jpg')}')`
       }}
     >
       <h3 className="text-white fw-bold px-9 mt-10 mb-6">
@@ -69,9 +69,9 @@ const HeaderNotificationsMenu: FC = () => (
               <div className="d-flex align-items-center">
                 <div className="symbol symbol-35px me-4">
                   <span
-                    className={clsx("symbol-label", `bg-light-${alert.state}`)}
+                    className={clsx('symbol-label', `bg-light-${alert.state}`)}
                   >
-                    {" "}
+                    {' '}
                     <KTSVG
                       path={`/media/${alert.icon}`}
                       className={`svg-icon-2 svg-icon-${alert.state}`}
@@ -100,7 +100,7 @@ const HeaderNotificationsMenu: FC = () => (
             to="/crafted/pages/profile"
             className="btn btn-color-gray-600 btn-active-color-primary"
           >
-            View All{" "}
+            View All{' '}
             <KTSVG
               path="/media/icons/duotune/arrows/arr064.svg"
               className="svg-icon-5"
@@ -139,7 +139,7 @@ const HeaderNotificationsMenu: FC = () => (
             <img
               className="mw-100 mh-200px"
               alt="metronic"
-              src={toAbsoluteUrl("/media/illustrations/sketchy-1/1.png")}
+              src={toAbsoluteUrl('/media/illustrations/sketchy-1/1.png')}
             />
           </div>
         </div>
@@ -156,9 +156,9 @@ const HeaderNotificationsMenu: FC = () => (
               <div className="d-flex align-items-center me-2">
                 <span
                   className={clsx(
-                    "w-70px badge",
+                    'w-70px badge',
                     `badge-light-${log.state}`,
-                    "me-4"
+                    'me-4'
                   )}
                 >
                   {log.code}
@@ -181,7 +181,7 @@ const HeaderNotificationsMenu: FC = () => (
             to="/crafted/pages/profile"
             className="btn btn-color-gray-600 btn-active-color-primary"
           >
-            View All{" "}
+            View All{' '}
             <KTSVG
               path="/media/icons/duotune/arrows/arr064.svg"
               className="svg-icon-5"

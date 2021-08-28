@@ -49,7 +49,7 @@ export class DataUtil {
 
   public static getAllInstancesByKey(key: string) {
     const result: any[] = [];
-    DataUtil.store.forEach((val) => {
+    DataUtil.store.forEach(val => {
       val.forEach((v, k) => {
         if (k === key) {
           result.push(v);

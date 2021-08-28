@@ -1,140 +1,140 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { FC, useState } from "react";
-import { KTSVG } from "../../../helpers";
+import React, { FC, useState } from 'react';
+import { KTSVG } from '../../../helpers';
 
 const plans = [
   {
-    title: "Startup",
-    subTitle: "Best for startups",
-    description: "Optimal for 10+ team size and new startup",
-    priceMonth: "39",
-    priceAnnual: "399",
+    title: 'Startup',
+    subTitle: 'Best for startups',
+    description: 'Optimal for 10+ team size and new startup',
+    priceMonth: '39',
+    priceAnnual: '399',
     default: true,
     custom: false,
     features: [
       {
-        title: "Up to 10 Active Users",
-        supported: true,
+        title: 'Up to 10 Active Users',
+        supported: true
       },
       {
-        title: "Up to 30 Project Integrations",
-        supported: true,
+        title: 'Up to 30 Project Integrations',
+        supported: true
       },
       {
-        title: "Analytics Module",
-        supported: true,
+        title: 'Analytics Module',
+        supported: true
       },
       {
-        title: "Finance Module",
-        supported: false,
+        title: 'Finance Module',
+        supported: false
       },
       {
-        title: "Accounting Module",
-        supported: false,
+        title: 'Accounting Module',
+        supported: false
       },
       {
-        title: "Network Platform",
-        supported: false,
+        title: 'Network Platform',
+        supported: false
       },
       {
-        title: "Unlimited Cloud Space",
-        supported: false,
-      },
-    ],
+        title: 'Unlimited Cloud Space',
+        supported: false
+      }
+    ]
   },
 
   {
-    title: "Advanced",
-    subTitle: "Best for 100+ team size",
-    description: "Optimal for 100+ team size and grown company",
-    priceMonth: "339",
-    priceAnnual: "3399",
+    title: 'Advanced',
+    subTitle: 'Best for 100+ team size',
+    description: 'Optimal for 100+ team size and grown company',
+    priceMonth: '339',
+    priceAnnual: '3399',
     default: false,
     custom: false,
     features: [
       {
-        title: "Up to 10 Active Users",
-        supported: true,
+        title: 'Up to 10 Active Users',
+        supported: true
       },
       {
-        title: "Up to 30 Project Integrations",
-        supported: true,
+        title: 'Up to 30 Project Integrations',
+        supported: true
       },
       {
-        title: "Analytics Module",
-        supported: true,
+        title: 'Analytics Module',
+        supported: true
       },
       {
-        title: "Finance Module",
-        supported: true,
+        title: 'Finance Module',
+        supported: true
       },
       {
-        title: "Accounting Module",
-        supported: true,
+        title: 'Accounting Module',
+        supported: true
       },
       {
-        title: "Network Platform",
-        supported: false,
+        title: 'Network Platform',
+        supported: false
       },
       {
-        title: "Unlimited Cloud Space",
-        supported: false,
-      },
-    ],
+        title: 'Unlimited Cloud Space',
+        supported: false
+      }
+    ]
   },
 
   {
-    title: "Enterprise",
-    subTitle: "Best value for 1000+ team",
-    description: "Optimal for 1000+ team and enterpise",
-    priceMonth: "999",
-    priceAnnual: "9999",
-    label: "Most popular",
+    title: 'Enterprise',
+    subTitle: 'Best value for 1000+ team',
+    description: 'Optimal for 1000+ team and enterpise',
+    priceMonth: '999',
+    priceAnnual: '9999',
+    label: 'Most popular',
     default: false,
     custom: false,
     features: [
       {
-        title: "Up to 10 Active Users",
-        supported: true,
+        title: 'Up to 10 Active Users',
+        supported: true
       },
       {
-        title: "Up to 30 Project Integrations",
-        supported: true,
+        title: 'Up to 30 Project Integrations',
+        supported: true
       },
       {
-        title: "Analytics Module",
-        supported: true,
+        title: 'Analytics Module',
+        supported: true
       },
       {
-        title: "Finance Module",
-        supported: true,
+        title: 'Finance Module',
+        supported: true
       },
       {
-        title: "Accounting Module",
-        supported: true,
+        title: 'Accounting Module',
+        supported: true
       },
       {
-        title: "Network Platform",
-        supported: true,
+        title: 'Network Platform',
+        supported: true
       },
       {
-        title: "Unlimited Cloud Space",
-        supported: true,
-      },
-    ],
+        title: 'Unlimited Cloud Space',
+        supported: true
+      }
+    ]
   },
 
   {
-    title: "Custom",
-    subTitle: "Requet a custom license",
+    title: 'Custom',
+    subTitle: 'Requet a custom license',
     default: false,
-    custom: true,
-  },
+    custom: true
+  }
 ];
 
 const UpgradePlan: FC = () => {
-  const [currentState, setCurrentState] = useState<"month" | "annual">("month");
-  const [selected, setSelected] = useState("Startup");
+  const [currentState, setCurrentState] = useState<'month' | 'annual'>('month');
+  const [selected, setSelected] = useState('Startup');
 
   return (
     <div className="modal fade" id="kt_modal_upgrade_plan" aria-hidden="true">
@@ -157,7 +157,7 @@ const UpgradePlan: FC = () => {
               <h1 className="mb-3">Upgrade a Plan</h1>
 
               <div className="text-muted fw-bold fs-5">
-                If you need more info, please check{" "}
+                If you need more info, please check{' '}
                 <a href="#" className="link-primary fw-bolder">
                   Pricing Guidelines
                 </a>
@@ -173,11 +173,11 @@ const UpgradePlan: FC = () => {
                 <a
                   href="#"
                   className={
-                    "btn btn-color-gray-400 btn-active btn-active-secondary px-6 py-3 me-2 " +
-                    (currentState === "month" && "active")
+                    'btn btn-color-gray-400 btn-active btn-active-secondary px-6 py-3 me-2 ' +
+                    (currentState === 'month' && 'active')
                   }
                   onClick={() => {
-                    setCurrentState("month");
+                    setCurrentState('month');
                   }}
                   data-kt-plan="month"
                 >
@@ -186,11 +186,11 @@ const UpgradePlan: FC = () => {
                 <a
                   href="#"
                   className={
-                    "btn btn-color-gray-400 btn-active btn-active-secondary px-6 py-3 me-2 " +
-                    (currentState === "annual" && "active")
+                    'btn btn-color-gray-400 btn-active btn-active-secondary px-6 py-3 me-2 ' +
+                    (currentState === 'annual' && 'active')
                   }
                   onClick={() => {
-                    setCurrentState("annual");
+                    setCurrentState('annual');
                   }}
                   data-kt-plan="annual"
                 >
@@ -209,9 +209,9 @@ const UpgradePlan: FC = () => {
                           }}
                           className={
                             `nav-link btn btn-outline btn-outline-dashed btn-color-dark d-flex flex-stack text-start p-6 ` +
-                            (index !== plans.length - 1 && "mb-6 ") +
-                            (plan.default && "active ") +
-                            (!plan.custom && "btn-active btn-active-primary ")
+                            (index !== plans.length - 1 && 'mb-6 ') +
+                            (plan.default && 'active ') +
+                            (!plan.custom && 'btn-active btn-active-primary ')
                           }
                           data-bs-toggle="tab"
                           data-bs-target={`#kt_upgrade_plan_${index}`}
@@ -225,7 +225,7 @@ const UpgradePlan: FC = () => {
                                 name="plan"
                                 value={plan.title}
                                 checked={selected === plan.title}
-                                onChange={(e) => setSelected(e.target.value)}
+                                onChange={e => setSelected(e.target.value)}
                               />
                             </div>
 
@@ -256,7 +256,7 @@ const UpgradePlan: FC = () => {
                                 <span className="mb-2">$</span>
 
                                 <span className="fs-3x fw-bolder">
-                                  {currentState === "month"
+                                  {currentState === 'month'
                                     ? plan.priceMonth
                                     : plan.priceAnnual}
                                 </span>
@@ -283,7 +283,7 @@ const UpgradePlan: FC = () => {
                               <div
                                 className={
                                   `tab-pane fade` +
-                                  (plan.default && "show active")
+                                  (plan.default && 'show active')
                                 }
                                 id={`kt_upgrade_plan_${index}`}
                                 key={index}
@@ -305,7 +305,7 @@ const UpgradePlan: FC = () => {
                                         className={
                                           `d-flex align-items-center` +
                                           (i !== plan.features!.length - 1 &&
-                                            " mb-7")
+                                            ' mb-7')
                                         }
                                         key={`${i}-${feature.title}`}
                                       >

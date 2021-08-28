@@ -1,6 +1,6 @@
-import { DOMEventHandlerUtil } from "./_DOMEventHandlerUtil";
-import { ElementStyleUtil } from "./_ElementStyleUtil";
-import { getElementOffset } from "./DomHelpers";
+import { DOMEventHandlerUtil } from './_DOMEventHandlerUtil';
+import { ElementStyleUtil } from './_ElementStyleUtil';
+import { getElementOffset } from './DomHelpers';
 
 export class ElementAnimateUtil {
   public static animate(
@@ -17,7 +17,7 @@ export class ElementAnimateUtil {
     const easings = {
       linear: function (t: number, b: number, c: number, d: number) {
         return (c * t) / d + b;
-      },
+      }
     };
 
     // Create mock done() function if necessary
@@ -61,31 +61,31 @@ export class ElementAnimateUtil {
     animationName: string,
     callBack?: Function
   ): void {
-    const animateClasses = animationName.split(" ");
-    animateClasses.forEach((cssClass) => element.classList.add(cssClass));
-    DOMEventHandlerUtil.one(element, "animationend", function () {
-      animateClasses.forEach((cssClass) => element.classList.remove(cssClass));
+    const animateClasses = animationName.split(' ');
+    animateClasses.forEach(cssClass => element.classList.add(cssClass));
+    DOMEventHandlerUtil.one(element, 'animationend', function () {
+      animateClasses.forEach(cssClass => element.classList.remove(cssClass));
     });
 
     if (callBack) {
-      DOMEventHandlerUtil.one(element, "animationend", callBack);
+      DOMEventHandlerUtil.one(element, 'animationend', callBack);
     }
   }
 
   public static transitionEnd(element: HTMLElement, callBack: Function) {
-    DOMEventHandlerUtil.one(element, "transitionend", callBack);
+    DOMEventHandlerUtil.one(element, 'transitionend', callBack);
   }
 
   public static animationEnd(element: HTMLElement, callBack: Function) {
-    DOMEventHandlerUtil.one(element, "animationend", callBack);
+    DOMEventHandlerUtil.one(element, 'animationend', callBack);
   }
 
   public static animationDelay(element: HTMLElement, value: string) {
-    ElementStyleUtil.set(element, "animation-delay", value);
+    ElementStyleUtil.set(element, 'animation-delay', value);
   }
 
   public static animationDuration(element: HTMLElement, value: string) {
-    ElementStyleUtil.set(element, "animation-duration", value);
+    ElementStyleUtil.set(element, 'animation-duration', value);
   }
 
   public static scrollTo(

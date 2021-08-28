@@ -9,8 +9,8 @@ import {
   DataUtil,
   ElementAnimateUtil,
   ElementStyleUtil,
-  EventHandlerUtil,
-} from "../_utils/index";
+  EventHandlerUtil
+} from '../_utils/index';
 
 export interface StickyOptions {
   offset: number;
@@ -24,15 +24,15 @@ const defaultStickyOptions: StickyOptions = {
   offset: 200,
   reverse: false,
   animation: true,
-  animationSpeed: "0.3s",
-  animationClass: "animation-slide-in-down",
+  animationSpeed: '0.3s',
+  animationClass: 'animation-slide-in-down'
 };
 
 class StickyComponent {
   element: HTMLElement;
   options: StickyOptions;
   instanceUid: string;
-  instanceName: string | null = "";
+  instanceName: string | null = '';
   attributeName: string;
   eventTriggerState: boolean;
   lastScrollTop: number;
@@ -40,24 +40,24 @@ class StickyComponent {
   constructor(_element: HTMLElement, options: StickyOptions) {
     this.element = _element;
     this.options = Object.assign(defaultStickyOptions, options);
-    this.instanceUid = getUniqueIdWithPrefix("sticky");
-    this.instanceName = this.element.getAttribute("data-kt-sticky-name");
-    this.attributeName = "data-kt-sticky-" + this.instanceName;
+    this.instanceUid = getUniqueIdWithPrefix('sticky');
+    this.instanceName = this.element.getAttribute('data-kt-sticky-name');
+    this.attributeName = 'data-kt-sticky-' + this.instanceName;
     this.eventTriggerState = true;
     this.lastScrollTop = 0;
 
     // Event Handlers
-    window.addEventListener("scroll", this.scroll);
+    window.addEventListener('scroll', this.scroll);
 
     // Initial Launch
     this.scroll();
 
-    DataUtil.set(this.element, "sticky", this);
+    DataUtil.set(this.element, 'sticky', this);
   }
 
   private scroll = () => {
-    let offset = this.getOption("offset");
-    let reverse = this.getOption("reverse");
+    let offset = this.getOption('offset');
+    let reverse = this.getOption('reverse');
 
     // Exit if false
     if (offset === false) {
@@ -65,7 +65,7 @@ class StickyComponent {
     }
 
     let offsetNum = 0;
-    if (typeof offset === "string") {
+    if (typeof offset === 'string') {
       offsetNum = parseInt(offset);
     }
 
@@ -77,12 +77,12 @@ class StickyComponent {
       if (st > offsetNum && this.lastScrollTop < st) {
         if (document.body.hasAttribute(this.attributeName) === false) {
           this.enable();
-          document.body.setAttribute(this.attributeName, "on");
+          document.body.setAttribute(this.attributeName, 'on');
         }
 
         if (this.eventTriggerState === true) {
-          EventHandlerUtil.trigger(this.element, "kt.sticky.on");
-          EventHandlerUtil.trigger(this.element, "kt.sticky.change");
+          EventHandlerUtil.trigger(this.element, 'kt.sticky.on');
+          EventHandlerUtil.trigger(this.element, 'kt.sticky.change');
 
           this.eventTriggerState = false;
         }
@@ -94,8 +94,8 @@ class StickyComponent {
         }
 
         if (this.eventTriggerState === false) {
-          EventHandlerUtil.trigger(this.element, "kt.sticky.off");
-          EventHandlerUtil.trigger(this.element, "kt.sticky.change");
+          EventHandlerUtil.trigger(this.element, 'kt.sticky.off');
+          EventHandlerUtil.trigger(this.element, 'kt.sticky.change');
 
           this.eventTriggerState = true;
         }
@@ -109,12 +109,12 @@ class StickyComponent {
     if (st > offsetNum) {
       if (document.body.hasAttribute(this.attributeName) === false) {
         this.enable();
-        document.body.setAttribute(this.attributeName, "on");
+        document.body.setAttribute(this.attributeName, 'on');
       }
 
       if (this.eventTriggerState === true) {
-        EventHandlerUtil.trigger(this.element, "kt.sticky.on");
-        EventHandlerUtil.trigger(this.element, "kt.sticky.change");
+        EventHandlerUtil.trigger(this.element, 'kt.sticky.on');
+        EventHandlerUtil.trigger(this.element, 'kt.sticky.change');
         this.eventTriggerState = false;
       }
     } else {
@@ -125,21 +125,21 @@ class StickyComponent {
       }
 
       if (this.eventTriggerState === false) {
-        EventHandlerUtil.trigger(this.element, "kt.sticky.off");
-        EventHandlerUtil.trigger(this.element, "kt.sticky.change");
+        EventHandlerUtil.trigger(this.element, 'kt.sticky.off');
+        EventHandlerUtil.trigger(this.element, 'kt.sticky.change');
         this.eventTriggerState = true;
       }
     }
   };
 
   private getOption = (name: string) => {
-    const dataStickyAttr = "data-kt-sticky-" + name;
+    const dataStickyAttr = 'data-kt-sticky-' + name;
     if (this.element.hasAttribute(dataStickyAttr) === true) {
       const attrValueInStr = this.element.getAttribute(dataStickyAttr);
-      const attrValue = getAttributeValueByBreakpoint(attrValueInStr || "");
-      if (attrValue !== null && String(attrValue) === "true") {
+      const attrValue = getAttributeValueByBreakpoint(attrValueInStr || '');
+      if (attrValue !== null && String(attrValue) === 'true') {
         return true;
-      } else if (attrValue !== null && String(attrValue) === "false") {
+      } else if (attrValue !== null && String(attrValue) === 'false') {
         return false;
       }
 
@@ -154,59 +154,59 @@ class StickyComponent {
   };
 
   private disable = () => {
-    ElementStyleUtil.remove(this.element, "top");
-    ElementStyleUtil.remove(this.element, "width");
-    ElementStyleUtil.remove(this.element, "left");
-    ElementStyleUtil.remove(this.element, "right");
-    ElementStyleUtil.remove(this.element, "z-index");
-    ElementStyleUtil.remove(this.element, "position");
+    ElementStyleUtil.remove(this.element, 'top');
+    ElementStyleUtil.remove(this.element, 'width');
+    ElementStyleUtil.remove(this.element, 'left');
+    ElementStyleUtil.remove(this.element, 'right');
+    ElementStyleUtil.remove(this.element, 'z-index');
+    ElementStyleUtil.remove(this.element, 'position');
   };
 
   private enable = (update: boolean = false) => {
-    const top = this.getOption("top");
-    const left = this.getOption("left");
+    const top = this.getOption('top');
+    const left = this.getOption('left');
     // const right = this.getOption("right");
-    let width = this.getOption("width");
-    const zindex = this.getOption("zindex");
+    let width = this.getOption('width');
+    const zindex = this.getOption('zindex');
 
-    if (update !== true && this.getOption("animation") === true) {
+    if (update !== true && this.getOption('animation') === true) {
       ElementStyleUtil.set(
         this.element,
-        "animationDuration",
-        this.getOption("animationSpeed")
+        'animationDuration',
+        this.getOption('animationSpeed')
       );
       ElementAnimateUtil.animateClass(
         this.element,
-        "animation " + this.getOption("animationClass")
+        'animation ' + this.getOption('animationClass')
       );
     }
 
     if (zindex !== null) {
-      ElementStyleUtil.set(this.element, "z-index", zindex);
-      ElementStyleUtil.set(this.element, "position", "fixed");
+      ElementStyleUtil.set(this.element, 'z-index', zindex);
+      ElementStyleUtil.set(this.element, 'position', 'fixed');
     }
 
     if (top !== null) {
-      ElementStyleUtil.set(this.element, "top", top);
+      ElementStyleUtil.set(this.element, 'top', top);
     }
 
     if (width !== null && width !== undefined) {
-      const widthTarget = getObjectPropertyValueByKey(width, "target");
+      const widthTarget = getObjectPropertyValueByKey(width, 'target');
       if (widthTarget) {
         const targetElement = document.querySelector(widthTarget);
         if (targetElement) {
-          width = getCSS(targetElement, "width");
+          width = getCSS(targetElement, 'width');
         }
       }
-      ElementStyleUtil.set(this.element, "width", width);
+      ElementStyleUtil.set(this.element, 'width', width);
     }
 
     if (left !== null) {
-      if (String(left).toLowerCase() === "auto") {
+      if (String(left).toLowerCase() === 'auto') {
         var offsetLeft = getElementOffset(this.element).left;
 
         if (offsetLeft > 0) {
-          ElementStyleUtil.set(this.element, "left", String(offsetLeft) + "px");
+          ElementStyleUtil.set(this.element, 'left', String(offsetLeft) + 'px');
         }
       }
     }
@@ -217,7 +217,7 @@ class StickyComponent {
       this.disable();
       document.body.removeAttribute(this.attributeName);
       this.enable(true);
-      document.body.setAttribute(this.attributeName, "on");
+      document.body.setAttribute(this.attributeName, 'on');
     }
   };
 
@@ -240,19 +240,19 @@ class StickyComponent {
 
   // Static methods
   public static hasInstace(element: HTMLElement) {
-    return DataUtil.has(element, "sticky");
+    return DataUtil.has(element, 'sticky');
   }
 
   public static getInstance(element: HTMLElement) {
     if (element !== null && StickyComponent.hasInstace(element)) {
-      return DataUtil.get(element, "sticky");
+      return DataUtil.get(element, 'sticky');
     }
   }
 
   // Create Instances
   public static createInstances(selector: string) {
     const elements = document.body.querySelectorAll(selector);
-    elements.forEach((element) => {
+    elements.forEach(element => {
       const item = element as HTMLElement;
       let sticky = StickyComponent.getInstance(item);
       if (!sticky) {

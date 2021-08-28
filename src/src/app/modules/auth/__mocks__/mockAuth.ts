@@ -1,12 +1,12 @@
-import MockAdapter from "axios-mock-adapter";
-import { UserModel } from "../models/UserModel";
+import MockAdapter from 'axios-mock-adapter';
+import { UserModel } from '../models/UserModel';
 import {
   LOGIN_URL,
   GET_USER_BY_ACCESSTOKEN_URL,
   REGISTER_URL,
-  REQUEST_PASSWORD_URL,
-} from "../redux/AuthCRUD";
-import { UsersTableMock } from "./usersTableMock";
+  REQUEST_PASSWORD_URL
+} from '../redux/AuthCRUD';
+import { UsersTableMock } from './usersTableMock';
 
 export function mockAuth(mock: MockAdapter) {
   mock.onPost(LOGIN_URL).reply(({ data }) => {
@@ -14,7 +14,7 @@ export function mockAuth(mock: MockAdapter) {
 
     if (email && password) {
       const user = UsersTableMock.table.find(
-        (x) =>
+        x =>
           x.email.toLowerCase() === email.toLowerCase() &&
           x.password === password
       );
@@ -41,10 +41,10 @@ export function mockAuth(mock: MockAdapter) {
         password,
         roles: [2], // Manager
         auth: {
-          accessToken: "access-token-" + Math.random(),
-          refreshToken: "access-token-" + Math.random(),
+          accessToken: 'access-token-' + Math.random(),
+          refreshToken: 'access-token-' + Math.random()
         },
-        pic: process.env.PUBLIC_URL + "/media/users/default.jpg",
+        pic: process.env.PUBLIC_URL + '/media/users/default.jpg'
       };
 
       UsersTableMock.table.push(user);
@@ -61,7 +61,7 @@ export function mockAuth(mock: MockAdapter) {
 
     if (email) {
       const user = UsersTableMock.table.find(
-        (x) => x.email.toLowerCase() === email.toLowerCase()
+        x => x.email.toLowerCase() === email.toLowerCase()
       );
       let result = false;
       if (user) {
@@ -79,12 +79,12 @@ export function mockAuth(mock: MockAdapter) {
     .reply(({ headers: { Authorization } }) => {
       const accessToken =
         Authorization &&
-        Authorization.startsWith("Bearer ") &&
-        Authorization.slice("Bearer ".length);
+        Authorization.startsWith('Bearer ') &&
+        Authorization.slice('Bearer '.length);
 
       if (accessToken) {
         const user = UsersTableMock.table.find(
-          (x) => x.auth?.accessToken === accessToken
+          x => x.auth?.accessToken === accessToken
         );
 
         if (user) {
@@ -96,7 +96,7 @@ export function mockAuth(mock: MockAdapter) {
     });
 
   function generateUserId(): number {
-    const ids = UsersTableMock.table.map((el) => el.id);
+    const ids = UsersTableMock.table.map(el => el.id);
     const maxId = Math.max(...ids);
     return maxId + 1;
   }

@@ -1,51 +1,51 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { useFormik } from "formik";
-import * as Yup from "yup";
-import clsx from "clsx";
-import * as auth from "../redux/AuthRedux";
-import { register } from "../redux/AuthCRUD";
-import { Link } from "react-router-dom";
-import { toAbsoluteUrl } from "../../../../_metronic/helpers";
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
+import clsx from 'clsx';
+import * as auth from '../redux/AuthRedux';
+import { register } from '../redux/AuthCRUD';
+import { Link } from 'react-router-dom';
+import { toAbsoluteUrl } from '../../../../_metronic/helpers';
 
 const initialValues = {
-  firstname: "",
-  lastname: "",
-  email: "",
-  password: "",
-  changepassword: "",
-  acceptTerms: false,
+  firstname: '',
+  lastname: '',
+  email: '',
+  password: '',
+  changepassword: '',
+  acceptTerms: false
 };
 
 const registrationSchema = Yup.object().shape({
   firstname: Yup.string()
-    .min(3, "Minimum 3 symbols")
-    .max(50, "Maximum 50 symbols")
-    .required("First name is required"),
+    .min(3, 'Minimum 3 symbols')
+    .max(50, 'Maximum 50 symbols')
+    .required('First name is required'),
   email: Yup.string()
-    .email("Wrong email format")
-    .min(3, "Minimum 3 symbols")
-    .max(50, "Maximum 50 symbols")
-    .required("Email is required"),
+    .email('Wrong email format')
+    .min(3, 'Minimum 3 symbols')
+    .max(50, 'Maximum 50 symbols')
+    .required('Email is required'),
   lastname: Yup.string()
-    .min(3, "Minimum 3 symbols")
-    .max(50, "Maximum 50 symbols")
-    .required("Last name is required"),
+    .min(3, 'Minimum 3 symbols')
+    .max(50, 'Maximum 50 symbols')
+    .required('Last name is required'),
   password: Yup.string()
-    .min(3, "Minimum 3 symbols")
-    .max(50, "Maximum 50 symbols")
-    .required("Password is required"),
+    .min(3, 'Minimum 3 symbols')
+    .max(50, 'Maximum 50 symbols')
+    .required('Password is required'),
   changepassword: Yup.string()
-    .required("Password confirmation is required")
-    .when("password", {
+    .required('Password confirmation is required')
+    .when('password', {
       is: (val: string) => (val && val.length > 0 ? true : false),
       then: Yup.string().oneOf(
-        [Yup.ref("password")],
+        [Yup.ref('password')],
         "Password and Confirm Password didn't match"
-      ),
+      )
     }),
-  acceptTerms: Yup.bool().required("You must accept the terms and conditions"),
+  acceptTerms: Yup.bool().required('You must accept the terms and conditions')
 });
 
 export function Registration() {
@@ -70,10 +70,10 @@ export function Registration() {
           .catch(() => {
             setLoading(false);
             setSubmitting(false);
-            setStatus("Registration process has broken");
+            setStatus('Registration process has broken');
           });
       }, 1000);
-    },
+    }
   });
 
   return (
@@ -95,7 +95,7 @@ export function Registration() {
           <Link
             to="/auth/login"
             className="link-primary fw-bolder"
-            style={{ marginLeft: "5px" }}
+            style={{ marginLeft: '5px' }}
           >
             Forgot Password ?
           </Link>
@@ -111,7 +111,7 @@ export function Registration() {
       >
         <img
           alt="Logo"
-          src={toAbsoluteUrl("/media/svg/brand-logos/google-icon.svg")}
+          src={toAbsoluteUrl('/media/svg/brand-logos/google-icon.svg')}
           className="h-20px me-3"
         />
         Sign in with Google
@@ -140,16 +140,15 @@ export function Registration() {
             placeholder="First name"
             type="text"
             autoComplete="off"
-            {...formik.getFieldProps("firstname")}
+            {...formik.getFieldProps('firstname')}
             className={clsx(
-              "form-control form-control-lg form-control-solid",
+              'form-control form-control-lg form-control-solid',
               {
-                "is-invalid":
-                  formik.touched.firstname && formik.errors.firstname,
+                'is-invalid':
+                  formik.touched.firstname && formik.errors.firstname
               },
               {
-                "is-valid":
-                  formik.touched.firstname && !formik.errors.firstname,
+                'is-valid': formik.touched.firstname && !formik.errors.firstname
               }
             )}
           />
@@ -171,16 +170,15 @@ export function Registration() {
               placeholder="Last name"
               type="text"
               autoComplete="off"
-              {...formik.getFieldProps("lastname")}
+              {...formik.getFieldProps('lastname')}
               className={clsx(
-                "form-control form-control-lg form-control-solid",
+                'form-control form-control-lg form-control-solid',
                 {
-                  "is-invalid":
-                    formik.touched.lastname && formik.errors.lastname,
+                  'is-invalid':
+                    formik.touched.lastname && formik.errors.lastname
                 },
                 {
-                  "is-valid":
-                    formik.touched.lastname && !formik.errors.lastname,
+                  'is-valid': formik.touched.lastname && !formik.errors.lastname
                 }
               )}
             />
@@ -204,12 +202,12 @@ export function Registration() {
           placeholder="Email"
           type="email"
           autoComplete="off"
-          {...formik.getFieldProps("email")}
+          {...formik.getFieldProps('email')}
           className={clsx(
-            "form-control form-control-lg form-control-solid",
-            { "is-invalid": formik.touched.email && formik.errors.email },
+            'form-control form-control-lg form-control-solid',
+            { 'is-invalid': formik.touched.email && formik.errors.email },
             {
-              "is-valid": formik.touched.email && !formik.errors.email,
+              'is-valid': formik.touched.email && !formik.errors.email
             }
           )}
         />
@@ -234,16 +232,15 @@ export function Registration() {
               type="password"
               placeholder="Password"
               autoComplete="off"
-              {...formik.getFieldProps("password")}
+              {...formik.getFieldProps('password')}
               className={clsx(
-                "form-control form-control-lg form-control-solid",
+                'form-control form-control-lg form-control-solid',
                 {
-                  "is-invalid":
-                    formik.touched.password && formik.errors.password,
+                  'is-invalid':
+                    formik.touched.password && formik.errors.password
                 },
                 {
-                  "is-valid":
-                    formik.touched.password && !formik.errors.password,
+                  'is-valid': formik.touched.password && !formik.errors.password
                 }
               )}
             />
@@ -268,16 +265,16 @@ export function Registration() {
           type="password"
           placeholder="Password confirmation"
           autoComplete="off"
-          {...formik.getFieldProps("changepassword")}
+          {...formik.getFieldProps('changepassword')}
           className={clsx(
-            "form-control form-control-lg form-control-solid",
+            'form-control form-control-lg form-control-solid',
             {
-              "is-invalid":
-                formik.touched.changepassword && formik.errors.changepassword,
+              'is-invalid':
+                formik.touched.changepassword && formik.errors.changepassword
             },
             {
-              "is-valid":
-                formik.touched.changepassword && !formik.errors.changepassword,
+              'is-valid':
+                formik.touched.changepassword && !formik.errors.changepassword
             }
           )}
         />
@@ -298,13 +295,13 @@ export function Registration() {
             className="form-check-input"
             type="checkbox"
             id="kt_login_toc_agree"
-            {...formik.getFieldProps("acceptTerms")}
+            {...formik.getFieldProps('acceptTerms')}
           />
           <label
             className="form-check-label fw-bold text-gray-700 fs-6"
             htmlFor="kt_login_toc_agree"
           >
-            I Agree the{" "}
+            I Agree the{' '}
             <Link to="/auth/terms" className="ms-1 link-primary">
               terms and conditions
             </Link>
@@ -333,8 +330,8 @@ export function Registration() {
         >
           {!loading && <span className="indicator-label">Submit</span>}
           {loading && (
-            <span className="indicator-progress" style={{ display: "block" }}>
-              Please wait...{" "}
+            <span className="indicator-progress" style={{ display: 'block' }}>
+              Please wait...{' '}
               <span className="spinner-border spinner-border-sm align-middle ms-2"></span>
             </span>
           )}

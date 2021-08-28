@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import clsx from "clsx";
-import React from "react";
+import clsx from 'clsx';
+import React from 'react';
 
 type Props = {
   className: string;
@@ -11,9 +11,9 @@ type Props = {
 
 const EngageWidget2: React.FC<Props> = ({
   className,
-  imagePath = "",
-  innerPadding = "",
-  color = "primary",
+  imagePath = '',
+  innerPadding = '',
+  color = 'primary'
 }) => {
   return (
     <div className={`card overflow-hidden ${className}`}>
@@ -24,7 +24,7 @@ const EngageWidget2: React.FC<Props> = ({
               Nike Sneakers
             </a>
           </h3>
-          <div className={clsx("fs-3", `text-${color}`)}>
+          <div className={clsx('fs-3', `text-${color}`)}>
             Get Amazing Nike Sneakers
           </div>
         </div>
@@ -32,8 +32,8 @@ const EngageWidget2: React.FC<Props> = ({
           <div
             className="d-none d-md-flex flex-row-fluid bgi-no-repeat bgi-position-y-center bgi-position-x-right bgi-size-cover"
             style={{
-              transform: "translateX(10%) rotate(-26deg)",
-              backgroundImage: `url('${imagePath}')`,
+              transform: 'translateX(10%) rotate(-26deg)',
+              backgroundImage: `url('${imagePath}')`
             }}
           ></div>
         )}

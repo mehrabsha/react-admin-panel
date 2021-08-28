@@ -1,6 +1,6 @@
 /* eslint-disable array-callback-return */
 /* eslint-disable no-useless-escape */
-import { DataUtil } from "../_utils/index";
+import { DataUtil } from '../_utils/index';
 
 export interface IPasswordMeterOptions {
   minLength: number;
@@ -25,15 +25,15 @@ const defaultPasswordMeterOptions = {
   checkLowercase: true,
   checkDigit: true,
   checkChar: true,
-  scoreHighlightClass: "active",
+  scoreHighlightClass: 'active'
 };
 
 const defaultPasswordMeterQueires: IPasswordMeterQueries = {
-  componentName: "password-meter",
-  instanseQuery: "[data-kt-password-meter]",
-  inputQuery: "input[type]",
+  componentName: 'password-meter',
+  instanseQuery: '[data-kt-password-meter]',
+  inputQuery: 'input[type]',
   visibilityQuery: '[data-kt-password-meter-control="visibility"]',
-  highlightQuery: '[data-kt-password-meter-control="highlight"]',
+  highlightQuery: '[data-kt-password-meter-control="highlight"]'
 };
 
 class PasswordMeterComponent {
@@ -74,13 +74,13 @@ class PasswordMeterComponent {
 
   private handlers(): void {
     if (this.inputElement) {
-      this.inputElement.addEventListener("input", () => {
+      this.inputElement.addEventListener('input', () => {
         this.check();
       });
     }
 
     if (this.visibilityElement) {
-      this.visibilityElement.addEventListener("click", () => {
+      this.visibilityElement.addEventListener('click', () => {
         this.visitbility();
       });
     }
@@ -89,23 +89,23 @@ class PasswordMeterComponent {
   private visitbility() {
     if (this.visibilityElement && this.inputElement) {
       const visibleIcon = this.visibilityElement.querySelector(
-        "i:not(.d-none), .svg-icon:not(.d-none)"
+        'i:not(.d-none), .svg-icon:not(.d-none)'
       );
 
       const hiddenIcon = this.visibilityElement.querySelector(
-        "i.d-none, .svg-icon.d-none"
+        'i.d-none, .svg-icon.d-none'
       );
 
-      const typeAttr = this.inputElement.getAttribute("type") || "";
+      const typeAttr = this.inputElement.getAttribute('type') || '';
 
-      if (typeAttr === "password") {
-        this.inputElement.setAttribute("type", "text");
+      if (typeAttr === 'password') {
+        this.inputElement.setAttribute('type', 'text');
       } else {
-        this.inputElement.setAttribute("type", "password");
+        this.inputElement.setAttribute('type', 'password');
       }
 
-      visibleIcon?.classList.add("d-none");
-      hiddenIcon?.classList.remove("d-none");
+      visibleIcon?.classList.add('d-none');
+      hiddenIcon?.classList.remove('d-none');
 
       this.inputElement.focus();
     }
@@ -124,22 +124,22 @@ class PasswordMeterComponent {
   }
 
   private checkLowerCase(): boolean {
-    const val = this.inputElement ? this.inputElement.value : "";
+    const val = this.inputElement ? this.inputElement.value : '';
     return /[a-z]/.test(val); // 20 score
   }
 
   private checkUppercase(): boolean {
-    const val = this.inputElement ? this.inputElement.value : "";
+    const val = this.inputElement ? this.inputElement.value : '';
     return /[A-Z]/.test(val); // 20 score
   }
 
   private checkDigit(): boolean {
-    const val = this.inputElement ? this.inputElement.value : "";
+    const val = this.inputElement ? this.inputElement.value : '';
     return /[0-9]/.test(val); // 20 score
   }
 
   private checkChar(): boolean {
-    const val = this.inputElement ? this.inputElement.value : "";
+    const val = this.inputElement ? this.inputElement.value : '';
     return /[~`!#$%\^&*+=\-\[\]\\';,/{}|\\":<>\?]/g.test(val); // 20 score
   }
 
@@ -167,7 +167,7 @@ class PasswordMeterComponent {
 
   private highlight() {
     const items = this.highlightElement
-      ? [].slice.call(this.highlightElement.querySelectorAll("div"))
+      ? [].slice.call(this.highlightElement.querySelectorAll('div'))
       : [];
     const total = items.length;
     let index = 0;
@@ -177,9 +177,9 @@ class PasswordMeterComponent {
     items.map((item: HTMLElement) => {
       index++;
       if (checkScore * index * (this.checkSteps / total) <= score) {
-        item.classList.add("active");
+        item.classList.add('active');
       } else {
-        item.classList.remove("active");
+        item.classList.remove('active');
       }
     });
   }
@@ -242,7 +242,7 @@ class PasswordMeterComponent {
     queries: IPasswordMeterQueries = defaultPasswordMeterQueires
   ) => {
     const elements = document.body.querySelectorAll(selector);
-    elements.forEach((el) => {
+    elements.forEach(el => {
       const item = el as HTMLElement;
       let passwordMeter = PasswordMeterComponent.getInstance(item);
       if (!passwordMeter) {
@@ -283,5 +283,5 @@ class PasswordMeterComponent {
 export {
   PasswordMeterComponent,
   defaultPasswordMeterOptions,
-  defaultPasswordMeterQueires,
+  defaultPasswordMeterQueires
 };

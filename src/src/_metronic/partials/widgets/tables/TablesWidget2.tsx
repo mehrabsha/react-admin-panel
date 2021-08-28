@@ -1,8 +1,8 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from "react";
-import { toAbsoluteUrl } from "../../../helpers";
-import { KTSVG } from "../../../helpers";
-import { Dropdown1 } from "../../content/dropdown/Dropdown1";
+import React from 'react';
+import { toAbsoluteUrl } from '../../../helpers';
+import { KTSVG } from '../../../helpers';
+import { Dropdown1 } from '../../content/dropdown/Dropdown1';
 
 type Props = {
   className: string;
@@ -64,7 +64,7 @@ const TablesWidget2: React.FC<Props> = ({ className }) => {
                   <div className="symbol symbol-50px me-2">
                     <span className="symbol-label">
                       <img
-                        src={toAbsoluteUrl("/media/svg/brand-logos/plurk.svg")}
+                        src={toAbsoluteUrl('/media/svg/brand-logos/plurk.svg')}
                         className="h-50 align-self-center"
                         alt=""
                       />
@@ -111,7 +111,7 @@ const TablesWidget2: React.FC<Props> = ({ className }) => {
                     <span className="symbol-label">
                       <img
                         src={toAbsoluteUrl(
-                          "/media/svg/brand-logos/telegram.svg"
+                          '/media/svg/brand-logos/telegram.svg'
                         )}
                         className="h-50 align-self-center"
                         alt=""
@@ -158,7 +158,7 @@ const TablesWidget2: React.FC<Props> = ({ className }) => {
                   <div className="symbol symbol-50px me-2">
                     <span className="symbol-label">
                       <img
-                        src={toAbsoluteUrl("/media/svg/brand-logos/vimeo.svg")}
+                        src={toAbsoluteUrl('/media/svg/brand-logos/vimeo.svg')}
                         className="h-50 align-self-center"
                         alt=""
                       />
@@ -204,7 +204,7 @@ const TablesWidget2: React.FC<Props> = ({ className }) => {
                   <div className="symbol symbol-50px me-2">
                     <span className="symbol-label">
                       <img
-                        src={toAbsoluteUrl("/media/svg/brand-logos/bebo.svg")}
+                        src={toAbsoluteUrl('/media/svg/brand-logos/bebo.svg')}
                         className="h-50 align-self-center"
                         alt=""
                       />
@@ -251,7 +251,7 @@ const TablesWidget2: React.FC<Props> = ({ className }) => {
                     <span className="symbol-label">
                       <img
                         src={toAbsoluteUrl(
-                          "/media/svg/brand-logos/kickstarter.svg"
+                          '/media/svg/brand-logos/kickstarter.svg'
                         )}
                         className="h-50 align-self-center"
                         alt=""

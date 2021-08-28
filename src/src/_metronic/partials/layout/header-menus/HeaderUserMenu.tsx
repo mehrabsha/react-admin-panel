@@ -1,9 +1,9 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import { FC } from "react";
-import { shallowEqual, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
-import { UserModel } from "../../../../app/modules/auth/models/UserModel";
-import { RootState } from "../../../../setup";
+import { FC } from 'react';
+import { shallowEqual, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { UserModel } from '../../../../app/modules/auth/models/UserModel';
+import { RootState } from '../../../../setup';
 
 const HeaderUserMenu: FC = () => {
   const user: UserModel = useSelector<RootState>(
@@ -38,7 +38,7 @@ const HeaderUserMenu: FC = () => {
       <div className="separator my-2"></div>
 
       <div className="menu-item px-5">
-        <Link to={"/crafted/pages/profile"} className="menu-link px-5">
+        <Link to={'/crafted/pages/profile'} className="menu-link px-5">
           My Profile
         </Link>
       </div>

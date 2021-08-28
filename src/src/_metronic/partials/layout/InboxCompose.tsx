@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useState, useRef } from "react";
-import { Modal } from "react-bootstrap-v5";
-import { KTSVG } from "../../helpers";
+import React, { useState, useRef } from 'react';
+import { Modal } from 'react-bootstrap-v5';
+import { KTSVG } from '../../helpers';
 
 export type Props = {
   show: boolean;
@@ -11,9 +11,9 @@ export type Props = {
 const InboxCompose: React.FC<Props> = ({ show, handleClose }) => {
   const composeToRef = useRef<HTMLInputElement | null>(null);
   const formRef = useRef<HTMLFormElement | null>(null);
-  const [composeCC, setComposeCC] = useState("");
-  const [composeBCC, setComposeBCC] = useState("");
-  const [subject, setSubject] = useState("");
+  const [composeCC, setComposeCC] = useState('');
+  const [composeBCC, setComposeBCC] = useState('');
+  const [subject, setSubject] = useState('');
 
   return (
     <Modal
@@ -31,7 +31,7 @@ const InboxCompose: React.FC<Props> = ({ show, handleClose }) => {
         <form
           ref={formRef}
           id="kt_inbox_compose_form"
-          onSubmit={() => console.log("submit")}
+          onSubmit={() => console.log('submit')}
         >
           {/*begin::Header*/}
           <div className="d-flex align-items-center justify-content-between py-5 ps-8 pe-5 border-bottom">
@@ -92,7 +92,7 @@ const InboxCompose: React.FC<Props> = ({ show, handleClose }) => {
                   className="form-control border-0"
                   name="compose_cc"
                   value={composeCC}
-                  onChange={(e) => setComposeCC(e.target.value)}
+                  onChange={e => setComposeCC(e.target.value)}
                 />
               </div>
               <span
@@ -113,7 +113,7 @@ const InboxCompose: React.FC<Props> = ({ show, handleClose }) => {
                   className="form-control border-0"
                   name="compose_bcc"
                   value={composeBCC}
-                  onChange={(e) => setComposeBCC(e.target.value)}
+                  onChange={e => setComposeBCC(e.target.value)}
                 />
               </div>
               <span
@@ -132,7 +132,7 @@ const InboxCompose: React.FC<Props> = ({ show, handleClose }) => {
                 name="compose_subject"
                 placeholder="Subject"
                 value={subject}
-                onChange={(e) => setSubject(e.target.value)}
+                onChange={e => setSubject(e.target.value)}
               />
             </div>
             {/*end::Subject*/}
@@ -150,13 +150,13 @@ const InboxCompose: React.FC<Props> = ({ show, handleClose }) => {
               id="kt_inbox_compose_attachments"
             >
               <div className="dropzone-items">
-                <div className="dropzone-item" style={{ display: "none" }}>
+                <div className="dropzone-item" style={{ display: 'none' }}>
                   <div className="dropzone-file">
                     <div
                       className="dropzone-filename"
                       title="some_image_file_name.jpg"
                     >
-                      <span data-dz-name>some_image_file_name.jpg</span>{" "}
+                      <span data-dz-name>some_image_file_name.jpg</span>{' '}
                       <strong>
                         (<span data-dz-size>340kb</span>)
                       </strong>

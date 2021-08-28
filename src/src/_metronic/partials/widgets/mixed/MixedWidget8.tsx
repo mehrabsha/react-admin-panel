@@ -1,9 +1,9 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useEffect, useRef } from "react";
-import ApexCharts, { ApexOptions } from "apexcharts";
-import { KTSVG, toAbsoluteUrl } from "../../../helpers";
-import { getCSSVariableValue } from "../../../assets/ts/_utils";
-import { Dropdown1 } from "../../content/dropdown/Dropdown1";
+import React, { useEffect, useRef } from 'react';
+import ApexCharts, { ApexOptions } from 'apexcharts';
+import { KTSVG, toAbsoluteUrl } from '../../../helpers';
+import { getCSSVariableValue } from '../../../assets/ts/_utils';
+import { Dropdown1 } from '../../content/dropdown/Dropdown1';
 
 type Props = {
   className: string;
@@ -14,7 +14,7 @@ type Props = {
 const MixedWidget8: React.FC<Props> = ({
   className,
   chartColor,
-  chartHeight,
+  chartHeight
 }) => {
   const chartRef = useRef<HTMLDivElement | null>(null);
 
@@ -88,7 +88,7 @@ const MixedWidget8: React.FC<Props> = ({
               <div className="symbol symbol-50px me-3">
                 <div className="symbol-label bg-light">
                   <img
-                    src={toAbsoluteUrl("/media/svg/brand-logos/plurk.svg")}
+                    src={toAbsoluteUrl('/media/svg/brand-logos/plurk.svg')}
                     alt=""
                     className="h-50"
                   />
@@ -126,7 +126,7 @@ const MixedWidget8: React.FC<Props> = ({
               <div className="symbol symbol-50px me-3">
                 <div className="symbol-label bg-light">
                   <img
-                    src={toAbsoluteUrl("/media/svg/brand-logos/figma-1.svg")}
+                    src={toAbsoluteUrl('/media/svg/brand-logos/figma-1.svg')}
                     alt=""
                     className="h-50"
                   />
@@ -164,7 +164,7 @@ const MixedWidget8: React.FC<Props> = ({
               <div className="symbol symbol-50px me-3">
                 <div className="symbol-label bg-light">
                   <img
-                    src={toAbsoluteUrl("/media/svg/brand-logos/vimeo.svg")}
+                    src={toAbsoluteUrl('/media/svg/brand-logos/vimeo.svg')}
                     alt=""
                     className="h-50"
                   />
@@ -204,85 +204,85 @@ const chart1Options = (
   chartColor: string,
   chartHeight: string
 ): ApexOptions => {
-  const labelColor = getCSSVariableValue("--bs-gray-800");
-  const strokeColor = getCSSVariableValue("--bs-gray-300");
-  const baseColor = getCSSVariableValue("--bs-" + chartColor);
-  const lightColor = getCSSVariableValue("--bs-light-" + chartColor);
+  const labelColor = getCSSVariableValue('--bs-gray-800');
+  const strokeColor = getCSSVariableValue('--bs-gray-300');
+  const baseColor = getCSSVariableValue('--bs-' + chartColor);
+  const lightColor = getCSSVariableValue('--bs-light-' + chartColor);
 
   return {
     series: [
       {
-        name: "Net Profit",
-        data: [30, 30, 60, 25, 25, 40],
-      },
+        name: 'Net Profit',
+        data: [30, 30, 60, 25, 25, 40]
+      }
     ],
     chart: {
-      fontFamily: "inherit",
-      type: "area",
+      fontFamily: 'inherit',
+      type: 'area',
       height: chartHeight,
       toolbar: {
-        show: false,
+        show: false
       },
       zoom: {
-        enabled: false,
+        enabled: false
       },
       sparkline: {
-        enabled: true,
-      },
+        enabled: true
+      }
     },
     plotOptions: {},
     legend: {
-      show: false,
+      show: false
     },
     dataLabels: {
-      enabled: false,
+      enabled: false
     },
     fill: {
-      type: "gradient",
+      type: 'gradient',
       opacity: 1,
       gradient: {
-        type: "vertical",
+        type: 'vertical',
         shadeIntensity: 0.5,
         gradientToColors: undefined,
         inverseColors: true,
         opacityFrom: 1,
         opacityTo: 0.375,
-        stops: [25, 50, 100],
-      },
+        stops: [25, 50, 100]
+      }
     },
     stroke: {
-      curve: "smooth",
+      curve: 'smooth',
       show: true,
       width: 3,
-      colors: [baseColor],
+      colors: [baseColor]
     },
     xaxis: {
-      categories: ["Feb", "Mar", "Apr", "May", "Jun", "Jul"],
+      categories: ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
       axisBorder: {
-        show: false,
+        show: false
       },
       axisTicks: {
-        show: false,
+        show: false
       },
       labels: {
         show: false,
         style: {
           colors: labelColor,
-          fontSize: "12px",
-        },
+          fontSize: '12px'
+        }
       },
       crosshairs: {
         show: false,
-        position: "front",
+        position: 'front',
         stroke: {
           color: strokeColor,
           width: 1,
-          dashArray: 3,
-        },
+          dashArray: 3
+        }
       },
       tooltip: {
-        enabled: false,
-      },
+        enabled: false
+      }
     },
     yaxis: {
       min: 0,
@@ -291,47 +291,47 @@ const chart1Options = (
         show: false,
         style: {
           colors: labelColor,
-          fontSize: "12px",
-        },
-      },
+          fontSize: '12px'
+        }
+      }
     },
     states: {
       normal: {
         filter: {
-          type: "none",
-          value: 0,
-        },
+          type: 'none',
+          value: 0
+        }
       },
       hover: {
         filter: {
-          type: "none",
-          value: 0,
-        },
+          type: 'none',
+          value: 0
+        }
       },
       active: {
         allowMultipleDataPointsSelection: false,
         filter: {
-          type: "none",
-          value: 0,
-        },
-      },
+          type: 'none',
+          value: 0
+        }
+      }
     },
     tooltip: {
       style: {
-        fontSize: "12px",
+        fontSize: '12px'
       },
       y: {
         formatter: function (val) {
-          return "$" + val + " thousands";
-        },
-      },
+          return '$' + val + ' thousands';
+        }
+      }
     },
     colors: [lightColor],
     markers: {
       colors: [lightColor],
       strokeColors: [baseColor],
-      strokeWidth: 3,
-    },
+      strokeWidth: 3
+    }
   };
 };
 

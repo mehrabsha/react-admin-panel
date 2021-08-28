@@ -1,9 +1,9 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useEffect, useRef } from "react";
-import ApexCharts, { ApexOptions } from "apexcharts";
-import { KTSVG } from "../../../helpers";
-import { getCSSVariableValue } from "../../../assets/ts/_utils";
-import { Dropdown1 } from "../../content/dropdown/Dropdown1";
+import React, { useEffect, useRef } from 'react';
+import ApexCharts, { ApexOptions } from 'apexcharts';
+import { KTSVG } from '../../../helpers';
+import { getCSSVariableValue } from '../../../assets/ts/_utils';
+import { Dropdown1 } from '../../content/dropdown/Dropdown1';
 
 type Props = {
   className: string;
@@ -14,7 +14,7 @@ type Props = {
 const MixedWidget6: React.FC<Props> = ({
   className,
   chartHeight,
-  chartColor,
+  chartColor
 }) => {
   const chartRef = useRef<HTMLDivElement | null>(null);
 
@@ -158,76 +158,76 @@ const MixedWidget6: React.FC<Props> = ({
 };
 
 const chartOptions = (chartHeight: string, chartColor: string): ApexOptions => {
-  const labelColor = getCSSVariableValue("--bs-gray-800");
-  const strokeColor = getCSSVariableValue("--bs-gray-300");
-  const baseColor = getCSSVariableValue("--bs-" + chartColor);
-  const lightColor = getCSSVariableValue("--bs-light-" + chartColor);
+  const labelColor = getCSSVariableValue('--bs-gray-800');
+  const strokeColor = getCSSVariableValue('--bs-gray-300');
+  const baseColor = getCSSVariableValue('--bs-' + chartColor);
+  const lightColor = getCSSVariableValue('--bs-light-' + chartColor);
 
   return {
     series: [
       {
-        name: "Net Profit",
-        data: [30, 25, 45, 30, 55, 55],
-      },
+        name: 'Net Profit',
+        data: [30, 25, 45, 30, 55, 55]
+      }
     ],
     chart: {
-      fontFamily: "inherit",
-      type: "area",
+      fontFamily: 'inherit',
+      type: 'area',
       height: chartHeight,
       toolbar: {
-        show: false,
+        show: false
       },
       zoom: {
-        enabled: false,
+        enabled: false
       },
       sparkline: {
-        enabled: true,
-      },
+        enabled: true
+      }
     },
     plotOptions: {},
     legend: {
-      show: false,
+      show: false
     },
     dataLabels: {
-      enabled: false,
+      enabled: false
     },
     fill: {
-      type: "solid",
-      opacity: 1,
+      type: 'solid',
+      opacity: 1
     },
     stroke: {
-      curve: "smooth",
+      curve: 'smooth',
       show: true,
       width: 3,
-      colors: [baseColor],
+      colors: [baseColor]
     },
     xaxis: {
-      categories: ["Feb", "Mar", "Apr", "May", "Jun", "Jul"],
+      categories: ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
       axisBorder: {
-        show: false,
+        show: false
       },
       axisTicks: {
-        show: false,
+        show: false
       },
       labels: {
         show: false,
         style: {
           colors: labelColor,
-          fontSize: "12px",
-        },
+          fontSize: '12px'
+        }
       },
       crosshairs: {
         show: false,
-        position: "front",
+        position: 'front',
         stroke: {
           color: strokeColor,
           width: 1,
-          dashArray: 3,
-        },
+          dashArray: 3
+        }
       },
       tooltip: {
-        enabled: false,
-      },
+        enabled: false
+      }
     },
     yaxis: {
       min: 0,
@@ -236,47 +236,47 @@ const chartOptions = (chartHeight: string, chartColor: string): ApexOptions => {
         show: false,
         style: {
           colors: labelColor,
-          fontSize: "12px",
-        },
-      },
+          fontSize: '12px'
+        }
+      }
     },
     states: {
       normal: {
         filter: {
-          type: "none",
-          value: 0,
-        },
+          type: 'none',
+          value: 0
+        }
       },
       hover: {
         filter: {
-          type: "none",
-          value: 0,
-        },
+          type: 'none',
+          value: 0
+        }
       },
       active: {
         allowMultipleDataPointsSelection: false,
         filter: {
-          type: "none",
-          value: 0,
-        },
-      },
+          type: 'none',
+          value: 0
+        }
+      }
     },
     tooltip: {
       style: {
-        fontSize: "12px",
+        fontSize: '12px'
       },
       y: {
         formatter: function (val) {
-          return "$" + val + " thousands";
-        },
-      },
+          return '$' + val + ' thousands';
+        }
+      }
     },
     colors: [lightColor],
     markers: {
       colors: [lightColor],
       strokeColors: [baseColor],
-      strokeWidth: 3,
-    },
+      strokeWidth: 3
+    }
   };
 };
 

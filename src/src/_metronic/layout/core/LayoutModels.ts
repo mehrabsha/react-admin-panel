@@ -1,6 +1,6 @@
 export interface ILoader {
   display?: boolean;
-  type: "default" | "spinner-message" | "spinner-logo";
+  type: 'default' | 'spinner-message' | 'spinner-logo';
 }
 
 export interface IScrollTop {
@@ -9,13 +9,13 @@ export interface IScrollTop {
 
 export interface IHeader {
   display: boolean;
-  width: "fixed" | "fluid";
-  left: "menu" | "page-title";
+  width: 'fixed' | 'fluid';
+  left: 'menu' | 'page-title';
   fixed: {
     desktop: boolean;
     tabletAndMobile: boolean;
   };
-  menuIcon: "svg" | "font";
+  menuIcon: 'svg' | 'font';
 }
 
 export interface IMegaMenu {
@@ -24,42 +24,42 @@ export interface IMegaMenu {
 
 export interface IAside {
   display: boolean; // Display aside
-  theme: "dark" | "light"; // Set aside theme(dark|light)
-  menu: "main" | "documentation"; // Set aside menu(main|documentation)
+  theme: 'dark' | 'light'; // Set aside theme(dark|light)
+  menu: 'main' | 'documentation'; // Set aside menu(main|documentation)
   fixed: boolean; // Enable aside fixed mode
   minimized: boolean; // Set aside minimized by default
   minimize: boolean; // Allow aside minimize toggle
   hoverable: boolean; // Allow aside hovering when minimized
-  menuIcon: "svg" | "font"; // Menu icon type(svg|font)
+  menuIcon: 'svg' | 'font'; // Menu icon type(svg|font)
 }
 
 export interface IContent {
-  width: "fixed" | "fluid";
-  layout: "default" | "docs";
+  width: 'fixed' | 'fluid';
+  layout: 'default' | 'docs';
 }
 
 export interface IFooter {
-  width: "fixed" | "fluid";
+  width: 'fixed' | 'fluid';
 }
 
 export interface ISidebar {
   display: boolean;
   toggle: boolean;
   shown: boolean;
-  content: "general" | "user" | "shop";
-  bgColor: "bg-white" | "bg-info";
+  content: 'general' | 'user' | 'shop';
+  bgColor: 'bg-white' | 'bg-info';
   displayFooter: boolean;
   displayFooterButton: boolean;
 }
 
 export interface IToolbar {
   display: boolean;
-  width: "fixed" | "fluid";
+  width: 'fixed' | 'fluid';
   fixed: {
     desktop: boolean; // Set fixed header for desktop
     tabletAndMobileMode: boolean; // Set fixed header for talet & mobile
   };
-  layout: "toolbar1" | "toolbar2" | "toolbar3" | "toolbar4" | "toolbar5";
+  layout: 'toolbar1' | 'toolbar2' | 'toolbar3' | 'toolbar4' | 'toolbar5';
   layouts: {
     toolbar1: {
       height: string;
@@ -88,10 +88,10 @@ export interface IPageTitle {
   display: boolean;
   breadCrumbs: boolean;
   description: boolean;
-  layout: "default" | "select";
-  direction: "row" | "column";
+  layout: 'default' | 'select';
+  direction: 'row' | 'column';
   responsive: boolean;
-  responsiveBreakpoint: "lg" | "md" | "lg" | "300px";
+  responsiveBreakpoint: 'lg' | 'md' | 'lg' | '300px';
   responsiveTarget: string;
 }
 
@@ -102,7 +102,7 @@ export interface IMain {
   };
   primaryColor: string;
   darkSkinEnabled: boolean;
-  type: "blank" | "default" | "none";
+  type: 'blank' | 'default' | 'none';
 }
 
 export interface ILayout {

@@ -1,7 +1,7 @@
-import React, { useRef, useEffect } from "react";
-import { useLayout } from "../core";
+import React, { useRef, useEffect } from 'react';
+import { useLayout } from '../core';
 
-const BG_COLORS = ["bg-white", "bg-info"];
+const BG_COLORS = ['bg-white', 'bg-info'];
 
 export function Sidebar() {
   const { classes } = useLayout();
@@ -13,11 +13,11 @@ export function Sidebar() {
       return;
     }
 
-    BG_COLORS.forEach((cssClass) => {
+    BG_COLORS.forEach(cssClass => {
       sideBarRef.current?.classList.remove(cssClass);
     });
 
-    sidebarCSSClass.forEach((cssClass) => {
+    sidebarCSSClass.forEach(cssClass => {
       sideBarRef.current?.classList.add(cssClass);
     });
   }, [sidebarCSSClass]);

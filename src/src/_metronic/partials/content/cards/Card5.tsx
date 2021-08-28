@@ -1,13 +1,13 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import { FC } from "react";
-import { toAbsoluteUrl, KTSVG } from "../../../helpers";
-import { Dropdown1 } from "../dropdown/Dropdown1";
+import { FC } from 'react';
+import { toAbsoluteUrl, KTSVG } from '../../../helpers';
+import { Dropdown1 } from '../dropdown/Dropdown1';
 
 type Props = {
   image: string;
   title: string;
   description: string;
-  status: "up" | "down";
+  status: 'up' | 'down';
   statusValue: number;
   statusDesc: string;
   progress: number;
@@ -22,7 +22,7 @@ const Card5: FC<Props> = ({
   statusValue,
   statusDesc,
   progress,
-  progressType,
+  progressType
 }) => {
   return (
     <div className="card h-100">
@@ -62,14 +62,14 @@ const Card5: FC<Props> = ({
         <div className="fs-2tx fw-bolder mb-3">{description}</div>
 
         <div className="d-flex align-items-center flex-wrap mb-5 mt-auto fs-6">
-          {status === "up" && (
+          {status === 'up' && (
             <KTSVG
               path="/media/icons/duotune/arrows/arr007.svg"
               className="svg-icon-3 me-1 svg-icon-success"
             />
           )}
 
-          {status === "down" && (
+          {status === 'down' && (
             <KTSVG
               path="/media/icons/duotune/arrows/arr006.svg"
               className="svg-icon-3 me-1 svg-icon-danger"
@@ -79,10 +79,10 @@ const Card5: FC<Props> = ({
           <div
             className={
               `fw-bolder me-2 ` +
-              (status === "up" ? "text-success" : "text-danger")
+              (status === 'up' ? 'text-success' : 'text-danger')
             }
           >
-            {status === "up" ? "+" : "-"}
+            {status === 'up' ? '+' : '-'}
             {statusValue}%
           </div>
 

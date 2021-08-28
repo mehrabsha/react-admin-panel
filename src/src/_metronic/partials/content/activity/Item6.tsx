@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import { FC } from "react";
-import { KTSVG } from "../../../helpers";
+import { FC } from 'react';
+import { KTSVG } from '../../../helpers';
 
 const Item6: FC = () => {
   return (
@@ -19,7 +19,7 @@ const Item6: FC = () => {
       <div className="timeline-content mb-10 mt-n1">
         <div className="pe-3 mb-5">
           <div className="fs-5 fw-bold mb-2">
-            New case{" "}
+            New case{' '}
             <a href="#" className="text-primary fw-bolder me-1">
               #67890
             </a>

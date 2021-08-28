@@ -1,10 +1,10 @@
 import {
   DataUtil,
   getUniqueIdWithPrefix,
-  EventHandlerUtil,
-} from "../_utils/index";
+  EventHandlerUtil
+} from '../_utils/index';
 // Helpers
-import { CookieComponent } from "./_CookieComponent";
+import { CookieComponent } from './_CookieComponent';
 
 export interface ToggleOptions {
   saveState: boolean;
@@ -14,43 +14,43 @@ export interface ToggleOptions {
 }
 
 const defaultToggleOptions: ToggleOptions = {
-  saveState: false,
+  saveState: false
 };
 
 class ToggleComponent {
   element: HTMLElement;
   instanceUid: string;
   options: ToggleOptions;
-  state: string = "";
+  state: string = '';
   target: HTMLElement | null = null;
-  attribute: string = "";
+  attribute: string = '';
 
   constructor(_element: HTMLElement, options: ToggleOptions) {
     this.options = Object.assign(defaultToggleOptions, options);
-    this.instanceUid = getUniqueIdWithPrefix("toggle");
+    this.instanceUid = getUniqueIdWithPrefix('toggle');
     this.element = _element;
 
     const elementTargetAttr = this.element.getAttribute(
-      "data-kt-toggle-target"
+      'data-kt-toggle-target'
     );
     if (elementTargetAttr) {
       this.target = document.querySelector(elementTargetAttr);
     }
-    const elementToggleAttr = this.element.getAttribute("data-kt-toggle-state");
-    this.state = elementToggleAttr || "";
+    const elementToggleAttr = this.element.getAttribute('data-kt-toggle-state');
+    this.state = elementToggleAttr || '';
     this.attribute =
-      "data-kt-" + this.element.getAttribute("data-kt-toggle-name");
+      'data-kt-' + this.element.getAttribute('data-kt-toggle-name');
 
     // Event Handlers
     this._handlers();
 
     // Update Instance
     // Bind Instance
-    DataUtil.set(this.element, "toggle", this);
+    DataUtil.set(this.element, 'toggle', this);
   }
 
   private _handlers = () => {
-    this.element.addEventListener("click", (e: Event) => {
+    this.element.addEventListener('click', (e: Event) => {
       e.preventDefault();
       this._toggle();
     });
@@ -59,7 +59,7 @@ class ToggleComponent {
   // Event handlers
   private _toggle = () => {
     // Trigger "after.toggle" event
-    EventHandlerUtil.trigger(this.element, "kt.toggle.change");
+    EventHandlerUtil.trigger(this.element, 'kt.toggle.change');
 
     if (this._isEnabled()) {
       this._disable();
@@ -68,7 +68,7 @@ class ToggleComponent {
     }
 
     // Trigger "before.toggle" event
-    EventHandlerUtil.trigger(this.element, "kt.toggle.changed");
+    EventHandlerUtil.trigger(this.element, 'kt.toggle.changed');
     return this;
   };
 
@@ -77,17 +77,17 @@ class ToggleComponent {
       return;
     }
 
-    EventHandlerUtil.trigger(this.element, "kt.toggle.enable");
-    this.target?.setAttribute(this.attribute, "on");
+    EventHandlerUtil.trigger(this.element, 'kt.toggle.enable');
+    this.target?.setAttribute(this.attribute, 'on');
     if (this.state.length > 0) {
       this.element.classList.add(this.state);
     }
 
     if (this.options.saveState) {
-      CookieComponent.set(this.attribute, "on", {});
+      CookieComponent.set(this.attribute, 'on', {});
     }
 
-    EventHandlerUtil.trigger(this.element, "kt.toggle.enabled");
+    EventHandlerUtil.trigger(this.element, 'kt.toggle.enabled');
     return this;
   };
 
@@ -96,7 +96,7 @@ class ToggleComponent {
       return false;
     }
 
-    EventHandlerUtil.trigger(this.element, "kt.toggle.disable");
+    EventHandlerUtil.trigger(this.element, 'kt.toggle.disable');
     this.target?.removeAttribute(this.attribute);
 
     if (this.state.length > 0) {
@@ -107,7 +107,7 @@ class ToggleComponent {
       CookieComponent.delete(this.attribute);
     }
 
-    EventHandlerUtil.trigger(this.element, "kt.toggle.disabled");
+    EventHandlerUtil.trigger(this.element, 'kt.toggle.disabled');
     return this;
   };
 
@@ -117,7 +117,7 @@ class ToggleComponent {
     }
 
     return (
-      String(this.target.getAttribute(this.attribute)).toLowerCase() === "on"
+      String(this.target.getAttribute(this.attribute)).toLowerCase() === 'on'
     );
   };
 
@@ -166,7 +166,7 @@ class ToggleComponent {
 
   // Static methods
   public static getInstance = (el: HTMLElement) => {
-    const toggleElement = DataUtil.get(el, "toggle");
+    const toggleElement = DataUtil.get(el, 'toggle');
     if (toggleElement) {
       return toggleElement;
     }
@@ -176,7 +176,7 @@ class ToggleComponent {
 
   public static createInstances = (selector: string) => {
     const elements = document.body.querySelectorAll(selector);
-    elements.forEach((el) => {
+    elements.forEach(el => {
       const item = el as HTMLElement;
       let toggleElement = ToggleComponent.getInstance(item);
       if (!toggleElement) {
@@ -202,11 +202,11 @@ class ToggleComponent {
   };
 
   public static reinitialization = () => {
-    ToggleComponent.createInstances("[data-kt-toggle]");
+    ToggleComponent.createInstances('[data-kt-toggle]');
   };
 
   public static bootstrap = () => {
-    ToggleComponent.createInstances("[data-kt-toggle]");
+    ToggleComponent.createInstances('[data-kt-toggle]');
   };
 }
 

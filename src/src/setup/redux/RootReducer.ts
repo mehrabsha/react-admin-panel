@@ -1,10 +1,10 @@
-import { all } from "redux-saga/effects";
-import { combineReducers } from "redux";
+import { all } from 'redux-saga/effects';
+import { combineReducers } from 'redux';
 
-import * as auth from "../../app/modules/auth";
+import * as auth from '../../app/modules/auth';
 
 export const rootReducer = combineReducers({
-  auth: auth.reducer,
+  auth: auth.reducer
 });
 
 export type RootState = ReturnType<typeof rootReducer>;

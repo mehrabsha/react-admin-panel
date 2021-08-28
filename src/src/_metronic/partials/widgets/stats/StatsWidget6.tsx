@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from "react";
-import { KTSVG, toAbsoluteUrl } from "../../../helpers";
+import React from 'react';
+import { KTSVG, toAbsoluteUrl } from '../../../helpers';
 
 type Props = {
   className: string;
@@ -10,8 +10,8 @@ type Props = {
 
 const StatsWidget6: React.FC<Props> = ({
   className,
-  innerPadding = "",
-  children,
+  innerPadding = '',
+  children
 }) => {
   return (
     <div className={`card ${className}`}>
@@ -25,7 +25,7 @@ const StatsWidget6: React.FC<Props> = ({
             <div className="">
               <span className="text-primary d-block mb-n1">Your Storage</span>
               <span className="font-weight-light fs-1 text-gray-800">
-                GB{" "}
+                GB{' '}
                 <span className="fw-bolder fs-1 text-gray-800">7,562.00</span>
               </span>
             </div>
@@ -39,8 +39,8 @@ const StatsWidget6: React.FC<Props> = ({
             className="position-relative bgi-no-repeat bgi-size-contain bgi-position-y-bottom bgi-position-x-end mt-6 flex-grow-1"
             style={{
               backgroundImage: `url('${toAbsoluteUrl(
-                "/media/misc/illustration-1.png"
-              )}')`,
+                '/media/misc/illustration-1.png'
+              )}')`
             }}
           ></div>
           {/* end::Pic */}
@@ -59,7 +59,7 @@ const StatsWidget6: React.FC<Props> = ({
                 <KTSVG
                   className="svg-icon-2x ms-n1"
                   path="/media/icons/duotune/general/gen002.svg"
-                />{" "}
+                />{' '}
                 <span className="text-gray-800 fw-bolder fs-6 d-block pt-6">
                   Upload File
                 </span>
@@ -73,7 +73,7 @@ const StatsWidget6: React.FC<Props> = ({
                 <KTSVG
                   className="svg-icon-2x ms-n1"
                   path="/media/icons/duotune/general/gen005.svg"
-                />{" "}
+                />{' '}
                 <span className="text-gray-800 fw-bolder fs-6 d-block pt-6">
                   Read Docs
                 </span>
@@ -92,7 +92,7 @@ const StatsWidget6: React.FC<Props> = ({
                 <KTSVG
                   className="svg-icon-2x ms-n1"
                   path="/media/icons/duotune/general/gen002.svg"
-                />{" "}
+                />{' '}
                 <span className="text-gray-800 fw-bolder fs-6 d-block pt-6">
                   MRC 22 XML
                 </span>
@@ -106,7 +106,7 @@ const StatsWidget6: React.FC<Props> = ({
                 <KTSVG
                   className="svg-icon-2x ms-n1"
                   path="/media/icons/duotune/general/gen005.svg"
-                />{" "}
+                />{' '}
                 <span className="text-gray-800 fw-bolder fs-6 d-block pt-6">
                   CTI Tech Specs
                 </span>
@@ -125,7 +125,7 @@ const StatsWidget6: React.FC<Props> = ({
                 <KTSVG
                   className="svg-icon-2x ms-n1"
                   path="/media/icons/duotune/general/gen005.svg"
-                />{" "}
+                />{' '}
                 <span className="text-gray-800 fw-bolder fs-6 d-block pt-6">
                   Check List
                 </span>
@@ -139,7 +139,7 @@ const StatsWidget6: React.FC<Props> = ({
                 <KTSVG
                   className="svg-icon-2x ms-n1"
                   path="/media/icons/duotune/files/fil023.svg"
-                />{" "}
+                />{' '}
                 <span className="text-gray-800 fw-bolder fs-6 d-block pt-6">
                   Reports
                 </span>

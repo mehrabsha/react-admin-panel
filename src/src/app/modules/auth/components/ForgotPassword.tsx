@@ -1,20 +1,20 @@
-import React, { useState } from "react";
-import * as Yup from "yup";
-import clsx from "clsx";
-import { Link } from "react-router-dom";
-import { useFormik } from "formik";
-import { requestPassword } from "../redux/AuthCRUD";
+import React, { useState } from 'react';
+import * as Yup from 'yup';
+import clsx from 'clsx';
+import { Link } from 'react-router-dom';
+import { useFormik } from 'formik';
+import { requestPassword } from '../redux/AuthCRUD';
 
 const initialValues = {
-  email: "admin@demo.com",
+  email: 'admin@demo.com'
 };
 
 const forgotPasswordSchema = Yup.object().shape({
   email: Yup.string()
-    .email("Wrong email format")
-    .min(3, "Minimum 3 symbols")
-    .max(50, "Maximum 50 symbols")
-    .required("Email is required"),
+    .email('Wrong email format')
+    .min(3, 'Minimum 3 symbols')
+    .max(50, 'Maximum 50 symbols')
+    .required('Email is required')
 });
 
 export function ForgotPassword() {
@@ -36,10 +36,10 @@ export function ForgotPassword() {
             setHasErrors(true);
             setLoading(false);
             setSubmitting(false);
-            setStatus("The login detail is incorrect");
+            setStatus('The login detail is incorrect');
           });
       }, 1000);
-    },
+    }
   });
 
   return (
@@ -90,12 +90,12 @@ export function ForgotPassword() {
             type="email"
             placeholder=""
             autoComplete="off"
-            {...formik.getFieldProps("email")}
+            {...formik.getFieldProps('email')}
             className={clsx(
-              "form-control form-control-lg form-control-solid",
-              { "is-invalid": formik.touched.email && formik.errors.email },
+              'form-control form-control-lg form-control-solid',
+              { 'is-invalid': formik.touched.email && formik.errors.email },
               {
-                "is-valid": formik.touched.email && !formik.errors.email,
+                'is-valid': formik.touched.email && !formik.errors.email
               }
             )}
           />
@@ -133,7 +133,7 @@ export function ForgotPassword() {
             >
               Cancel
             </button>
-          </Link>{" "}
+          </Link>{' '}
         </div>
         {/* end::Form group */}
       </form>

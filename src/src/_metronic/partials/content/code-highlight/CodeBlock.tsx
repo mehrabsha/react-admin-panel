@@ -1,9 +1,9 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useState, useEffect, useRef } from "react";
-import { CopyToClipboard } from "react-copy-to-clipboard";
-import Highlight, { defaultProps, Language } from "prism-react-renderer";
-import theme from "prism-react-renderer/themes/shadesOfPurple";
-import { OverlayTrigger, Tooltip } from "react-bootstrap-v5";
+import React, { useState, useEffect, useRef } from 'react';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
+import Highlight, { defaultProps, Language } from 'prism-react-renderer';
+import theme from 'prism-react-renderer/themes/shadesOfPurple';
+import { OverlayTrigger, Tooltip } from 'react-bootstrap-v5';
 
 type Props = {
   code: string;
@@ -29,11 +29,11 @@ const CodeBlock: React.FC<Props> = ({ code, language }) => {
     }
 
     const prismCodeElement = codeRef.current.querySelector(
-      ".prism-code "
+      '.prism-code '
     ) as HTMLDivElement;
     if (prismCodeElement) {
-      prismCodeElement.style.background = "none";
-      prismCodeElement.style.fontSize = "13px";
+      prismCodeElement.style.background = 'none';
+      prismCodeElement.style.fontSize = '13px';
     }
   }, []);
 
@@ -46,7 +46,7 @@ const CodeBlock: React.FC<Props> = ({ code, language }) => {
           overlay={<Tooltip id="tooltip-copy-to-clipboard">Copy Code</Tooltip>}
         >
           <CopyToClipboard text={code} onCopy={() => setCopied(true)}>
-            <a className="highlight-copy btn">{copied ? "copied" : "copy"}</a>
+            <a className="highlight-copy btn">{copied ? 'copied' : 'copy'}</a>
           </CopyToClipboard>
         </OverlayTrigger>
 
@@ -61,7 +61,7 @@ const CodeBlock: React.FC<Props> = ({ code, language }) => {
               return (
                 <pre
                   className={className}
-                  style={{ maxHeight: "300px", ...style }}
+                  style={{ maxHeight: '300px', ...style }}
                 >
                   {tokens.map((line, i) => (
                     <div {...getLineProps({ line, key: i })}>

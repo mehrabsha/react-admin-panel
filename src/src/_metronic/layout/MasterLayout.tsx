@@ -1,19 +1,19 @@
-import React from "react";
-import { AsideDefault } from "./components/aside/AsideDefault";
-import { HeaderWrapper } from "./components/header/HeaderWrapper";
-import { Toolbar } from "./components/toolbar/Toolbar";
-import { ScrollTop } from "./components/ScrollTop";
-import { Content } from "./components/Content";
-import { MasterInit } from "./MasterInit";
-import { PageDataProvider } from "./core";
+import React from 'react';
+import { AsideDefault } from './components/aside/AsideDefault';
+import { HeaderWrapper } from './components/header/HeaderWrapper';
+import { Toolbar } from './components/toolbar/Toolbar';
+import { ScrollTop } from './components/ScrollTop';
+import { Content } from './components/Content';
+import { MasterInit } from './MasterInit';
+import { PageDataProvider } from './core';
 import {
   DrawerMessenger,
   ExploreMain,
   ActivityDrawer,
   Main,
   InviteUsers,
-  UpgradePlan,
-} from "../partials";
+  UpgradePlan
+} from '../partials';
 
 const MasterLayout: React.FC = ({ children }) => {
   return (

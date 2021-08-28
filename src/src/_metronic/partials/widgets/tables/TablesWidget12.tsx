@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from "react";
-import { KTSVG, toAbsoluteUrl } from "../../../helpers";
+import React from 'react';
+import { KTSVG, toAbsoluteUrl } from '../../../helpers';
 
 type Props = {
   className: string;
@@ -153,7 +153,7 @@ const TablesWidget12: React.FC<Props> = ({ className }) => {
                     <div className="symbol symbol-50px me-5">
                       <span className="symbol-label bg-light">
                         <img
-                          src={toAbsoluteUrl("/media/svg/avatars/001-boy.svg")}
+                          src={toAbsoluteUrl('/media/svg/avatars/001-boy.svg')}
                           className="h-75 align-self-end"
                           alt=""
                         />
@@ -249,7 +249,7 @@ const TablesWidget12: React.FC<Props> = ({ className }) => {
                       <span className="symbol-label bg-light">
                         <img
                           src={toAbsoluteUrl(
-                            "/media/svg/avatars/047-girl-25.svg"
+                            '/media/svg/avatars/047-girl-25.svg'
                           )}
                           className="h-75 align-self-end"
                           alt=""
@@ -346,7 +346,7 @@ const TablesWidget12: React.FC<Props> = ({ className }) => {
                       <span className="symbol-label bg-light">
                         <img
                           src={toAbsoluteUrl(
-                            "/media/svg/avatars/006-girl-3.svg"
+                            '/media/svg/avatars/006-girl-3.svg'
                           )}
                           className="h-75 align-self-end"
                           alt=""
@@ -443,7 +443,7 @@ const TablesWidget12: React.FC<Props> = ({ className }) => {
                       <span className="symbol-label bg-light">
                         <img
                           src={toAbsoluteUrl(
-                            "/media/svg/avatars/014-girl-7.svg"
+                            '/media/svg/avatars/014-girl-7.svg'
                           )}
                           className="h-75 align-self-end"
                           alt=""
@@ -540,7 +540,7 @@ const TablesWidget12: React.FC<Props> = ({ className }) => {
                       <span className="symbol-label bg-light">
                         <img
                           src={toAbsoluteUrl(
-                            "/media/svg/avatars/020-girl-11.svg"
+                            '/media/svg/avatars/020-girl-11.svg'
                           )}
                           className="h-75 align-self-end"
                           alt=""

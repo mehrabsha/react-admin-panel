@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useState, useEffect } from "react";
-import { createPortal } from "react-dom";
+import React, { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 
 /**
  * React portal based on https://stackoverflow.com/a/59154364
@@ -10,9 +10,9 @@ import { createPortal } from "react-dom";
  */
 const Portal: React.FC<{ className?: string }> = ({
   children,
-  className = "",
+  className = ''
 }) => {
-  const [container] = useState(document.createElement("div"));
+  const [container] = useState(document.createElement('div'));
 
   if (className) container.classList.add(className);
 

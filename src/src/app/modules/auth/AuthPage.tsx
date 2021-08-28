@@ -1,16 +1,16 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useEffect } from "react";
-import { Redirect, Route, Switch } from "react-router-dom";
-import { Registration } from "./components/Registration";
-import { ForgotPassword } from "./components/ForgotPassword";
-import { Login } from "./components/Login";
-import { toAbsoluteUrl } from "../../../_metronic/helpers";
+import React, { useEffect } from 'react';
+import { Redirect, Route, Switch } from 'react-router-dom';
+import { Registration } from './components/Registration';
+import { ForgotPassword } from './components/ForgotPassword';
+import { Login } from './components/Login';
+import { toAbsoluteUrl } from '../../../_metronic/helpers';
 
 export function AuthPage() {
   useEffect(() => {
-    document.body.classList.add("bg-white");
+    document.body.classList.add('bg-white');
     return () => {
-      document.body.classList.remove("bg-white");
+      document.body.classList.remove('bg-white');
     };
   }, []);
 
@@ -19,8 +19,8 @@ export function AuthPage() {
       className="d-flex flex-column flex-column-fluid bgi-position-y-bottom position-x-center bgi-no-repeat bgi-size-contain bgi-attachment-fixed"
       style={{
         backgroundImage: `url(${toAbsoluteUrl(
-          "/media/illustrations/sketchy-1/14.png"
-        )})`,
+          '/media/illustrations/sketchy-1/14.png'
+        )})`
       }}
     >
       {/* begin::Content */}
@@ -29,7 +29,7 @@ export function AuthPage() {
         <a href="#" className="mb-12">
           <img
             alt="Logo"
-            src={toAbsoluteUrl("/media/logos/logo-1.svg")}
+            src={toAbsoluteUrl('/media/logos/logo-1.svg')}
             className="h-45px"
           />
         </a>

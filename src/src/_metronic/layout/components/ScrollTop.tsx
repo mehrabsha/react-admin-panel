@@ -1,14 +1,14 @@
-import React, { useEffect, useRef } from "react";
-import { useLocation } from "react-router-dom";
+import React, { useEffect, useRef } from 'react';
+import { useLocation } from 'react-router-dom';
 import {
   // ScrollComponent,
   ScrollTopComponent,
   MenuComponent,
   DrawerComponent,
   ToggleComponent,
-  StickyComponent,
-} from "../../assets/ts/components";
-import { KTSVG } from "../../helpers";
+  StickyComponent
+} from '../../assets/ts/components';
+import { KTSVG } from '../../helpers';
 
 export function ScrollTop() {
   const { pathname } = useLocation();

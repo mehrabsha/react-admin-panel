@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from "react";
-import { toAbsoluteUrl } from "../../../helpers";
+import React from 'react';
+import { toAbsoluteUrl } from '../../../helpers';
 
 type Props = {
   className: string;
@@ -15,15 +15,15 @@ const StatisticsWidget1: React.FC<Props> = ({
   image,
   title,
   time,
-  description,
+  description
 }) => {
   return (
     <div
       className={`card bgi-no-repeat ${className}`}
       style={{
-        backgroundPosition: "right top",
-        backgroundSize: "30% auto",
-        backgroundImage: `url(${toAbsoluteUrl("/media/svg/shapes/" + image)})`,
+        backgroundPosition: 'right top',
+        backgroundSize: '30% auto',
+        backgroundImage: `url(${toAbsoluteUrl('/media/svg/shapes/' + image)})`
       }}
     >
       {/* begin::Body */}

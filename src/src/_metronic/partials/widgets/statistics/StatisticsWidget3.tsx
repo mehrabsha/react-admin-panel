@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useEffect, useRef } from "react";
-import ApexCharts, { ApexOptions } from "apexcharts";
-import { getCSS, getCSSVariableValue } from "../../../assets/ts/_utils";
+import React, { useEffect, useRef } from 'react';
+import ApexCharts, { ApexOptions } from 'apexcharts';
+import { getCSS, getCSSVariableValue } from '../../../assets/ts/_utils';
 
 type Props = {
   className: string;
@@ -16,7 +16,7 @@ const StatisticsWidget3: React.FC<Props> = ({
   title,
   description,
   change,
-  color,
+  color
 }) => {
   const chartRef = useRef<HTMLDivElement | null>(null);
 
@@ -25,10 +25,10 @@ const StatisticsWidget3: React.FC<Props> = ({
       return;
     }
 
-    const height = parseInt(getCSS(chartRef.current, "height"));
-    const labelColor = getCSSVariableValue("--bs-gray-800");
-    const baseColor = getCSSVariableValue("--bs-" + color);
-    const lightColor = getCSSVariableValue("--bs-light-" + color);
+    const height = parseInt(getCSS(chartRef.current, 'height'));
+    const labelColor = getCSSVariableValue('--bs-gray-800');
+    const baseColor = getCSSVariableValue('--bs-' + color);
+    const lightColor = getCSSVariableValue('--bs-light-' + color);
 
     const chart = new ApexCharts(
       chartRef.current,
@@ -73,7 +73,7 @@ const StatisticsWidget3: React.FC<Props> = ({
         <div
           ref={chartRef}
           className="statistics-widget-3-chart card-rounded-bottom"
-          style={{ height: "150px" }}
+          style={{ height: '150px' }}
         ></div>
       </div>
       {/* end::Body */}
@@ -92,68 +92,68 @@ function getChartOptions(
   const options: ApexOptions = {
     series: [
       {
-        name: "Net Profit",
-        data: [30, 45, 32, 70, 40],
-      },
+        name: 'Net Profit',
+        data: [30, 45, 32, 70, 40]
+      }
     ],
     chart: {
-      fontFamily: "inherit",
-      type: "area",
+      fontFamily: 'inherit',
+      type: 'area',
       height: height,
       toolbar: {
-        show: false,
+        show: false
       },
       zoom: {
-        enabled: false,
+        enabled: false
       },
       sparkline: {
-        enabled: true,
-      },
+        enabled: true
+      }
     },
     plotOptions: {},
     legend: {
-      show: false,
+      show: false
     },
     dataLabels: {
-      enabled: false,
+      enabled: false
     },
     fill: {
-      type: "solid",
-      opacity: 1,
+      type: 'solid',
+      opacity: 1
     },
     stroke: {
-      curve: "smooth",
+      curve: 'smooth',
       show: true,
       width: 3,
-      colors: [baseColor],
+      colors: [baseColor]
     },
     xaxis: {
-      categories: ["Feb", "Mar", "Apr", "May", "Jun", "Jul"],
+      categories: ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
       axisBorder: {
-        show: false,
+        show: false
       },
       axisTicks: {
-        show: false,
+        show: false
       },
       labels: {
         show: false,
         style: {
           colors: labelColor,
-          fontSize: "12px",
-        },
+          fontSize: '12px'
+        }
       },
       crosshairs: {
         show: false,
-        position: "front",
+        position: 'front',
         stroke: {
-          color: "#E4E6EF",
+          color: '#E4E6EF',
           width: 1,
-          dashArray: 3,
-        },
+          dashArray: 3
+        }
       },
       tooltip: {
-        enabled: false,
-      },
+        enabled: false
+      }
     },
     yaxis: {
       min: 0,
@@ -162,47 +162,47 @@ function getChartOptions(
         show: false,
         style: {
           colors: labelColor,
-          fontSize: "12px",
-        },
-      },
+          fontSize: '12px'
+        }
+      }
     },
     states: {
       normal: {
         filter: {
-          type: "none",
-          value: 0,
-        },
+          type: 'none',
+          value: 0
+        }
       },
       hover: {
         filter: {
-          type: "none",
-          value: 0,
-        },
+          type: 'none',
+          value: 0
+        }
       },
       active: {
         allowMultipleDataPointsSelection: false,
         filter: {
-          type: "none",
-          value: 0,
-        },
-      },
+          type: 'none',
+          value: 0
+        }
+      }
     },
     tooltip: {
       style: {
-        fontSize: "12px",
+        fontSize: '12px'
       },
       y: {
         formatter: function (val) {
-          return "$" + val + " thousands";
-        },
-      },
+          return '$' + val + ' thousands';
+        }
+      }
     },
     colors: [lightColor],
     markers: {
       colors: [lightColor],
       strokeColors: [baseColor],
-      strokeWidth: 3,
-    },
+      strokeWidth: 3
+    }
   };
   return options;
 }

@@ -7,16 +7,16 @@ import {
   isVisibleElement,
   throttle,
   getCSS,
-  ElementStyleUtil,
-} from "../_utils/index";
-import { CookieComponent } from "./_CookieComponent";
+  ElementStyleUtil
+} from '../_utils/index';
+import { CookieComponent } from './_CookieComponent';
 
 export interface ScrollOptions {
   saveState?: boolean;
 }
 
 const defaultScrollOptions: ScrollOptions = {
-  saveState: true,
+  saveState: true
 };
 
 class ScrollComponent {
@@ -27,19 +27,19 @@ class ScrollComponent {
   constructor(_element: HTMLElement, options: ScrollOptions) {
     this.element = _element;
     this.options = Object.assign(defaultScrollOptions, options);
-    this.id = this.element.getAttribute("id") || "";
+    this.id = this.element.getAttribute('id') || '';
     this.update();
     // this.element.setAttribute('data-kt-scrolltop', 'true')
-    DataUtil.set(this.element, "scroll", this);
+    DataUtil.set(this.element, 'scroll', this);
   }
 
   private getOption = (name: string) => {
-    if (this.element.hasAttribute("data-kt-scroll-" + name) === true) {
-      const attr = this.element.getAttribute("data-kt-scroll-" + name) || "";
+    if (this.element.hasAttribute('data-kt-scroll-' + name) === true) {
+      const attr = this.element.getAttribute('data-kt-scroll-' + name) || '';
       let value: string | JSON | boolean = getAttributeValueByBreakpoint(attr);
-      if (value !== null && String(value) === "true") {
+      if (value !== null && String(value) === 'true') {
         value = true;
-      } else if (value !== null && String(value) === "false") {
+      } else if (value !== null && String(value) === 'false') {
         value = false;
       }
 
@@ -56,22 +56,22 @@ class ScrollComponent {
   };
 
   private getHeightType = () => {
-    if (this.getOption("height")) {
-      return "height";
+    if (this.getOption('height')) {
+      return 'height';
     }
-    if (this.getOption("min-height")) {
-      return "min-height";
+    if (this.getOption('min-height')) {
+      return 'min-height';
     }
-    if (this.getOption("max-height")) {
-      return "max-height";
+    if (this.getOption('max-height')) {
+      return 'max-height';
     }
   };
 
   private getAutoHeight = () => {
     let height: number | string = getViewPort().height;
-    const dependencies = this.getOption("dependencies");
-    const wrappers = this.getOption("wrappers");
-    const offset = this.getOption("offset");
+    const dependencies = this.getOption('dependencies');
+    const wrappers = this.getOption('wrappers');
+    const offset = this.getOption('offset');
 
     // Height dependencies
     if (dependencies !== null) {
@@ -83,16 +83,16 @@ class ScrollComponent {
             continue;
           }
 
-          height = height - parseInt(getCSS(element, "height"));
-          height = height - parseInt(getCSS(element, "margin-top"));
-          height = height - parseInt(getCSS(element, "margin-bottom"));
+          height = height - parseInt(getCSS(element, 'height'));
+          height = height - parseInt(getCSS(element, 'margin-top'));
+          height = height - parseInt(getCSS(element, 'margin-bottom'));
 
-          const borderTop = getCSS(element, "border-top");
+          const borderTop = getCSS(element, 'border-top');
           if (borderTop) {
             height = height - parseInt(borderTop);
           }
 
-          const borderBottom = getCSS(element, "border-bottom");
+          const borderBottom = getCSS(element, 'border-bottom');
           if (borderBottom) {
             height = height - parseInt(borderBottom);
           }
@@ -111,17 +111,17 @@ class ScrollComponent {
             continue;
           }
 
-          height = height - parseInt(getCSS(element, "margin-top"));
-          height = height - parseInt(getCSS(element, "margin-bottom"));
-          height = height - parseInt(getCSS(element, "padding-top"));
-          height = height - parseInt(getCSS(element, "padding-bottom"));
+          height = height - parseInt(getCSS(element, 'margin-top'));
+          height = height - parseInt(getCSS(element, 'margin-bottom'));
+          height = height - parseInt(getCSS(element, 'padding-top'));
+          height = height - parseInt(getCSS(element, 'padding-bottom'));
 
-          const borderTop = getCSS(element, "border-top");
+          const borderTop = getCSS(element, 'border-top');
           if (borderTop) {
             height = height - parseInt(borderTop);
           }
 
-          const borderBottom = getCSS(element, "border-bottom");
+          const borderBottom = getCSS(element, 'border-bottom');
           if (borderBottom) {
             height = height - parseInt(borderBottom);
           }
@@ -134,20 +134,20 @@ class ScrollComponent {
       height = height - parseInt(offset as string);
     }
 
-    height = height - parseInt(getCSS(this.element, "margin-top"));
-    height = height - parseInt(getCSS(this.element, "margin-bottom"));
+    height = height - parseInt(getCSS(this.element, 'margin-top'));
+    height = height - parseInt(getCSS(this.element, 'margin-bottom'));
 
-    const borderTop = getCSS(this.element, "border-top");
+    const borderTop = getCSS(this.element, 'border-top');
     if (borderTop) {
       height = height - parseInt(borderTop);
     }
 
-    const borderBottom = getCSS(this.element, "border-bottom");
+    const borderBottom = getCSS(this.element, 'border-bottom');
     if (borderBottom) {
       height = height - parseInt(borderBottom);
     }
 
-    height = String(height) + "px";
+    height = String(height) + 'px';
 
     return height;
   };
@@ -160,13 +160,13 @@ class ScrollComponent {
     if (height !== null && height.length > 0) {
       ElementStyleUtil.set(this.element, heightType, height);
     } else {
-      ElementStyleUtil.set(this.element, heightType, "");
+      ElementStyleUtil.set(this.element, heightType, '');
     }
   };
 
   private setupState = () => {
-    if (this.getOption("save-state") === true && this.id) {
-      const cookie = CookieComponent.get(this.id + "st");
+    if (this.getOption('save-state') === true && this.id) {
+      const cookie = CookieComponent.get(this.id + 'st');
       if (cookie) {
         var pos = parseInt(cookie);
 
@@ -178,26 +178,26 @@ class ScrollComponent {
   };
 
   private setupScrollHandler = () => {
-    if (this.getOption("save-state") === true && this.id) {
-      this.element.addEventListener("scroll", this.scrollHandler);
+    if (this.getOption('save-state') === true && this.id) {
+      this.element.addEventListener('scroll', this.scrollHandler);
     } else {
-      this.element.removeEventListener("scroll", this.scrollHandler);
+      this.element.removeEventListener('scroll', this.scrollHandler);
     }
   };
 
   private scrollHandler = () => {
-    const cookieId = this.id + "st";
+    const cookieId = this.id + 'st';
     CookieComponent.set(cookieId, this.element.scrollTop, {});
   };
 
   private destroyScrollHandler = () => {
-    this.element.removeEventListener("scroll", this.scrollHandler);
+    this.element.removeEventListener('scroll', this.scrollHandler);
   };
 
   private resetHeight = () => {
     const heghtType = this.getHeightType();
     if (heghtType) {
-      ElementStyleUtil.set(this.element, heghtType, "");
+      ElementStyleUtil.set(this.element, heghtType, '');
     }
   };
 
@@ -207,8 +207,8 @@ class ScrollComponent {
   public update = () => {
     // Activate/deactivate
     if (
-      this.getOption("activate") === true ||
-      !this.element.hasAttribute("data-kt-scroll-activate")
+      this.getOption('activate') === true ||
+      !this.element.hasAttribute('data-kt-scroll-activate')
     ) {
       this.setupHeight();
       this.setupScrollHandler();
@@ -221,13 +221,13 @@ class ScrollComponent {
 
   public getHeight = () => {
     const heightType = this.getHeightType();
-    const height = this.getOption(heightType || "");
+    const height = this.getOption(heightType || '');
     if (height instanceof Function) {
       return height.call(height);
     } else if (
       height !== null &&
-      typeof height === "string" &&
-      height.toLowerCase() === "auto"
+      typeof height === 'string' &&
+      height.toLowerCase() === 'auto'
     ) {
       return this.getAutoHeight();
     } else {
@@ -241,12 +241,12 @@ class ScrollComponent {
 
   // Static methods
   public static hasInstace(element: HTMLElement) {
-    return DataUtil.has(element, "scroll");
+    return DataUtil.has(element, 'scroll');
   }
 
   public static getInstance(element: HTMLElement) {
     if (element !== null && ScrollComponent.hasInstace(element)) {
-      return DataUtil.get(element, "scroll");
+      return DataUtil.get(element, 'scroll');
     }
   }
 
@@ -286,7 +286,7 @@ class ScrollComponent {
 
   public static resize() {
     // Window Resize Handling
-    window.addEventListener("resize", function () {
+    window.addEventListener('resize', function () {
       let timer;
       throttle(
         timer,

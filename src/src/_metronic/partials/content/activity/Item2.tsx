@@ -1,5 +1,5 @@
-import { FC } from "react";
-import { KTSVG, toAbsoluteUrl } from "../../../helpers";
+import { FC } from 'react';
+import { KTSVG, toAbsoluteUrl } from '../../../helpers';
 
 const Item2: FC = () => {
   return (
@@ -31,7 +31,7 @@ const Item2: FC = () => {
               data-bs-placement="top"
               title="Alan Nilson"
             >
-              <img src={toAbsoluteUrl("/media/avatars/150-2.jpg")} alt="img" />
+              <img src={toAbsoluteUrl('/media/avatars/150-2.jpg')} alt="img" />
             </div>
           </div>
         </div>

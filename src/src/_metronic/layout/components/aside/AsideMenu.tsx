@@ -1,13 +1,13 @@
-import React, { useRef, useEffect } from "react";
-import { useLocation } from "react-router";
-import clsx from "clsx";
-import { AsideMenuMain } from "./AsideMenuMain";
+import React, { useRef, useEffect } from 'react';
+import { useLocation } from 'react-router';
+import clsx from 'clsx';
+import { AsideMenuMain } from './AsideMenuMain';
 import {
   DrawerComponent,
   MenuComponent,
   ScrollComponent,
-  ToggleComponent,
-} from "../../../assets/ts/components";
+  ToggleComponent
+} from '../../../assets/ts/components';
 
 type Props = {
   asideMenuCSSClasses: string[];
@@ -46,8 +46,8 @@ const AsideMenu: React.FC<Props> = ({ asideMenuCSSClasses }) => {
         id="#kt_aside_menu"
         data-kt-menu="true"
         className={clsx(
-          "menu menu-column menu-title-gray-800 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500",
-          asideMenuCSSClasses.join(" ")
+          'menu menu-column menu-title-gray-800 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500',
+          asideMenuCSSClasses.join(' ')
         )}
       >
         <AsideMenuMain />
