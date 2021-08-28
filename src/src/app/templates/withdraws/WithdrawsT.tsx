@@ -5,9 +5,9 @@ import WithdrawsList from '../../modules/withdraws/WithdrawsList';
 const WithdrawsT = () => {
   return (
     <div className="d-flex flex-column">
-      <WithdrawsFilters></WithdrawsFilters>
+      <WithdrawsFilters />
       <br />
-      <WithdrawsList></WithdrawsList>
+      <WithdrawsList />
     </div>
   );
 };
