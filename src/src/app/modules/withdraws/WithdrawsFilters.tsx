@@ -16,18 +16,8 @@ const currncyOptions = [
   { value: 'doge', label: 'Dogecoin' },
   { value: 'safemoon', label: 'safemoon' }
 ];
-const customStyles = {
-  container: (base: any) => ({
-    ...base,
-    flex: 1
-  })
-};
+
 const WithdrawsFilters = () => {
-  const [selectedStatus, setSelectedStatus] = useState('Pending');
-  const handleChange = (selectedOption: string) => {
-    setSelectedStatus(selectedOption);
-    console.log(`Option selected:`, selectedOption);
-  };
   return (
     <div className="card card-xl-stretch mb-5 mb-xl-8">
       {/* begin::Header */}
@@ -41,17 +31,17 @@ const WithdrawsFilters = () => {
           <div className="row">
             <div className="col-4">
               <div className="form-group">
-                <label htmlFor="exampleFormControlInput1">Id</label>
+                <label htmlFor="userid">Id</label>
                 <input
-                  type="email"
                   className="form-control"
-                  id="exampleFormControlInput1"
-                  placeholder="name@example.com"
+                  id="userid"
+                  name="id"
+                  placeholder="12345"
                 />
               </div>
             </div>
             <div className="col-4 ">
-              <label htmlFor="exampleSelect1">Currency</label>
+              <label>Currency</label>
               <Select
                 //value={selectedStatus}
                 onChange={e => {
@@ -59,11 +49,10 @@ const WithdrawsFilters = () => {
                 }}
                 options={currncyOptions}
                 placeholder="select currency ..."
-                styles={customStyles}
               />
             </div>
             <div className="col-4 form-group">
-              <label htmlFor="exampleSelect1">Status</label>
+              <label>Status</label>
               <Select
                 //value={selectedStatus}
                 onChange={e => {
@@ -71,7 +60,6 @@ const WithdrawsFilters = () => {
                 }}
                 options={statusOptions}
                 placeholder="select status ..."
-                styles={customStyles}
               />
             </div>
           </div>

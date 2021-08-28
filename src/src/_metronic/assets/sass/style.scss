@@ -7,6 +7,7 @@ $mode: default;
 
 // Initialize
 @import 'init';
+@import 'custom.scss';
 
 // Components
 @import './core/components/components';
