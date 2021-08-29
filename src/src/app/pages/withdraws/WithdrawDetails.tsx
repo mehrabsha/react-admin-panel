@@ -18,7 +18,9 @@ const withdrawBreadCrumbs: Array<PageLink> = [
 const WithdrawDetails = (props: any) => {
   return (
     <>
-      <PageTitle breadcrumbs={withdrawBreadCrumbs}>Withdraw Details</PageTitle>
+      <PageTitle breadcrumbs={withdrawBreadCrumbs}>
+        Withdraw Details with id: {props.WithdrawData.id}
+      </PageTitle>
       <div className="card">
         <div className="card-body">{props.WithdrawData.id}</div>
         <div className="card-body">{props.WithdrawData.username}</div>

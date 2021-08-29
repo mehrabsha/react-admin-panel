@@ -82,6 +82,8 @@ const WithdrawsListItem: FC<WithdrawDataProps> = props => {
                   ? 'badge-light-success'
                   : row.status === 'In Progress'
                   ? 'badge-light-primary'
+                  : row.status === 'Canceled'
+                  ? 'badge-light-danger'
                   : 'badge-light-warning'
               )}
             >
@@ -91,7 +93,7 @@ const WithdrawsListItem: FC<WithdrawDataProps> = props => {
           <td className="text-end">
             <OverlayTrigger
               placement="top"
-              overlay={<Tooltip id="delete-tooltip">Delete</Tooltip>}
+              overlay={<Tooltip id="delete-tooltip">Cancel</Tooltip>}
             >
               <div className="btn btn-icon btn-bg-light btn-color-danger btn-sm me-1">
                 <i className="fas fa-trash"></i>
