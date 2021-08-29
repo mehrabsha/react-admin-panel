@@ -1,17 +1,26 @@
 import React from 'react';
-import { Toggle } from '../../../_metronic/partials/layout/explore/Toggle';
+import { Pagination } from 'react-bootstrap-v5';
 import { WithdrawData } from './models/WithdrawMockData';
 import WithdrawsListItem from './WithdrawListItem';
 
+let active: number = 2;
+const pagination: Array<any> = [];
+for (let number: number = 1; number < 6; number++) {
+  pagination.push(
+    <Pagination.Item key={number} active={number === active}>
+      {number}
+    </Pagination.Item>
+  );
+}
 const WithdrawsList = () => {
   return (
     <div className="card">
-      <div className="card-header">
-        <h3 className="card-title card-label fw-bolder fs-3">Withdraws</h3>
-      </div>
       <div className="card-body">
         <div className="table-responsive">
-          <table className="table table-row-bordered table-row-gray-100 align-middle gs-0 gy-3">
+          <table
+            className="table table-row-bordered fs-7 table-row-gray-100 align-middle gs-0 gy-3"
+            style={{ whiteSpace: 'nowrap' }}
+          >
             <thead>
               <tr className="fw-bolder text-muted">
                 <th className="min-w-120px">Withdraw Id</th>
@@ -26,6 +35,7 @@ const WithdrawsList = () => {
             <WithdrawsListItem items={WithdrawData} />
           </table>
         </div>
+        <Pagination className="mt-4">{pagination}</Pagination>
       </div>
     </div>
   );
