@@ -1,14 +1,24 @@
 import Select from 'react-select';
 import { useFormik } from 'formik';
 import { useHistory } from 'react-router-dom';
+import selectValueSelector from '../../../utils/selectValueSelector';
 
 const statusOptions = [
+  { value: 'all', label: 'All' },
   { value: 'pending', label: 'Pending' },
   { value: 'canceled', label: 'Canceled' },
   { value: 'approved', label: 'Approved' },
   { value: 'rejected', label: 'Rejected' }
 ];
+const networkOptions = [
+  { value: 'all', label: 'All' },
+  { value: 'bep20', label: 'Bep20' },
+  { value: 'erc20', label: 'Bep20' },
+  { value: 'bsc', label: 'Bsc' },
+  { value: 'trc20', label: 'Trc20' }
+];
 const currncyOptions = [
+  { value: 'all', label: 'All' },
   { value: 'btc', label: 'Bitcoin' },
   { value: 'xrp', label: 'Xripple' },
   { value: 'ada', label: 'Cardano' },
@@ -17,23 +27,15 @@ const currncyOptions = [
   { value: 'safemoon', label: 'safemoon' }
 ];
 
-interface optionItems {
-  value: string;
-  label: string;
-}
-
-const selectDefaultValue = (options: optionItems[], value: string) =>
-  options
-    ? options.find(option => option.value === value)
-    : { value: '', label: '' };
-
 const WithdrawsFilters = () => {
   const history = useHistory();
   const formik = useFormik({
     initialValues: {
       id: '',
-      currency: 'btc',
-      status: 'approved'
+      currency: 'all',
+      status: 'all',
+      network: 'all',
+      txid: ''
     },
     onSubmit: values => {
       console.log(values);
@@ -54,22 +56,32 @@ const WithdrawsFilters = () => {
       {/* begin::Body */}
       <div className="card-body pt-0">
         <form>
-          <div className="row">
-            <div className="col-4 form-group my-2">
+          <div className="row gy-5">
+            <div className="col-12 col-sm-6 col-xl-2 form-group">
               <label htmlFor="withdrawid">Withdraw id</label>
               <input
                 className="form-control"
                 id="withdrawid"
                 name="id"
-                placeholder="12345"
+                placeholder="Ex : 135"
                 onChange={formik.handleChange}
                 value={formik.values.id}
               />
             </div>
-            <div className="col-4  form-group my-2">
+            <div className="col-12 col-sm-6 col-xl-2 form-group">
+              <label>Status</label>
+              <Select
+                value={selectValueSelector(statusOptions, formik.values.status)}
+                onChange={value => formik.setFieldValue('status', value?.value)}
+                name="status"
+                options={statusOptions}
+                placeholder="select status ..."
+              />
+            </div>
+            <div className="col-12 col-sm-6 col-xl-2  form-group">
               <label>Currency</label>
               <Select
-                value={selectDefaultValue(
+                value={selectValueSelector(
                   currncyOptions,
                   formik.values.currency
                 )}
@@ -81,18 +93,23 @@ const WithdrawsFilters = () => {
                 placeholder="select currency ..."
               />
             </div>
-            <div className="col-4 form-group my-2">
-              <label>Status</label>
+            <div className="col-12 col-sm-6 col-xl-2 form-group">
+              <label>Network</label>
               <Select
-                value={selectDefaultValue(statusOptions, formik.values.status)}
-                onChange={value => formik.setFieldValue('status', value?.value)}
-                name="status"
-                options={statusOptions}
-                placeholder="select status ..."
+                value={selectValueSelector(
+                  networkOptions,
+                  formik.values.network
+                )}
+                onChange={value =>
+                  formik.setFieldValue('network', value?.value)
+                }
+                name="network"
+                options={networkOptions}
+                placeholder="select network ..."
               />
             </div>
 
-            <div className="col-6 form-group my-2">
+            <div className="col-12 col-sm-6 col-xl-4 form-group">
               <label htmlFor="user">User</label>
               <input
                 className="form-control"
@@ -101,7 +118,7 @@ const WithdrawsFilters = () => {
                 placeholder="first name , last name , mobile , ..."
               />
             </div>
-            <div className="col-3 form-group my-2">
+            <div className="col-12 col-sm-6 col-xl-3 form-group">
               <label htmlFor="network">From date</label>
               <input
                 className="form-control"
@@ -110,7 +127,7 @@ const WithdrawsFilters = () => {
                 placeholder="2021/10/08"
               />
             </div>
-            <div className="col-3 form-group my-2">
+            <div className="col-12 col-sm-6 col-xl-3 form-group">
               <label htmlFor="network">To date</label>
               <input
                 className="form-control"
@@ -120,23 +137,31 @@ const WithdrawsFilters = () => {
               />
             </div>
 
-            <div className="col-8 form-group my-2">
-              <label htmlFor="network">Tx id</label>
+            <div className="col-12 col-sm-6 col-xl-6 form-group">
+              <label htmlFor="txid">Tx id</label>
               <input
                 className="form-control"
-                id="network"
-                name="network"
-                placeholder="2021/12/04"
+                id="txid"
+                name="txid"
+                placeholder="Ex : 0x2d7667457070f9e...."
               />
             </div>
-            <div className="col-4  form-group my-2">
-              <label htmlFor="network">Network</label>
-              <input
-                className="form-control"
-                id="network"
-                name="network"
-                placeholder="bep20 ,..."
-              />
+          </div>
+          <div className="row mt-2 gy-5">
+            <div className="col-12 col-sm-6 col-xl-2">
+              <button type="submit" className="w-100 btn btn-primary">
+                Search
+              </button>
+            </div>
+
+            <div className="col-12 col-sm-6 col-xl-2">
+              <button
+                onClick={formik.handleReset}
+                type="button"
+                className="w-100 btn btn-danger"
+              >
+                Reset
+              </button>
             </div>
           </div>
         </form>
