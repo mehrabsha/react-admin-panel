@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { Pagination } from 'react-bootstrap-v5';
-import { WithdrawData } from './models/WithdrawMockData';
-import WithdrawsListItem from './WithdrawListItem';
+import WithdrawListItem from './WithdrawListItem';
 
 let active: number = 2;
 const pagination: Array<any> = [];
@@ -12,7 +11,8 @@ for (let number: number = 1; number < 6; number++) {
     </Pagination.Item>
   );
 }
-const WithdrawsList = () => {
+
+const WithdrawsList = (props: any) => {
   return (
     <div className="card">
       <div className="card-body">
@@ -32,7 +32,13 @@ const WithdrawsList = () => {
                 <th className="min-w-100px text-end">Actions</th>
               </tr>
             </thead>
-            <WithdrawsListItem items={WithdrawData} />
+            <tbody>
+              {props.items.map((row: any, index: number) => (
+                <tr key={index}>
+                  <WithdrawListItem item={row} />
+                </tr>
+              ))}
+            </tbody>
           </table>
         </div>
         <Pagination className="mt-4">{pagination}</Pagination>
