@@ -12,7 +12,8 @@ const WithdrawTabs = () => {
           id="controlled-tab-example"
           activeKey={key}
           onSelect={(k: any) => setKey(k)}
-          className="mb-3 fs-4"
+          className="mb-3 fs-4 overflow-auto"
+          style={{ whiteSpace: 'nowrap', flexWrap: 'nowrap' }}
         >
           <Tab eventKey="specifications" title="Withdraw specifications">
             <WithdrawForms />

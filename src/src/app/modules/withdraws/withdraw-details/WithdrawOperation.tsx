@@ -6,7 +6,7 @@ const WithdrawOperation = () => {
       <div className="row">
         <div className="col-md-6">
           <div className="card">
-            <div className="card-body">
+            <div className="card-body px-1 p-lg-7">
               <div className="card-title fs-4 fw-bolder">
                 EXAMINE THE DOCUMENT AND THE RECORD RECORDS OF THIS REQUEST
               </div>
@@ -31,7 +31,7 @@ const WithdrawOperation = () => {
         </div>
         <div className="col-md-6">
           <div className="card">
-            <div className="card-body">
+            <div className="card-body px-1 p-lg-7">
               <div className="card-title fs-4 fw-bolder">
                 CHECK THE WITHDRAWAL REQUEST AND RELATED BALANCE TRANSACTION
               </div>

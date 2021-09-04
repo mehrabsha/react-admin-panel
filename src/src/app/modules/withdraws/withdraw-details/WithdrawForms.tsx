@@ -19,10 +19,10 @@ const WithdrawForms = () => {
     }
   });
   return (
-    <div className="card-body">
+    <div className="card-body px-1 p-lg-7">
       <form onSubmit={formik.handleSubmit}>
         <div className="mb-8 row">
-          <div className="col-md-4 form-group">
+          <div className="col-md-4 form-group mb-md-0 mb-6">
             <label className="text-muted form-label">Full Name</label>
             <input
               className="form-control"
@@ -32,7 +32,7 @@ const WithdrawForms = () => {
               readOnly
             />
           </div>
-          <div className="col-md-4 form-group">
+          <div className="col-md-4 form-group mb-md-0 mb-6">
             <label className="text-muted form-label">Identifier</label>
             <input
               className="form-control"
@@ -42,7 +42,7 @@ const WithdrawForms = () => {
               readOnly
             />
           </div>
-          <div className="col-md-4 form-group">
+          <div className="col-md-4 form-group mb-md-0 mb-6">
             <label className="text-muted form-label">Currency</label>
             <input
               className="form-control"
@@ -54,7 +54,7 @@ const WithdrawForms = () => {
           </div>
         </div>
         <div className="mb-8 row">
-          <div className="col-md-4 form-group">
+          <div className="col-md-4 form-group mb-md-0 mb-6">
             <label className="text-muted form-label">Amount</label>
             <input
               className="form-control"
@@ -64,7 +64,7 @@ const WithdrawForms = () => {
               readOnly
             />
           </div>
-          <div className="col-md-6 form-group">
+          <div className="col-md-6 form-group mb-md-0 mb-9">
             <label className="text-muted form-label">Date</label>
             <div className="d-flex">
               <input
@@ -83,9 +83,9 @@ const WithdrawForms = () => {
               />
             </div>
           </div>
-          <div className="col-md-2 form-group">
-            <label className="text-muted form-label">Status</label>
-            <div className="mt-3">
+          <div className="col-md-2 form-group d-md-block d-flex">
+            <label className="text-muted form-label me-4">Status</label>
+            <div className="mt-md-3">
               <span
                 className={clsx(
                   'badge',
@@ -104,7 +104,7 @@ const WithdrawForms = () => {
           </div>
         </div>
         <div className="mb-8 row">
-          <div className="col-md-6 form-group">
+          <div className="col-md-12 form-group">
             <label className="text-muted form-label">Sender Address</label>
             <input
               className="form-control"
@@ -115,15 +115,6 @@ const WithdrawForms = () => {
             <small className="text-info">
               You as a developer can edit this field
             </small>
-          </div>
-          <div className="col-md-6 form-group">
-            <label className="text-muted form-label">Tag</label>
-            <input
-              className="form-control"
-              type="text"
-              name="tag"
-              onChange={formik.handleChange}
-            />
           </div>
         </div>
         <div className="mb-8 row">
@@ -192,7 +183,7 @@ const WithdrawForms = () => {
           </div>
         </div>
         <div className="mb-8 row">
-          <div className="col-md-6 form-group">
+          <div className="col-md-6 form-group mb-md-0 mb-6">
             <label className="text-muted form-label">Description</label>
             <textarea
               name="description"
@@ -213,17 +204,17 @@ const WithdrawForms = () => {
         <div className="text-end">
           <button
             type="submit"
-            className="btn btn-danger me-2"
+            className="btn btn-danger me-md-2 mb-3"
             style={{ minWidth: '150px' }}
           >
             Cancel
           </button>
           <button
             type="submit"
-            className="btn btn-warning me-2"
+            className="btn btn-warning me-md-2 mb-3"
             style={{ minWidth: '150px' }}
           >
-            Tranaction
+            Transaction
           </button>
           <button
             type="submit"
