@@ -7,6 +7,7 @@ export function PrivateRoutes() {
   // const example = lazy(() => import('../pages/pageFolder/pageFile'))
   const Users = lazy(() => import('../pages/users/Users'));
   const Withdraws = lazy(() => import('../pages/withdraws/Withdraws'));
+
   return (
     <Suspense fallback={<FallbackView />}>
       <Switch>
