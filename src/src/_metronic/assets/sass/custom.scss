@@ -1,0 +1,31 @@
+.css-yk16xz-control {
+    width: 100%;
+    padding: 0.167rem 1rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    line-height: 1.5;
+    color: #181c32;
+    background-color: #ffffff;
+    background-clip: padding-box;
+    border: 1px solid #e4e6ef !important;
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 0.475rem;
+    box-shadow: inset 0 1px 2px rgb(0 0 0 / 8%);
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+    &:hover {
+      border-color: none
+    }
+    @media (max-width: 768px) {
+        padding: 0.05rem 1rem;
+    }
+    
+    
+}
+
+.css-1pahdxg-control {
+    box-shadow:  none !important;
+    border-color: #b5b5c3 !important;
+
+}

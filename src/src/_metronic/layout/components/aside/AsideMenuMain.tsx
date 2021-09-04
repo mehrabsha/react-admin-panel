@@ -20,6 +20,12 @@ export function AsideMenuMain() {
         title="Users"
         fontIcon="bi-app-indicator"
       />
+      <AsideMenuItem
+        to="/withdraws"
+        icon="/media/icons/duotune/general/gen032.svg"
+        title="Withdraws"
+        fontIcon="bi-app-indicator"
+      />
     </>
   );
 }
