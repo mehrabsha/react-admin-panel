@@ -1,7 +1,7 @@
-export const WithdrawData = [
+export const RialWithdrawData = [
     {
         id: 5630,
-        username: 'fatemeh mehrani',
+        username: 'Mehrab shayesteh',
         phone: 912986543,
         emialConfirm: true,
         googleConfirm: false,

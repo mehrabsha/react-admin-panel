@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
-import { PageTitle, PageLink } from '../../../_metronic/layout/core';
-import { WithdrawData } from '../../modules/withdraws/WithdrawMockData';
-import WithdrawsFilters from '../../modules/withdraws/WithdrawsFilters';
-import WithdrawsList from '../../modules/withdraws/WithdrawsList';
+import { PageTitle, PageLink } from '../../../../_metronic/layout/core';
+import { CryptoWithdrawData } from '../../../modules/withdraws/crypto/CryptoWithdrawMockData';
+import CryptoWithdrawsFilters from '../../../modules/withdraws/crypto/CryptoWithdrawsFilters';
+import CryptoWithdrawsList from '../../../modules/withdraws/crypto/CryptoWithdrawsList';
 
 const withdrawBreadCrumbs: Array<PageLink> = [
   {
@@ -24,9 +24,9 @@ const WithdrawsT = () => {
     <>
       <PageTitle breadcrumbs={withdrawBreadCrumbs}>Withdraws</PageTitle>
       <div className="d-flex flex-column">
-        <WithdrawsFilters />
+        <CryptoWithdrawsFilters />
         <br />
-        <WithdrawsList items={WithdrawData} />
+        <CryptoWithdrawsList items={CryptoWithdrawData} />
       </div>
     </>
   );

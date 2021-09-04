@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Tab, Tabs } from 'react-bootstrap-v5';
-import WithdrawForms from './WithdrawForms';
-import WithdrawOperation from './WithdrawOperation';
+import RialWithdrawForms from './RialWithdrawForms';
+import RialWithdrawOperation from './RialWithdrawOperation';
 
-const WithdrawTabs = () => {
+const RialWithdrawTabs = () => {
   const [key, setKey] = useState('specifications');
   return (
     <div className="card">
@@ -16,10 +16,10 @@ const WithdrawTabs = () => {
           style={{ whiteSpace: 'nowrap', flexWrap: 'nowrap' }}
         >
           <Tab eventKey="specifications" title="Withdraw specifications">
-            <WithdrawForms />
+            <RialWithdrawForms />
           </Tab>
           <Tab eventKey="operation" title="Operations">
-            <WithdrawOperation />
+            <RialWithdrawOperation />
           </Tab>
         </Tabs>
       </div>
@@ -27,4 +27,4 @@ const WithdrawTabs = () => {
   );
 };
 
-export default WithdrawTabs;
+export default RialWithdrawTabs;

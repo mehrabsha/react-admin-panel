@@ -1,17 +1,10 @@
-import { lazy } from 'react';
-import { Route } from 'react-router-dom';
-import WithdrawsT from '../../templates/withdraws/WithdrawsT';
+import { Redirect } from 'react-router';
 
 const Withdraws = () => {
-  const WithdrawDetailsT = lazy(
-    () => import('../../templates/withdraws/withdraw-details/WithdrawDetailsT')
-  );
-
   return (
-    <>
-      <Route exact path="/withdraws" component={WithdrawsT} />
-      <Route exact path="/withdraws/:id" component={WithdrawDetailsT} />
-    </>
+    <div>
+      <Redirect to="/withdraws/crypto" />
+    </div>
   );
 };
 

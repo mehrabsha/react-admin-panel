@@ -1,6 +1,6 @@
 import React from 'react';
 
-const WithdrawOperation = () => {
+const CryptoWithdrawOperation = () => {
   return (
     <div className="my-8">
       <div className="row">
@@ -51,4 +51,4 @@ const WithdrawOperation = () => {
     </div>
   );
 };
-export default WithdrawOperation;
+export default CryptoWithdrawOperation;

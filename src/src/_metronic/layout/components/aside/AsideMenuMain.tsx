@@ -2,6 +2,7 @@
 import React from 'react';
 import { useIntl } from 'react-intl';
 import { AsideMenuItem } from './AsideMenuItem';
+import { AsideMenuItemWithSub } from './AsideMenuItemWithSub';
 
 export function AsideMenuMain() {
   const intl = useIntl();
@@ -20,12 +21,23 @@ export function AsideMenuMain() {
         title="Users"
         fontIcon="bi-app-indicator"
       />
-      <AsideMenuItem
-        to="/withdraws"
-        icon="/media/icons/duotune/general/gen032.svg"
-        title="Withdraws"
-        fontIcon="bi-app-indicator"
-      />
+
+      <AsideMenuItemWithSub
+        icon="/media/icons/duotune/art/art002.svg"
+        title="Withdras"
+        to=""
+      >
+        <AsideMenuItem
+          to="/withdraws/crypto"
+          icon="/media/icons/duotune/art/art002.svg"
+          title="Crypto withdraws"
+        />
+        <AsideMenuItem
+          to="/withdraws/rial"
+          icon="/media/icons/duotune/art/art002.svg"
+          title="Rial withdraws"
+        />
+      </AsideMenuItemWithSub>
     </>
   );
 }

@@ -1,9 +1,9 @@
 import Select from 'react-select';
 import { useFormik } from 'formik';
 import { useHistory } from 'react-router-dom';
-import selectValueSelector from '../../../utils/selectValueSelector';
+import selectValueSelector from '../../../../utils/selectValueSelector';
 import DatePicker from 'react-multi-date-picker';
-import CustomDatePicker from '../global/date-picker/DatePicker';
+import CustomDatePicker from '../../global/date-picker/DatePicker';
 
 const statusOptions = [
   { value: 'all', label: 'All' },
@@ -29,7 +29,7 @@ const currncyOptions = [
   { value: 'safemoon', label: 'safemoon' }
 ];
 
-const WithdrawsFilters = () => {
+const CryptoWithdrawsFilters = () => {
   const history = useHistory();
   const formik = useFormik({
     initialValues: {
@@ -173,4 +173,4 @@ const WithdrawsFilters = () => {
   );
 };
 
-export default WithdrawsFilters;
+export default CryptoWithdrawsFilters;
