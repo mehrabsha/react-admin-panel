@@ -17,6 +17,8 @@ export interface PageLink {
 export interface PageDataContextModel {
   pageTitle?: string;
   setPageTitle: (_title: string) => void;
+  showTitle?: boolean;
+  setShowTitle: (_showTitle: boolean) => void;
   pageDescription?: string;
   setPageDescription: (_description: string) => void;
   pageBreadcrumbs?: Array<PageLink>;
@@ -26,16 +28,20 @@ export interface PageDataContextModel {
 const PageDataContext = createContext<PageDataContextModel>({
   setPageTitle: (_title: string) => {},
   setPageBreadcrumbs: (_breadcrumbs: Array<PageLink>) => {},
-  setPageDescription: (_description: string) => {}
+  setPageDescription: (_description: string) => {},
+  setShowTitle: (_showTitle: boolean) => {}
 });
 
 const PageDataProvider: React.FC = ({ children }) => {
   const [pageTitle, setPageTitle] = useState<string>('');
   const [pageDescription, setPageDescription] = useState<string>('');
   const [pageBreadcrumbs, setPageBreadcrumbs] = useState<Array<PageLink>>([]);
+  const [showTitle, setShowTitle] = useState<boolean>(false);
   const value: PageDataContextModel = {
     pageTitle,
     setPageTitle,
+    showTitle,
+    setShowTitle,
     pageDescription,
     setPageDescription,
     pageBreadcrumbs,
@@ -55,10 +61,16 @@ function usePageData() {
 type Props = {
   description?: string;
   breadcrumbs?: Array<PageLink>;
+  showTitle?: boolean;
 };
 
-const PageTitle: FC<Props> = ({ children, description, breadcrumbs }) => {
-  const { setPageTitle, setPageDescription, setPageBreadcrumbs } =
+const PageTitle: FC<Props> = ({
+  children,
+  description,
+  breadcrumbs,
+  showTitle
+}) => {
+  const { setPageTitle, setPageDescription, setPageBreadcrumbs, setShowTitle } =
     usePageData();
   useEffect(() => {
     if (children) {
@@ -86,6 +98,15 @@ const PageTitle: FC<Props> = ({ children, description, breadcrumbs }) => {
       setPageBreadcrumbs([]);
     };
   }, [breadcrumbs]);
+
+  useEffect(() => {
+    if (showTitle) {
+      setShowTitle(showTitle);
+    }
+    return () => {
+      setShowTitle(false);
+    };
+  }, [showTitle]);
 
   return <></>;
 };
