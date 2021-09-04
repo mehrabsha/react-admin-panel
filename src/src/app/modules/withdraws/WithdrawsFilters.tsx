@@ -2,6 +2,8 @@ import Select from 'react-select';
 import { useFormik } from 'formik';
 import { useHistory } from 'react-router-dom';
 import selectValueSelector from '../../../utils/selectValueSelector';
+import DatePicker from 'react-multi-date-picker';
+import CustomDatePicker from '../global/date-picker/DatePicker';
 
 const statusOptions = [
   { value: 'all', label: 'All' },
@@ -35,10 +37,12 @@ const WithdrawsFilters = () => {
       currency: 'all',
       status: 'all',
       network: 'all',
-      txid: ''
+      txid: '',
+      dateFrom: '',
+      dateTo: ''
     },
     onSubmit: values => {
-      console.log(values);
+      console.log('VALUES', values);
       history.push({
         // search: `?id=${values.id}&currency=${values.crypto}`
         search: `?${new URLSearchParams(values).toString()}`
@@ -55,7 +59,7 @@ const WithdrawsFilters = () => {
       {/* end::Header */}
       {/* begin::Body */}
       <div className="card-body pt-0">
-        <form>
+        <form onSubmit={formik.handleSubmit}>
           <div className="row gy-5">
             <div className="col-12 col-sm-6 col-xl-2 form-group">
               <label htmlFor="withdrawid">Withdraw id</label>
@@ -120,20 +124,18 @@ const WithdrawsFilters = () => {
             </div>
             <div className="col-12 col-sm-6 col-xl-3 form-group">
               <label htmlFor="network">From date</label>
-              <input
-                className="form-control"
-                id="network"
-                name="network"
-                placeholder="2021/10/08"
+              <CustomDatePicker
+                name="dateFrom"
+                value={formik.values.dateFrom}
+                setFieldValue={formik.setFieldValue}
               />
             </div>
             <div className="col-12 col-sm-6 col-xl-3 form-group">
               <label htmlFor="network">To date</label>
-              <input
-                className="form-control"
-                id="network"
-                name="network"
-                placeholder="2021/12/04"
+              <CustomDatePicker
+                name="dateTo"
+                value={formik.values.dateTo}
+                setFieldValue={formik.setFieldValue}
               />
             </div>
 
