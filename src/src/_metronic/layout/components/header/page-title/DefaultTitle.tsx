@@ -14,9 +14,8 @@ const DefaultTitle: FC = () => {
       className={clsx('page-title d-flex', classes.pageTitle.join(' '))}
     >
       {/* begin::Title */}
-      {pageTitle && (
+      {pageTitle && showTitle && (
         <h1 className="d-flex align-items-center text-dark fw-bolder my-1 fs-3">
-          {showTitle ? 'show' : 'nowwwwwwww'}
           {pageTitle}
           {pageDescription && config.pageTitle && config.pageTitle.description && (
             <>

@@ -91,7 +91,7 @@ const DashboardWrapper: FC = () => {
   const intl = useIntl();
   return (
     <>
-      <PageTitle breadcrumbs={[]}>
+      <PageTitle showTitle breadcrumbs={[]}>
         {intl.formatMessage({ id: 'MENU.DASHBOARD' })}
       </PageTitle>
       <DashboardPage />
