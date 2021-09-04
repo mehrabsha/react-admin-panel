@@ -5,7 +5,8 @@ import { useLayout } from '../../../core/LayoutProvider';
 import { usePageData } from '../../../core/PageData';
 
 const DefaultTitle: FC = () => {
-  const { pageTitle, pageDescription, pageBreadcrumbs } = usePageData();
+  const { pageTitle, showTitle, pageDescription, pageBreadcrumbs } =
+    usePageData();
   const { config, attributes, classes } = useLayout();
   return (
     <div
@@ -15,6 +16,7 @@ const DefaultTitle: FC = () => {
       {/* begin::Title */}
       {pageTitle && (
         <h1 className="d-flex align-items-center text-dark fw-bolder my-1 fs-3">
+          {showTitle ? 'show' : 'nowwwwwwww'}
           {pageTitle}
           {pageDescription && config.pageTitle && config.pageTitle.description && (
             <>
