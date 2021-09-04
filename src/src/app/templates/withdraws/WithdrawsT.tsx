@@ -1,7 +1,6 @@
 import React, { FC } from 'react';
 import { PageTitle, PageLink } from '../../../_metronic/layout/core';
-import { WithdrawData } from '../../modules/withdraws/models/WithdrawMockData';
-import { WithdrawModel } from '../../modules/withdraws/models/WithdrawModel';
+import { WithdrawData } from '../../modules/withdraws/WithdrawMockData';
 import WithdrawsFilters from '../../modules/withdraws/WithdrawsFilters';
 import WithdrawsList from '../../modules/withdraws/WithdrawsList';
 
