@@ -37,7 +37,7 @@ const RialWithdrawsFilters = () => {
       currency: 'all',
       status: 'all',
       network: 'all',
-      txid: '',
+      tcode: '',
       dateFrom: '',
       dateTo: ''
     },
@@ -140,12 +140,12 @@ const RialWithdrawsFilters = () => {
             </div>
 
             <div className="col-12 col-sm-6 col-xl-6 form-group">
-              <label htmlFor="txid">Tx id</label>
+              <label htmlFor="tcode">Tracking code:</label>
               <input
                 className="form-control"
-                id="txid"
-                name="txid"
-                placeholder="Ex : 0x2d7667457070f9e...."
+                id="tcode"
+                name="tcode"
+                placeholder="Ex : 880518344"
               />
             </div>
           </div>
