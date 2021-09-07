@@ -1,6 +1,6 @@
 import React from 'react';
-import { PageTitle, PageLink } from '../../../../_metronic/layout/core';
-import WithdrawTabs from '../../../modules/withdraws/withdraw-details/WithdrawTabs';
+import { PageTitle, PageLink } from '../../../../../_metronic/layout/core';
+import CryptoWithdrawTabs from '../../../../modules/withdraws/crypto/crypto-withdraw-details/CryptoWithdrawTabs';
 
 const withdrawDetailsBreadCrumbs: Array<PageLink> = [
   {
@@ -35,7 +35,7 @@ const WithdrawDetialsT = () => {
       <PageTitle breadcrumbs={withdrawDetailsBreadCrumbs}>
         Withdraw details
       </PageTitle>
-      <WithdrawTabs />
+      <CryptoWithdrawTabs />
     </>
   );
 };

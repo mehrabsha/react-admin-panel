@@ -3,12 +3,12 @@ import clsx from 'clsx';
 import { Link } from 'react-router-dom';
 import { OverlayTrigger, Tooltip } from 'react-bootstrap-v5';
 
-const WithdrawListItem = (props: any) => {
+const CryptoWithdrawListItem = (props: any) => {
   return (
     <>
       <td>
         <Link
-          to={'/withdraws/' + props.item.id}
+          to={'/withdraws/crypto/' + props.item.id}
           className="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6"
         >
           {props.item.id}
@@ -97,7 +97,7 @@ const WithdrawListItem = (props: any) => {
           overlay={<Tooltip id="delete-tooltip">Edit</Tooltip>}
         >
           <Link
-            to={'/withdraws/' + props.item.id}
+            to={'/withdraws/crypto/' + props.item.id}
             className="btn btn-icon btn-bg-light btn-color-primary btn-sm me-1"
           >
             <i className="fas fa-edit"></i>
@@ -116,4 +116,4 @@ const WithdrawListItem = (props: any) => {
   );
 };
 
-export default WithdrawListItem;
+export default CryptoWithdrawListItem;

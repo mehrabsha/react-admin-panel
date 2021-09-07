@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { Pagination } from 'react-bootstrap-v5';
-import WithdrawListItem from './WithdrawListItem';
+import CryptoWithdrawListItem from './CryptoWithdrawListItem';
 
 let active: number = 2;
 const pagination: Array<any> = [];
@@ -12,7 +12,7 @@ for (let number: number = 1; number < 6; number++) {
   );
 }
 
-const WithdrawsList = (props: any) => {
+const CryptoWithdrawsList = (props: any) => {
   return (
     <div className="card">
       <div className="card-body">
@@ -35,7 +35,7 @@ const WithdrawsList = (props: any) => {
             <tbody>
               {props.items.map((row: any, index: number) => (
                 <tr key={index}>
-                  <WithdrawListItem item={row} />
+                  <CryptoWithdrawListItem item={row} />
                 </tr>
               ))}
             </tbody>
@@ -47,4 +47,4 @@ const WithdrawsList = (props: any) => {
   );
 };
 
-export default WithdrawsList;
+export default CryptoWithdrawsList;

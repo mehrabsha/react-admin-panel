@@ -2,12 +2,12 @@ import React from 'react';
 import { useFormik } from 'formik';
 import clsx from 'clsx';
 
-const WithdrawForms = () => {
+const RialWithdrawForms = () => {
   const formik = useFormik({
     initialValues: {
-      username: 'ftm mehrani',
+      username: 'Mehrab Shayesteh',
       id: '5630',
-      currency: 'TRX',
+      currency: 'Rial',
       amount: '3',
       date: '25/08/2021 - 13:56',
       jalaliDate: '03/06/1400 - 13:56',
@@ -218,7 +218,7 @@ const WithdrawForms = () => {
           </button>
           <button
             type="submit"
-            className="btn btn-primary"
+            className="btn btn-primary mb-3"
             style={{ minWidth: '150px' }}
           >
             Save Changes
@@ -229,4 +229,4 @@ const WithdrawForms = () => {
   );
 };
 
-export default WithdrawForms;
+export default RialWithdrawForms;
